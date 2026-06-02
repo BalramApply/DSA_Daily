@@ -1,99 +1,100 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [01/06/26] → #2  [02/06/26] → #3  [00/06/26]                    │
+ * │  #1  [02/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘ 
  * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 5: Simple Addition                                           ║
+ * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Compute the mathematical sum of two given integers and display the   │
- * │ final result to the standard output console.                         │
+ * │ Demonstrate implicit type conversion (widening conversion) in Java,  │
+ * │ showing how a smaller primitive integer data type is automatically   │
+ * │ promoted to a larger primitive long data type by the compiler.       │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  a = 1, b = 2                                                 │
- * │ Output: 3                                                            │
+ * │ Input:  Predefined int a = 68                                        │
+ * │ Output: Value of b: 68                                               │
  * │                                                                      │
- * │ Explanation: 1 + 2 = 3 (Arithmetic evaluation)                       │
+ * │ Explanation: The 32-bit int value is assigned directly to a 64-bit   │
+ * │              long variable without requiring an explicit cast block. │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation: Define two integer variables to hold the operand     │
- * │                values.                                               │
- * │ 2. Arithmetic: Execute binary addition operation (`+`) on variables. │
- * │ 3. Storage:    Assign the evaluated total into a destination value.  │
- * │ 4. Output:     Print the final sum directly to the screen.           │
+ * │ 1. Instantiation: Allocate a 32-bit integer variable (`int a`).      │
+ * │ 2. Promotion:     Assign the value of `a` directly to a 64-bit long  │
+ * │                   variable (`long b`). Java automatically widens it. │
+ * │ 3. Output:        Print the promoted value to the standard console.  │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Arithmetic Operation                                   │
- * │ Limit:  Operands must reside within standard signed integer limits   │
+ * │ Type:   Implicit Primitive Casting / Widening Promotion             │
+ * │ Limit:  Safe operation: No numeric overflow or data precision loss.  │
  * │                                                                      │
- * │ Time:   O(1) → Addition and assignment execute in a single CPU cycle │
- * │                independent of input scale.                           │
+ * │ Time:   O(1) → Bitwise widening and basic assignments execute in a   │
+ * │                single, constant clock cycle operation.               │
  * │                                                                      │
- * │ Space:  O(1) → Memory requirements are bound to fixed primitive stack│
- * │                registers with zero auxiliary scaling.                │
+ * │ Space:  O(1) → Utilizes a strict, fixed memory footprint bound entirely│
+ * │                to two active primitive stack frames.                  │
  * └──────────────────────────────────────────────────────────────────────┘
  */
 
-public class Addition {
+public class Type_Conversion {
     public static void main(String[] args) {
-
+    
     }
 }
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 5: Simple Addition                                           ║
+ * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Compute the mathematical sum of two given integers and display the   │
- * │ final result to the standard output console.                         │
+ * │ Demonstrate implicit type conversion (widening conversion) in Java,  │
+ * │ showing how a smaller primitive integer data type is automatically   │
+ * │ promoted to a larger primitive long data type by the compiler.       │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  a = 1, b = 2                                                 │
- * │ Output: 3                                                            │
+ * │ Input:  Predefined int a = 68                                        │
+ * │ Output: Value of b: 68                                               │
  * │                                                                      │
- * │ Explanation: 1 + 2 = 3 (Arithmetic evaluation)                       │
+ * │ Explanation: The 32-bit int value is assigned directly to a 64-bit   │
+ * │              long variable without requiring an explicit cast block. │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation: Define two integer variables to hold the operand     │
- * │                values.                                               │
- * │ 2. Arithmetic: Execute binary addition operation (`+`) on variables. │
- * │ 3. Storage:    Assign the evaluated total into a destination value.  │
- * │ 4. Output:     Print the final sum directly to the screen.           │
+ * │ 1. Instantiation: Allocate a 32-bit integer variable (`int a`).      │
+ * │ 2. Promotion:     Assign the value of `a` directly to a 64-bit long  │
+ * │                   variable (`long b`). Java automatically widens it. │
+ * │ 3. Output:        Print the promoted value to the standard console.  │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Arithmetic Operation                                   │
- * │ Limit:  Operands must reside within standard signed integer limits   │
+ * │ Type:   Implicit Primitive Casting / Widening Promotion             │
+ * │ Limit:  Safe operation: No numeric overflow or data precision loss.  │
  * │                                                                      │
- * │ Time:   O(1) → Addition and assignment execute in a single CPU cycle │
- * │                independent of input scale.                           │
+ * │ Time:   O(1) → Bitwise widening and basic assignments execute in a   │
+ * │                single, constant clock cycle operation.               │
  * │                                                                      │
- * │ Space:  O(1) → Memory requirements are bound to fixed primitive stack│
- * │                registers with zero auxiliary scaling.                │
+ * │ Space:  O(1) → Utilizes a strict, fixed memory footprint bound entirely│
+ * │                to two active primitive stack frames.                  │
  * └──────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Addition {
+// public class Type_Conversion {
 //     public static void main(String[] args) {
-//         // Declare and initialize two numbers
-//         int firstNumber = 10;
-//         int secondNumber = 20;
-
-//         // Calculate the sum of the two numbers
-//         int sum = firstNumber + secondNumber;
-
-//         // Display the result
-//         System.out.println("Sum: " + sum);
+//         // Declare an integer variable
+//         int a = 68;
+        
+//         // Implicit type casting (widening) from int to long
+//         long b = a;
+        
+//         // Print the value of 'b'
+//         System.out.println("Value of b: " + b);
 //     }
 // }

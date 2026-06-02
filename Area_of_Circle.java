@@ -1,47 +1,47 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [01/06/26] → #2  [02/06/26] → #3  [00/06/26]                    │
+ * │  #1  [02/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘ 
  * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 5: Simple Addition                                           ║
+ * ║ PROBLEM 9: Area of a Circle                                          ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Compute the mathematical sum of two given integers and display the   │
- * │ final result to the standard output console.                         │
+ * │ Capture the radius of a circle dynamically from user input, calculate│
+ * │ its total surface area using the geometric formula Area = π * r²,    │
+ * │ and display the result.                                              │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  a = 1, b = 2                                                 │
- * │ Output: 3                                                            │
+ * │ Input:  radius = 5                                                   │
+ * │ Output: 78.5                                                         │
  * │                                                                      │
- * │ Explanation: 1 + 2 = 3 (Arithmetic evaluation)                       │
+ * │ Explanation: Area = 3.14 * 5 * 5 = 78.5 (Approximated using π ≈ 3.14)│
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation: Define two integer variables to hold the operand     │
- * │                values.                                               │
- * │ 2. Arithmetic: Execute binary addition operation (`+`) on variables. │
- * │ 3. Storage:    Assign the evaluated total into a destination value.  │
- * │ 4. Output:     Print the final sum directly to the screen.           │
+ * │ 1. Initialization: Create a Scanner listener linked to System.in.    │
+ * │ 2. Stream Capture: Extract the incoming floating-point radius value. │
+ * │ 3. Evaluation:     Compute geometric product via π * radius * radius.│
+ * │ 4. Output:         Print the calculated double/float area value.      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Arithmetic Operation                                   │
- * │ Limit:  Operands must reside within standard signed integer limits   │
+ * │ Type:   Formula-Based Geometric Calculation                          │
+ * │ Limit:  Radius must be a non-negative numerical value (r ≥ 0)        │
  * │                                                                      │
- * │ Time:   O(1) → Addition and assignment execute in a single CPU cycle │
- * │                independent of input scale.                           │
+ * │ Time:   O(1) → Executing a static algebraic formula runs in          │
+ * │                identical, constant clock cycles.                     │
  * │                                                                      │
- * │ Space:  O(1) → Memory requirements are bound to fixed primitive stack│
- * │                registers with zero auxiliary scaling.                │
+ * │ Space:  O(1) → Utilizes a minimal, fixed number of primitive storage │
+ * │                registers alongside the standard input reader.        │
  * └──────────────────────────────────────────────────────────────────────┘
  */
-
-public class Addition {
+import java.util.*;
+public class Area_of_Circle {
     public static void main(String[] args) {
 
     }
@@ -49,51 +49,56 @@ public class Addition {
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 5: Simple Addition                                           ║
+ * ║ PROBLEM 9: Area of a Circle                                          ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Compute the mathematical sum of two given integers and display the   │
- * │ final result to the standard output console.                         │
+ * │ Capture the radius of a circle dynamically from user input, calculate│
+ * │ its total surface area using the geometric formula Area = π * r²,    │
+ * │ and display the result.                                              │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  a = 1, b = 2                                                 │
- * │ Output: 3                                                            │
+ * │ Input:  radius = 5                                                   │
+ * │ Output: 78.5                                                         │
  * │                                                                      │
- * │ Explanation: 1 + 2 = 3 (Arithmetic evaluation)                       │
+ * │ Explanation: Area = 3.14 * 5 * 5 = 78.5 (Approximated using π ≈ 3.14)│
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation: Define two integer variables to hold the operand     │
- * │                values.                                               │
- * │ 2. Arithmetic: Execute binary addition operation (`+`) on variables. │
- * │ 3. Storage:    Assign the evaluated total into a destination value.  │
- * │ 4. Output:     Print the final sum directly to the screen.           │
+ * │ 1. Initialization: Create a Scanner listener linked to System.in.    │
+ * │ 2. Stream Capture: Extract the incoming floating-point radius value. │
+ * │ 3. Evaluation:     Compute geometric product via π * radius * radius.│
+ * │ 4. Output:         Print the calculated double/float area value.      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Arithmetic Operation                                   │
- * │ Limit:  Operands must reside within standard signed integer limits   │
+ * │ Type:   Formula-Based Geometric Calculation                          │
+ * │ Limit:  Radius must be a non-negative numerical value (r ≥ 0)        │
  * │                                                                      │
- * │ Time:   O(1) → Addition and assignment execute in a single CPU cycle │
- * │                independent of input scale.                           │
+ * │ Time:   O(1) → Executing a static algebraic formula runs in          │
+ * │                identical, constant clock cycles.                     │
  * │                                                                      │
- * │ Space:  O(1) → Memory requirements are bound to fixed primitive stack│
- * │                registers with zero auxiliary scaling.                │
+ * │ Space:  O(1) → Utilizes a minimal, fixed number of primitive storage │
+ * │                registers alongside the standard input reader.        │
  * └──────────────────────────────────────────────────────────────────────┘
  */
-
-// public class Addition {
+// import java.util.*;
+// public class Area_of_Circle {
 //     public static void main(String[] args) {
-//         // Declare and initialize two numbers
-//         int firstNumber = 10;
-//         int secondNumber = 20;
+//         // Creating a Scanner object to take user input
+//         Scanner sc = new Scanner(System.in);
 
-//         // Calculate the sum of the two numbers
-//         int sum = firstNumber + secondNumber;
+//         // Prompt the user to enter the radius of the circle
+//         System.out.print("Enter the radius of the circle: ");
+//         float radius = sc.nextFloat(); // Taking float input for radius
 
-//         // Display the result
-//         System.out.println("Sum: " + sum);
+//         // Calculate the area of the circle using the formula: π * r^2
+//         float area = 3.14f * radius * radius;
+
+//         // Display the calculated area
+//         System.out.println("Area of the circle: " + area);
 //     }
 // }
+
+

@@ -1,47 +1,46 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [01/06/26] → #2  [02/06/26] → #3  [00/06/26]                    │
+ * │  #1  [02/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘ 
  * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 5: Simple Addition                                           ║
+ * ║ PROBLEM 8: User Input Multiplication                                 ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Compute the mathematical sum of two given integers and display the   │
- * │ final result to the standard output console.                         │
+ * │ Capture two integers dynamically from user input via the console,    │
+ * │ compute their arithmetic product, and display the result.            │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  a = 1, b = 2                                                 │
- * │ Output: 3                                                            │
+ * │ Input:  2 3                                                          │
+ * │ Output: 6                                                            │
  * │                                                                      │
- * │ Explanation: 1 + 2 = 3 (Arithmetic evaluation)                       │
+ * │ Explanation: 2 * 3 = 6 (Dynamic evaluation from stream inputs)       │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation: Define two integer variables to hold the operand     │
- * │                values.                                               │
- * │ 2. Arithmetic: Execute binary addition operation (`+`) on variables. │
- * │ 3. Storage:    Assign the evaluated total into a destination value.  │
- * │ 4. Output:     Print the final sum directly to the screen.           │
+ * │ 1. Initialization: Create a Scanner listener linked to System.in.    │
+ * │ 2. Stream Capture: Extract the next two available integer tokens.     │
+ * │ 3. Evaluation:     Multiply the extracted operands using the `*` flag.│
+ * │ 4. Output:         Print the resulting value and close the stream.    │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Arithmetic Operation                                   │
- * │ Limit:  Operands must reside within standard signed integer limits   │
+ * │ Type:   Dynamic I/O & Basic Arithmetic                               │
+ * │ Limit:  Operands must stay within language-specific integer bounds   │
  * │                                                                      │
- * │ Time:   O(1) → Addition and assignment execute in a single CPU cycle │
- * │                independent of input scale.                           │
+ * │ Time:   O(1) → Processing a fixed pair of numerical inputs executes   │
+ * │                in constant CPU instructions.                         │
  * │                                                                      │
- * │ Space:  O(1) → Memory requirements are bound to fixed primitive stack│
- * │                registers with zero auxiliary scaling.                │
+ * │ Space:  O(1) → Utilizes a static set of primitive variables alongside│
+ * │                a localized stream reference instance.                │
  * └──────────────────────────────────────────────────────────────────────┘
  */
-
-public class Addition {
+import java.util.*;
+public class Multiplication {
     public static void main(String[] args) {
 
     }
@@ -49,51 +48,60 @@ public class Addition {
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 5: Simple Addition                                           ║
+ * ║ PROBLEM 8: User Input Multiplication                                 ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Compute the mathematical sum of two given integers and display the   │
- * │ final result to the standard output console.                         │
+ * │ Capture two integers dynamically from user input via the console,    │
+ * │ compute their arithmetic product, and display the result.            │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  a = 1, b = 2                                                 │
- * │ Output: 3                                                            │
+ * │ Input:  2 3                                                          │
+ * │ Output: 6                                                            │
  * │                                                                      │
- * │ Explanation: 1 + 2 = 3 (Arithmetic evaluation)                       │
+ * │ Explanation: 2 * 3 = 6 (Dynamic evaluation from stream inputs)       │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation: Define two integer variables to hold the operand     │
- * │                values.                                               │
- * │ 2. Arithmetic: Execute binary addition operation (`+`) on variables. │
- * │ 3. Storage:    Assign the evaluated total into a destination value.  │
- * │ 4. Output:     Print the final sum directly to the screen.           │
+ * │ 1. Initialization: Create a Scanner listener linked to System.in.    │
+ * │ 2. Stream Capture: Extract the next two available integer tokens.     │
+ * │ 3. Evaluation:     Multiply the extracted operands using the `*` flag.│
+ * │ 4. Output:         Print the resulting value and close the stream.    │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Arithmetic Operation                                   │
- * │ Limit:  Operands must reside within standard signed integer limits   │
+ * │ Type:   Dynamic I/O & Basic Arithmetic                               │
+ * │ Limit:  Operands must stay within language-specific integer bounds   │
  * │                                                                      │
- * │ Time:   O(1) → Addition and assignment execute in a single CPU cycle │
- * │                independent of input scale.                           │
+ * │ Time:   O(1) → Processing a fixed pair of numerical inputs executes   │
+ * │                in constant CPU instructions.                         │
  * │                                                                      │
- * │ Space:  O(1) → Memory requirements are bound to fixed primitive stack│
- * │                registers with zero auxiliary scaling.                │
+ * │ Space:  O(1) → Utilizes a static set of primitive variables alongside│
+ * │                a localized stream reference instance.                │
  * └──────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Addition {
+// import java.util.*;
+// public class Multiplication {
 //     public static void main(String[] args) {
-//         // Declare and initialize two numbers
-//         int firstNumber = 10;
-//         int secondNumber = 20;
+//         //Creating a Scanner object to take user input
+//         Scanner sc = new Scanner(System.in);
 
-//         // Calculate the sum of the two numbers
-//         int sum = firstNumber + secondNumber;
+//         // Prompt the user to enter two numbers
+//         System.out.print("Enter first number: ");
+//         int a = sc.nextInt();
+
+//         System.out.print("Enter second number: ");
+//         int b = sc.nextInt();
+
+//         // Calculate the product of two numbers
+//         int product = a * b;
 
 //         // Display the result
-//         System.out.println("Sum: " + sum);
+//         System.out.println("Product: " + product);
+
+//         // Close the scanner to prevent resource leak
+//         sc.close();
 //     }
 // }
