@@ -1,100 +1,109 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [02/06/26] → #2  [02/06/26] → #3  [00/06/26]                    │
+ * │  #1  [03/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
- * └──────────────────────────────────────────────────────────────────────┘ 
+ * └──────────────────────────────────────────────────────────────────────┘
  * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
+ * ║ PROBLEM 14: Area of a Square                                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate implicit type conversion (widening conversion) in Java,  │
- * │ showing how a smaller primitive integer data type is automatically   │
- * │ promoted to a larger primitive long data type by the compiler.       │
+ * │ Capture the side length of a square from the user, calculate its     │
+ * │ total area using the geometric formula Area = side * side, and print │
+ * │ the resulting value to the console.                                  │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  Predefined int a = 68                                        │
- * │ Output: Value of b: 68                                               │
+ * │ Input:  side = 4                                                     │
+ * │ Output: 16                                                           │
  * │                                                                      │
- * │ Explanation: The 32-bit int value is assigned directly to a 64-bit   │
- * │              long variable without requiring an explicit cast block. │
+ * │ Explanation: Area = 4 * 4 = 16 (Geometric product of equal sides)    │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Instantiation: Allocate a 32-bit integer variable (`int a`).      │
- * │ 2. Promotion:     Assign the value of `a` directly to a 64-bit long  │
- * │                   variable (`long b`). Java automatically widens it. │
- * │ 3. Output:        Print the promoted value to the standard console.  │
+ * │ 1. Streaming Input: Capture the side length dimension from the input │
+ * │                     stream reader.                                   │
+ * │ 2. Evaluation:      Compute the squaring operation by multiplying the│
+ * │                     side value by itself.                            │
+ * │ 3. Flush:           Display the evaluated area total directly onto the│
+ * │                     system console stream.                           │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Implicit Primitive Casting / Widening Promotion             │
- * │ Limit:  Safe operation: No numeric overflow or data precision loss.  │
+ * │ Type:   Formula-Based Geometric Calculation                          │
+ * │ Limit:  Side length must be a non-negative numerical value (s ≥ 0)   │
  * │                                                                      │
- * │ Time:   O(1) → Bitwise widening and basic assignments execute in a   │
- * │                single, constant clock cycle operation.               │
+ * │ Time:   O(1) → Executing a single scalar multiplication operation    │
+ * │                runs in uniform, constant machine clock cycles.       │
  * │                                                                      │
- * │ Space:  O(1) → Utilizes a strict, fixed memory footprint bound entirely│
- * │                to two active primitive stack frames.                  │
+ * │ Space:  O(1) → Footprint remains fixed, requiring a constant count   │
+ * │                of primitive registers with zero dynamic overhead.     │
  * └──────────────────────────────────────────────────────────────────────┘
  */
-
-public class Type_Conversion {
+import java.util.*;
+public class Area_of_Square {
     public static void main(String[] args) {
-        
+    
     }
 }
-
 /**
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
+ * ║ PROBLEM 14: Area of a Square                                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate implicit type conversion (widening conversion) in Java,  │
- * │ showing how a smaller primitive integer data type is automatically   │
- * │ promoted to a larger primitive long data type by the compiler.       │
+ * │ Capture the side length of a square from the user, calculate its     │
+ * │ total area using the geometric formula Area = side * side, and print │
+ * │ the resulting value to the console.                                  │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  Predefined int a = 68                                        │
- * │ Output: Value of b: 68                                               │
+ * │ Input:  side = 4                                                     │
+ * │ Output: 16                                                           │
  * │                                                                      │
- * │ Explanation: The 32-bit int value is assigned directly to a 64-bit   │
- * │              long variable without requiring an explicit cast block. │
+ * │ Explanation: Area = 4 * 4 = 16 (Geometric product of equal sides)    │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Instantiation: Allocate a 32-bit integer variable (`int a`).      │
- * │ 2. Promotion:     Assign the value of `a` directly to a 64-bit long  │
- * │                   variable (`long b`). Java automatically widens it. │
- * │ 3. Output:        Print the promoted value to the standard console.  │
+ * │ 1. Streaming Input: Capture the side length dimension from the input │
+ * │                     stream reader.                                   │
+ * │ 2. Evaluation:      Compute the squaring operation by multiplying the│
+ * │                     side value by itself.                            │
+ * │ 3. Flush:           Display the evaluated area total directly onto the│
+ * │                     system console stream.                           │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Implicit Primitive Casting / Widening Promotion             │
- * │ Limit:  Safe operation: No numeric overflow or data precision loss.  │
+ * │ Type:   Formula-Based Geometric Calculation                          │
+ * │ Limit:  Side length must be a non-negative numerical value (s ≥ 0)   │
  * │                                                                      │
- * │ Time:   O(1) → Bitwise widening and basic assignments execute in a   │
- * │                single, constant clock cycle operation.               │
+ * │ Time:   O(1) → Executing a single scalar multiplication operation    │
+ * │                runs in uniform, constant machine clock cycles.       │
  * │                                                                      │
- * │ Space:  O(1) → Utilizes a strict, fixed memory footprint bound entirely│
- * │                to two active primitive stack frames.                  │
+ * │ Space:  O(1) → Footprint remains fixed, requiring a constant count   │
+ * │                of primitive registers with zero dynamic overhead.     │
  * └──────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Type_Conversion {
+// import java.util.*;
+// public class Area_of_Square {
 //     public static void main(String[] args) {
-//         // Declare an integer variable
-//         int a = 68;
+//         Scanner sc = new Scanner(System.in); // Create Scanner object
+
+//         // Prompting the user for input
+//         System.out.print("Enter the side length of the square: ");
         
-//         // Implicit type casting (widening) from int to long
-//         long b = a;
-        
-//         // Print the value of 'b'
-//         System.out.println("Value of b: " + b);
+//         // Taking integer input for the side of the square
+//         int side = sc.nextInt();
+
+//         // Calculating the area of the square
+//         int area = side * side;
+
+//         // Displaying the area
+//         System.out.println("Area of the square: " + area);
+
+//         sc.close(); // Closing the Scanner to prevent resource leak
 //     }
 // }

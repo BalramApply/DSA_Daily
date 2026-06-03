@@ -1,100 +1,116 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [02/06/26] → #2  [02/06/26] → #3  [00/06/26]                    │
+ * │  #1  [03/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
- * └──────────────────────────────────────────────────────────────────────┘ 
+ * └──────────────────────────────────────────────────────────────────────┘
  * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
+ * ║ PROBLEM 11: Explicit Type Casting                                    ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate implicit type conversion (widening conversion) in Java,  │
- * │ showing how a smaller primitive integer data type is automatically   │
- * │ promoted to a larger primitive long data type by the compiler.       │
+ * │ Demonstrate explicit narrowing and type conversions in Java:         │
+ * │ 1. Converting a floating-point value down into a truncated integer.  │
+ * │ 2. Extracting the foundational numerical ASCII/Unicode value of a    │
+ * │    given character code literal.                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  Predefined int a = 68                                        │
- * │ Output: Value of b: 68                                               │
+ * │ Float Input:  99.99f  →  Output Int: 99                              │
+ * │ Char Input:   'a'     →  Output Int: 97                              │
  * │                                                                      │
- * │ Explanation: The 32-bit int value is assigned directly to a 64-bit   │
- * │              long variable without requiring an explicit cast block. │
+ * │ Explanation:                                                         │
+ * │   • Float conversion forcefully truncates all fractional decimals.   │
+ * │   • Character evaluation maps the character to its exact ASCII value.│
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Instantiation: Allocate a 32-bit integer variable (`int a`).      │
- * │ 2. Promotion:     Assign the value of `a` directly to a 64-bit long  │
- * │                   variable (`long b`). Java automatically widens it. │
- * │ 3. Output:        Print the promoted value to the standard console.  │
+ * │ 1. Narrowing Cast: Instatiate a float variable and truncate it to a  │
+ * │                    32-bit integer via explicit `(int)` assignment.   │
+ * │ 2. Text Mapping:   Declare a standard char token and read its storage │
+ * │                    index via a numeric cast block expression.        │
+ * │ 3. Output Stream:  Forward both evaluated instances directly to the  │
+ * │                    system console display line interface.            │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Implicit Primitive Casting / Widening Promotion             │
- * │ Limit:  Safe operation: No numeric overflow or data precision loss.  │
+ * │ Type:   Explicit Casting / Data Truncation                           │
+ * │ Limit:  Narrowing float conversions permanently drop trailing scale. │
  * │                                                                      │
- * │ Time:   O(1) → Bitwise widening and basic assignments execute in a   │
- * │                single, constant clock cycle operation.               │
+ * │ Time:   O(1) → Direct machine-level bitwise masking and casting runs │
+ * │                in constant execution intervals.                      │
  * │                                                                      │
- * │ Space:  O(1) → Utilizes a strict, fixed memory footprint bound entirely│
- * │                to two active primitive stack frames.                  │
+ * │ Space:  O(1) → Memory properties remain entirely bound to a small    │
+ * │                handful of localized primitive type frames.            │
  * └──────────────────────────────────────────────────────────────────────┘
  */
 
-public class Type_Conversion {
+public class Type_Casting {
     public static void main(String[] args) {
-        
+
     }
 }
-
-/**
+/* 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
+ * ║ PROBLEM 11: Explicit Type Casting                                    ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate implicit type conversion (widening conversion) in Java,  │
- * │ showing how a smaller primitive integer data type is automatically   │
- * │ promoted to a larger primitive long data type by the compiler.       │
+ * │ Demonstrate explicit narrowing and type conversions in Java:         │
+ * │ 1. Converting a floating-point value down into a truncated integer.  │
+ * │ 2. Extracting the foundational numerical ASCII/Unicode value of a    │
+ * │    given character code literal.                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  Predefined int a = 68                                        │
- * │ Output: Value of b: 68                                               │
+ * │ Float Input:  99.99f  →  Output Int: 99                              │
+ * │ Char Input:   'a'     →  Output Int: 97                              │
  * │                                                                      │
- * │ Explanation: The 32-bit int value is assigned directly to a 64-bit   │
- * │              long variable without requiring an explicit cast block. │
+ * │ Explanation:                                                         │
+ * │   • Float conversion forcefully truncates all fractional decimals.   │
+ * │   • Character evaluation maps the character to its exact ASCII value.│
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Instantiation: Allocate a 32-bit integer variable (`int a`).      │
- * │ 2. Promotion:     Assign the value of `a` directly to a 64-bit long  │
- * │                   variable (`long b`). Java automatically widens it. │
- * │ 3. Output:        Print the promoted value to the standard console.  │
+ * │ 1. Narrowing Cast: Instatiate a float variable and truncate it to a  │
+ * │                    32-bit integer via explicit `(int)` assignment.   │
+ * │ 2. Text Mapping:   Declare a standard char token and read its storage │
+ * │                    index via a numeric cast block expression.        │
+ * │ 3. Output Stream:  Forward both evaluated instances directly to the  │
+ * │                    system console display line interface.            │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Implicit Primitive Casting / Widening Promotion             │
- * │ Limit:  Safe operation: No numeric overflow or data precision loss.  │
+ * │ Type:   Explicit Casting / Data Truncation                           │
+ * │ Limit:  Narrowing float conversions permanently drop trailing scale. │
  * │                                                                      │
- * │ Time:   O(1) → Bitwise widening and basic assignments execute in a   │
- * │                single, constant clock cycle operation.               │
+ * │ Time:   O(1) → Direct machine-level bitwise masking and casting runs │
+ * │                in constant execution intervals.                      │
  * │                                                                      │
- * │ Space:  O(1) → Utilizes a strict, fixed memory footprint bound entirely│
- * │                to two active primitive stack frames.                  │
+ * │ Space:  O(1) → Memory properties remain entirely bound to a small    │
+ * │                handful of localized primitive type frames.            │
  * └──────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Type_Conversion {
+// public class Type_Casting {
 //     public static void main(String[] args) {
-//         // Declare an integer variable
-//         int a = 68;
+//         // Declaring a floating-point variable
+//         float marks = 99.99f;
         
-//         // Implicit type casting (widening) from int to long
-//         long b = a;
+//         // Typecasting float to int (removes decimal part)
+//         int mark = (int) marks;
         
-//         // Print the value of 'b'
-//         System.out.println("Value of b: " + b);
+//         // Printing the integer value
+//         System.out.println("Integer value of marks: " + mark);
+
+//         // Declaring a character variable
+//         char ch = 'a';
+        
+//         // Typecasting char to int (ASCII value of 'a')
+//         int num = (int) ch;
+
+//         // Printing the ASCII value of character 'a'
+//         System.out.println("ASCII value of 'a': " + num);
 //     }
 // }

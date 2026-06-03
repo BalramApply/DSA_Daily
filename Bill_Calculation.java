@@ -1,100 +1,128 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [02/06/26] → #2  [02/06/26] → #3  [00/06/26]                    │
+ * │  #1  [03/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
- * └──────────────────────────────────────────────────────────────────────┘ 
+ * └──────────────────────────────────────────────────────────────────────┘
  * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
+ * ║ PROBLEM 15: Bill Calculation                                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate implicit type conversion (widening conversion) in Java,  │
- * │ showing how a smaller primitive integer data type is automatically   │
- * │ promoted to a larger primitive long data type by the compiler.       │
+ * │ Capture the individual costs of three stationary items (a pencil,    │
+ * │ a pen, and an eraser) from the user using floating-point types.      │
+ * │ Calculate their subtotal, apply an additional 18% tax surcharge, and │
+ * │ output the final gross bill amount.                                 │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  Predefined int a = 68                                        │
- * │ Output: Value of b: 68                                               │
+ * │ Input:  pencil = 5.0, eraser = 5.0, pen = 10.0                       │
+ * │ Output: 23.60                                                        │
  * │                                                                      │
- * │ Explanation: The 32-bit int value is assigned directly to a 64-bit   │
- * │              long variable without requiring an explicit cast block. │
+ * │ Explanation:                                                         │
+ * │   • Subtotal = 5.0 + 5.0 + 10.0 = 20.0                               │
+ * │   • Tax (18%) = 20.0 * 0.18 = 3.60                                   │
+ * │   • Gross Bill = 20.0 + 3.60 = 23.60                                  │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Instantiation: Allocate a 32-bit integer variable (`int a`).      │
- * │ 2. Promotion:     Assign the value of `a` directly to a 64-bit long  │
- * │                   variable (`long b`). Java automatically widens it. │
- * │ 3. Output:        Print the promoted value to the standard console.  │
+ * │ 1. Streaming Input: Capture three floating-point pricing tokens using │
+ * │                     the input stream reader (`nextFloat()`).         │
+ * │ 2. Subtotaling:     Accumulate the individual values into a single   │
+ * │                     base cost container variable.                    │
+ * │ 3. Tax Evaluation:  Multiply the base subtotal by a scalar factor of  │
+ * │                     1.18 to compound the 18% tax surcharge.          │
+ * │ 4. Flush:           Display the final evaluated bill total back onto │
+ * │                     the system console display line.                 │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Implicit Primitive Casting / Widening Promotion             │
- * │ Limit:  Safe operation: No numeric overflow or data precision loss.  │
+ * │ Type:   Financial Formula Evaluation / Floating-Point Arithmetic     │
+ * │ Limit:  Inputs must be non-negative numeric floating-point values    │
  * │                                                                      │
- * │ Time:   O(1) → Bitwise widening and basic assignments execute in a   │
- * │                single, constant clock cycle operation.               │
+ * │ Time:   O(1) → Sequential operations and scalar multiplication run   │
+ * │                in a strict, completely fixed number of CPU cycles.   │
  * │                                                                      │
- * │ Space:  O(1) → Utilizes a strict, fixed memory footprint bound entirely│
- * │                to two active primitive stack frames.                  │
+ * │ Space:  O(1) → Memory requirements stay constant, using a tiny,      │
+ * │                isolated group of primitive stack parameters.        │
  * └──────────────────────────────────────────────────────────────────────┘
  */
 
-public class Type_Conversion {
+import java.util.*;
+public class Bill_Calculation {
     public static void main(String[] args) {
-        
+  
     }
 }
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
+ * ║ PROBLEM 15: Bill Calculation                                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate implicit type conversion (widening conversion) in Java,  │
- * │ showing how a smaller primitive integer data type is automatically   │
- * │ promoted to a larger primitive long data type by the compiler.       │
+ * │ Capture the individual costs of three stationary items (a pencil,    │
+ * │ a pen, and an eraser) from the user using floating-point types.      │
+ * │ Calculate their subtotal, apply an additional 18% tax surcharge, and │
+ * │ output the final gross bill amount.                                 │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  Predefined int a = 68                                        │
- * │ Output: Value of b: 68                                               │
+ * │ Input:  pencil = 5.0, eraser = 5.0, pen = 10.0                       │
+ * │ Output: 23.60                                                        │
  * │                                                                      │
- * │ Explanation: The 32-bit int value is assigned directly to a 64-bit   │
- * │              long variable without requiring an explicit cast block. │
+ * │ Explanation:                                                         │
+ * │   • Subtotal = 5.0 + 5.0 + 10.0 = 20.0                               │
+ * │   • Tax (18%) = 20.0 * 0.18 = 3.60                                   │
+ * │   • Gross Bill = 20.0 + 3.60 = 23.60                                  │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Instantiation: Allocate a 32-bit integer variable (`int a`).      │
- * │ 2. Promotion:     Assign the value of `a` directly to a 64-bit long  │
- * │                   variable (`long b`). Java automatically widens it. │
- * │ 3. Output:        Print the promoted value to the standard console.  │
+ * │ 1. Streaming Input: Capture three floating-point pricing tokens using │
+ * │                     the input stream reader (`nextFloat()`).         │
+ * │ 2. Subtotaling:     Accumulate the individual values into a single   │
+ * │                     base cost container variable.                    │
+ * │ 3. Tax Evaluation:  Multiply the base subtotal by a scalar factor of  │
+ * │                     1.18 to compound the 18% tax surcharge.          │
+ * │ 4. Flush:           Display the final evaluated bill total back onto │
+ * │                     the system console display line.                 │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Implicit Primitive Casting / Widening Promotion             │
- * │ Limit:  Safe operation: No numeric overflow or data precision loss.  │
+ * │ Type:   Financial Formula Evaluation / Floating-Point Arithmetic     │
+ * │ Limit:  Inputs must be non-negative numeric floating-point values    │
  * │                                                                      │
- * │ Time:   O(1) → Bitwise widening and basic assignments execute in a   │
- * │                single, constant clock cycle operation.               │
+ * │ Time:   O(1) → Sequential operations and scalar multiplication run   │
+ * │                in a strict, completely fixed number of CPU cycles.   │
  * │                                                                      │
- * │ Space:  O(1) → Utilizes a strict, fixed memory footprint bound entirely│
- * │                to two active primitive stack frames.                  │
+ * │ Space:  O(1) → Memory requirements stay constant, using a tiny,      │
+ * │                isolated group of primitive stack parameters.        │
  * └──────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Type_Conversion {
+// import java.util.*;
+// public class Bill_Calculation {
 //     public static void main(String[] args) {
-//         // Declare an integer variable
-//         int a = 68;
-        
-//         // Implicit type casting (widening) from int to long
-//         long b = a;
-        
-//         // Print the value of 'b'
-//         System.out.println("Value of b: " + b);
+//         Scanner sc = new Scanner(System.in); // Create Scanner object
+
+//         // Taking price inputs from the user
+//         System.out.print("ENTER THE PRICE OF A PENCIL : ");
+//         float pencil = sc.nextFloat();
+
+//         System.out.print("ENTER THE PRICE OF A PEN : ");
+//         float pen = sc.nextFloat();
+
+//         System.out.print("ENTER THE PRICE OF AN ERASER: ");
+//         float eraser = sc.nextFloat();
+
+//         // Calculating total price
+//         float total = pencil + pen + eraser;
+//         System.out.println("BILL : " + total);
+
+//         // Calculating bill with 18% tax
+//         float tax = 0.18f * total;
+//         float newTotal = total + tax;
+//         System.out.println("TOTAL BILL WITH 18% TAX : " + newTotal);
 //     }
 // }

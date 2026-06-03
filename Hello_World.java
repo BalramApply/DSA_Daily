@@ -1,5 +1,5 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [01/06/26] → #2  [02/06/26] → #3  [00/06/26]                    │
+ * │  #1  [01/06/26] → #2  [02/06/26] → #3  [03/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
@@ -33,7 +33,9 @@
 
 public class Hello_World {
     public static void main(String[] args) {
-        
+        System.out.print("hello world \n");
+        System.out.println("hello world");
+        System.out.print("hello world");
     }
 }
 
@@ -134,3 +136,14 @@ public class Hello_World {
  * │ Space:  O(N)       → Storage for tree nodes, events, and X-mappings   │
  * └───────────────────────────────────────────────────────────────────────┘
  */
+
+// public class one {
+//     public static void main(String[] args) {
+//         // Printing "Hello World" with a newline using \n
+//         System.out.print("Hello World\n");
+
+//         // Printing "Hello World" with automatic newline
+//         System.out.println("Hello World");
+//         System.out.print("Hello World");
+//     }
+// }

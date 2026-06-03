@@ -1,5 +1,5 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [02/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #1  [02/06/26] → #2  [02/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
@@ -32,13 +32,14 @@
  * │ Type:   Dynamic I/O & Basic Arithmetic                               │
  * │ Limit:  Operands must stay within language-specific integer bounds   │
  * │                                                                      │
- * │ Time:   O(1) → Processing a fixed pair of numerical inputs executes   │
+ * │ Time:   O(1) → Processing a fixed pair of numerical inputs executes  │
  * │                in constant CPU instructions.                         │
  * │                                                                      │
  * │ Space:  O(1) → Utilizes a static set of primitive variables alongside│
  * │                a localized stream reference instance.                │
  * └──────────────────────────────────────────────────────────────────────┘
  */
+
 import java.util.*;
 public class Multiplication {
     public static void main(String[] args) {

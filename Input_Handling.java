@@ -1,5 +1,5 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [02/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #1  [02/06/26] → #2  [03/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
@@ -34,7 +34,7 @@
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
  * │ Type:   Stream Input / Output Processing                             │
- * │ Limit:  Incoming input formatting must match exact parser signatures  │
+ * │ Limit:  Incoming input formatting must match exact parser signatures │
  * │                                                                      │
  * │ Time:   O(1) → Standard parse logic depends entirely on standard     │
  * │                input length bounds, running in fixed execution time. │
@@ -48,7 +48,7 @@ import java.util.*;
 
 public class Input_Handling {
     public static void main(String[] args) {
-        
+       
     }
 }
 /* 
