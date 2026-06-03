@@ -1,5 +1,5 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [03/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #1  [03/06/26] → #2  [04/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
@@ -48,20 +48,7 @@
 
 public class Type_Promotion {
     public static void main(String[] args) {
-        // Declaring two character variables
-        char a = 'a'; // ASCII value of 'a' is 97
-        char b = 'b'; // ASCII value of 'b' is 98
-
-
-
-        // Declaring different primitive data types
-        short x = 5;
-        byte y = 25;
-        char z = 'c'; // ASCII value of 'c' is 99
-
-        // Multiplication and explicit typecasting
-        byte m = 5;
-
+        
     }
 }
 
@@ -70,9 +57,9 @@ public class Type_Promotion {
  * ║ PROBLEM 12: Type Promotion Rules                                     ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
- * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
+ * ┌── PROBLEM STATEMENT ─────────────────────────────────────────────────┐
  * │ Demonstrate Java's automatic type promotion behaviors during         │
- * │ arithmetic expressions:                                               │
+ * │ arithmetic expressions:                                              │
  * │   - `byte`, `short`, and `char` operands are automatically promoted  │
  * │     to `int` before an operator is evaluated.                        │
  * │   - Storing an expression's result back into a smaller data type     │
@@ -85,13 +72,13 @@ public class Type_Promotion {
  * │ • Re-assignment Block : byte m = 5; (byte)(m * 2) → Explicitly cast  │
  * └──────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
+ * ┌── APPROACH ──────────────────────────────────────────────────────────┐
  * │ 1. Character Math: Subtracted text literals showcase the underlying  │
  * │                    ASCII integers being treated as standard ints.    │
- * │ 2. Dynamic Mixed:  Combine multiple narrow types to observe compiler│
- * │                    up-casting behaviors across expressions.           │
+ * │ 2. Dynamic Mixed:  Combine multiple narrow types to observe compiler │
+ * │                    up-casting behaviors across expressions.          │
  * │ 3. Narrowing Cast: Enforce safety boundaries via explicit outer casts│
- * │                    to prevent assignment compilation errors.          │
+ * │                    to prevent assignment compilation errors.         │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
