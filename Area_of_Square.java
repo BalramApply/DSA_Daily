@@ -42,7 +42,7 @@
  * │                of primitive registers with zero dynamic overhead.     │
  * └──────────────────────────────────────────────────────────────────────┘
  */
-import java.util.*;
+
 public class Area_of_Square {
     public static void main(String[] args) {
         

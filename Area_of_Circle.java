@@ -40,7 +40,7 @@
  * │                registers alongside the standard input reader.        │
  * └──────────────────────────────────────────────────────────────────────┘
  */
-import java.util.*;
+
 public class Area_of_Circle {
     public static void main(String[] args) {
         
