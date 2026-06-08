@@ -1,5 +1,5 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [04/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #1  [04/06/26] → #2  [05/06/26] → #3  [06/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
@@ -56,18 +56,10 @@
 
 public class Arithmatic_Operations{
     public static void main(String[] args) {
-        // Declare two integer variables
-        int A = 10;
-        int B = 5;
-
-        // Perform and display arithmetic operations
-        // System.out.println("ADDITION: " + ());
-        // System.out.println("SUBTRACTION: " + ());
-        // System.out.println("MULTIPLICATION: " + ());
-        // System.out.println("DIVISION: " + ());
-        // System.out.println("MODULUS (REMAINDER): " + ());
+        
     }
 }
+
 /**
  * ╔══════════════════════════════════════════════════════════════════════╗
  * ║ PROBLEM 01: Arithmetic Operators & Basic Operations                  ║
