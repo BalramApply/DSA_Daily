@@ -6,77 +6,66 @@
  * └──────────────────────────────────────────────────────────────────────┘
  * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 26: Parenthetical Isolation vs Flat Associativity            ║
+ * ║ PROBLEM 29: Flawed Conditional Logic & Static Value Gating           ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Evaluate, compare, and trace two arithmetic expressions utilizing the │
- * │ same primitive variables (x and y) to contrast parenthetical isolation│
- * │ against standard multiplicative flat left-to-right associativity.     │
+ * │ Analyze and trace the runtime output of a logically flawed          │
+ * │ selection structure (`if-else`) that attempts to find the maximum    │
+ * │ value between two variables but mistakenly checks a static baseline │
+ * │ literal threshold instead.                                           │
  * └──────────────────────────────────────────────────────────────────────┘
  *
- * ┌── PRECEDENCE & ASSOCIATIVITY PRINCIPLES ────────────────────────────┐
- * │ • Explicit Grouping: Parentheses () possess the highest priority,    │
- * │   forcing immediate internal reduction before outside terms interact.│
+ * ┌── LOGICAL FALLACY ANALYSIS ─────────────────────────────────────────┐
+ * │ • Structural Intention: Finding the largest value requires a dynamic │
+ * │   comparative relational operation between both inputs (e.g., A > B).│
  * │                                                                      │
- * │ • Associativity Rule: Operators '*' and '/' share equal status and   │
- * │   resolve strictly left-to-right when appearing in a flat sequence.  │
- * │                                                                      │
- * │ • Additive Sequence: Operators '+' and '-' execute only after all    │
- * │   higher-ranked multiplicative clusters have completely resolved.    │
+ * │ • Hardcoded Bug: The implementation utilizes a static literal condition│
+ * │   (A >= 18). It completely isolates variable B from the evaluation,  │
+ * │   causing semantic inaccuracy despite compiling cleanly.            │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Inputs: x = 10, y = 5                                                │
- * │ Output:                                                              │
- * │   exp1 = 20                                                          │
- * │   exp2 = 65                                                          │
+ * │ Inputs: A = 16, B = 13                                               │
+ * │ Output: B IS LARGEST                                                 │
  * │                                                                      │
- * │ Step-by-Step Mathematical Resolution:                                │
- * │  • Expression 1: y * (x / y + x / y)                                 │
- * │    Step A: Resolve Brackets -> (10 / 5 + 10 / 5) -> (2 + 2) => 4       │
- * │    Step B: Outside Product  -> 5 * 4                         => 20    │
+ * │ Trace Execution Flow:                                                │
+ * │  • Check Condition: (A >= 18) -> (16 >= 18)                         │
+ * │  • Evaluation:      false                                            │
+ * │  • Branch Fallback: Bypasses the true branch, forcing execution flow │
+ * │                     directly into the secondary `else` statement block.│
  * │                                                                      │
- * │  • Expression 2: y * x / y + y * x + y                               │
- * │    Step A: Term 1 (y * x / y) -> 5 * 10 / 5 -> 50 / 5       => 10    │
- * │    Step B: Term 2 (y * x)     -> 5 * 10                      => 50    │
- * │    Step C: Term 3 (y)         -> Static Variable             => 5     │
- * │    Step D: Accumulate Sum     -> 10 + 50 + 5                 => 65    │
+ * │ Semantic Error Paradox: Even though A (16) is numerically superior    │
+ * │ to B (13), the faulty gating mechanism incorrectly prints:           │
+ * │ "B IS LARGEST"                                                       │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Environment Loading: Assign baseline primitive values to integer   │
- * │                        targets x and y.                              │
- * │ 2. Pipeline Processing: Compute expression one (bracketed boundary)  │
- * │                        and expression two (unbracketed sequence).    │
- * │ 3. Output Logging:     Directly dispatch calculated metrics into standard│
- * │                        console communication pipelines.               │
+ * │ 1. Allocation Step:  Define primitive integer spaces for inputs A    │
+ * │                      and B within stack frame bounds.                │
+ * │ 2. Defective Gating: Run the flawed conditional block to observe true │
+ * │                      vs false execution pathways.                    │
+ * │ 3. Output Logging:   Log the evaluated outcome to confirm how logic │
+ * │                      bugs alter runtime facts.                       │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Precedence Hierarchy & Linear Expression Tracing             │
- * │ Limit:  Divisor y must never equal zero to protect runtime integrity  │
+ * │ Type:   Logical Bug Evaluation / Single-Selection Control Flow       │
+ * │ Limit:  Operates on signed primitives; logic breaks mathematical truth│
  * │                                                                      │
- * │ Time:   O(1) → Calculations evaluate across a fixed thread sequence  │
- * │                requiring constant, uniform processing time.          │
+ * │ Time:   O(1) → Static literal comparisons process instantly within   │
+ * │                uniform, constant processor cycles.                   │
  * │                                                                      │
- * │ Space:  O(1) → Footprint remains strictly pinned to local register  │
- * │                allocations with zero scaling potential.              │
+ * │ Space:  O(1) → Footprint remains fixed to local variable structures  │
+ * │                with zero scaling dependency.                          │
  * └──────────────────────────────────────────────────────────────────────┘
  */
 
-public class Analyse_Output_Expressopn_1 {
+public class Largest_of_Two_Numbers {
     public static void main(String args[]){
-        int x = 10, y = 5;
         
-        int exp1 = (y * (x / y + x / y));
-        int exp2 = (y * x / y + y * x + y);
-
-        System.out.println("VALUE IS : "+exp1);  // Ans : 
-        System.out.print("VALUE IS : "+exp2);    // Ans : 
     }
 }
-
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [06/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
@@ -85,73 +74,70 @@ public class Analyse_Output_Expressopn_1 {
  * └──────────────────────────────────────────────────────────────────────┘
  * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 26: Parenthetical Isolation vs Flat Associativity           ║
+ * ║ PROBLEM 13: Flawed Conditional Logic & Static Value Gating           ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Evaluate, compare, and trace two arithmetic expressions utilizing the │
- * │ same primitive variables (x and y) to contrast parenthetical isolation│
- * │ against standard multiplicative flat left-to-right associativity.   │
+ * │ Analyze and trace the runtime output of a logically flawed          │
+ * │ selection structure (`if-else`) that attempts to find the maximum    │
+ * │ value between two variables but mistakenly checks a static baseline │
+ * │ literal threshold instead.                                           │
  * └──────────────────────────────────────────────────────────────────────┘
  *
- * ┌── PRECEDENCE & ASSOCIATIVITY PRINCIPLES ────────────────────────────┐
- * │ • Explicit Grouping: Parentheses () possess the highest priority,    │
- * │   forcing immediate internal reduction before outside terms interact.│
+ * ┌── LOGICAL FALLACY ANALYSIS ─────────────────────────────────────────┐
+ * │ • Structural Intention: Finding the largest value requires a dynamic │
+ * │   comparative relational operation between both inputs (e.g., A > B).│
  * │                                                                      │
- * │ • Associativity Rule: Operators '*' and '/' share equal status and   │
- * │   resolve strictly left-to-right when appearing in a flat sequence.  │
- * │                                                                      │
- * │ • Additive Sequence: Operators '+' and '-' execute only after all    │
- * │   higher-ranked multiplicative clusters have completely resolved.    │
+ * │ • Hardcoded Bug: The implementation utilizes a static literal condition│
+ * │   (A >= 18). It completely isolates variable B from the evaluation,  │
+ * │   causing semantic inaccuracy despite compiling cleanly.            │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Inputs: x = 10, y = 5                                                │
- * │ Output:                                                              │
- * │   exp1 = 20                                                          │
- * │   exp2 = 65                                                          │
+ * │ Inputs: A = 16, B = 13                                               │
+ * │ Output: B IS LARGEST                                                 │
  * │                                                                      │
- * │ Step-by-Step Mathematical Resolution:                                │
- * │  • Expression 1: y * (x / y + x / y)                                 │
- * │    Step A: Resolve Brackets -> (10 / 5 + 10 / 5) -> (2 + 2) => 4       │
- * │    Step B: Outside Product  -> 5 * 4                         => 20    │
+ * │ Trace Execution Flow:                                                │
+ * │  • Check Condition: (A >= 18) -> (16 >= 18)                         │
+ * │  • Evaluation:      false                                            │
+ * │  • Branch Fallback: Bypasses the true branch, forcing execution flow │
+ * │                     directly into the secondary `else` statement block.│
  * │                                                                      │
- * │  • Expression 2: y * x / y + y * x + y                               │
- * │    Step A: Term 1 (y * x / y) -> 5 * 10 / 5 -> 50 / 5       => 10    │
- * │    Step B: Term 2 (y * x)     -> 5 * 10                      => 50    │
- * │    Step C: Term 3 (y)         -> Static Variable             => 5     │
- * │    Step D: Accumulate Sum     -> 10 + 50 + 5                 => 65    │
+ * │ Semantic Error Paradox: Even though A (16) is numerically superior    │
+ * │ to B (13), the faulty gating mechanism incorrectly prints:           │
+ * │ "B IS LARGEST"                                                       │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Environment Loading: Assign baseline primitive values to integer   │
- * │                        targets x and y.                              │
- * │ 2. Pipeline Processing: Compute expression one (bracketed boundary)  │
- * │                        and expression two (unbracketed sequence).    │
- * │ 3. Output Logging:     Directly dispatch calculated metrics into standard│
- * │                        console communication pipelines.               │
+ * │ 1. Allocation Step:  Define primitive integer spaces for inputs A    │
+ * │                      and B within stack frame bounds.                │
+ * │ 2. Defective Gating: Run the flawed conditional block to observe true │
+ * │                      vs false execution pathways.                    │
+ * │ 3. Output Logging:   Log the evaluated outcome to confirm how logic │
+ * │                      bugs alter runtime facts.                       │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Precedence Hierarchy & Linear Expression Tracing             │
- * │ Limit:  Divisor y must never equal zero to protect runtime integrity  │
+ * │ Type:   Logical Bug Evaluation / Single-Selection Control Flow       │
+ * │ Limit:  Operates on signed primitives; logic breaks mathematical truth│
  * │                                                                      │
- * │ Time:   O(1) → Calculations evaluate across a fixed thread sequence  │
- * │                requiring constant, uniform processing time.          │
+ * │ Time:   O(1) → Static literal comparisons process instantly within   │
+ * │                uniform, constant processor cycles.                   │
  * │                                                                      │
- * │ Space:  O(1) → Footprint remains strictly pinned to local register  │
- * │                allocations with zero scaling potential.              │
+ * │ Space:  O(1) → Footprint remains fixed to local variable structures  │
+ * │                with zero scaling dependency.                          │
  * └──────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Analyse_Output_Expressopn_1 {
+// public class Largest_of_Two_Numbers {
 //     public static void main(String args[]){
-//         int x = 10, y = 5;
-        
-//         int exp1 = (y * (x / y + x / y));
-//         int exp2 = (y * x / y + y * x + y);
-
-//         System.out.println("VALUE IS :"+exp1);  // Ans : 
-//         System.out.print("VALUE IS :"+exp2);    // Ans : 
+//         int A = 16;
+//         int B = 13;
+//         if(A >= 18){
+//             System.out.println("A IS LARGEST");
+//         }
+//         else{
+//              System.out.println("B IS LARGEST");
+//         }
 //     }
 // }
