@@ -37,8 +37,8 @@
  * │                                                                      │
  * │  • Gating Evaluation: (1 == 0) ──> false                             │
  * │                                                                      │
- * │  • Branch Transition: Bypasses the true branch, shifting control      │
- * │                      directly down to the fallback `else` block to  │
+ * │  • Branch Transition: Bypasses the true branch, shifting control     │
+ * │                      directly down to the fallback `else` block to   │
  * │                      print: "NUMBER IS ODD"                          │
  * └──────────────────────────────────────────────────────────────────────┘
  *
