@@ -1,5 +1,5 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [06/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #1  [06/06/26] → #2  [07/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
@@ -12,16 +12,16 @@
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
  * │ Categorize an integer age variable into a targeted sociological      │
  * │ classification ("adult", "teenager", or "not adult") utilizing a     │
- * │ mixture of independent and nested conditional branching statements.   │
+ * │ mixture of independent and nested conditional branching statements.  │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── BRANCHING BEHAVIOR & SCOPING RULES ───────────────────────────────┐
- * │ • First Branch (Independent): The `age >= 18` block is entirely      │
- * │   decoupled. If true, it executes, but the program continues directly │
- * │   to evaluate subsequent branches regardless.                         │
- * │                                                                      │
- * │ • Second Branch (Tethered Pair): The `else` statement is tightly     │
- * │   bound *only* to the immediate secondary `if` statement. If the      │
+ * │ • First Branch (Independent): The `age >= 18` block is entirely         │
+ * │   decoupled. If true, it executes, but the program continues directly   │
+ * │   to evaluate subsequent branches regardless.                           │
+ * │                                                                         │
+ * │ • Second Branch (Tethered Pair): The `else` statement is tightly        │
+ * │   bound *only* to the immediate secondary `if` statement. If the        │
  * │   teenager expression resolves to true, the fallback `else` is bypassed.│
  * └──────────────────────────────────────────────────────────────────────┘
  *
@@ -32,10 +32,10 @@
  * │                                                                      │
  * │ Branch Evaluation Path:                                              │
  * │  • Check 1: (age >= 18) -> (16 >= 18)                                │
- * │             => false [Bypasses block; no print outcome]               │
+ * │             => false [Bypasses block; no print outcome]              │
  * │                                                                      │
  * │  • Check 2: (age > 13 && age < 18) -> (16 > 13 && 16 < 18)           │
- * │             => true && true -> true ["teenager" prints successfully]   │
+ * │             => true && true -> true ["teenager" prints successfully] │
  * │                                                                      │
  * │  • Check 3: else (Belongs exclusively to Check 2)                    │
  * │             => Bypassed entirely because Check 2 evaluated to true.  │

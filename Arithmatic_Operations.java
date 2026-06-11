@@ -1,6 +1,6 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [04/06/26] → #2  [05/06/26] → #3  [06/06/26]                    │
- * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #4  [07/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
@@ -33,7 +33,7 @@
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Initialize Operands: Declare and store two primitive integer       │
+ * │ 1. Initialize Operands: Declare and store two primitive integer      │
  * │                         variables, A and B.                          │
  * │ 2. Apply Operators:     Utilize standard binary arithmetic operators │
  * │                         to calculate sums, differences, products,    │
@@ -56,7 +56,11 @@
 
 public class Arithmatic_Operations{
     public static void main(String[] args) {
-        
+        System.out.println(3+5);
+        System.out.println(3-5);
+        System.out.println(3*5);
+        System.out.println(3/5);
+        System.out.println(3%5);
     }
 }
 
