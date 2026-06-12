@@ -9,14 +9,14 @@
  * ║ PROBLEM 30: Modulo Congruence & Parity Evaluation                    ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
- * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
+ * ┌── PROBLEM STATEMENT ─────────────────────────────────────────────── ─┐
  * │ Evaluate the mathematical parity (even or odd state) of a given      │
  * │ integer input by assessing its congruence modulo 2 within a dual-    │
  * │ selection (`if-else`) control flow hierarchy.                        │
  * └──────────────────────────────────────────────────────────────────────┘
  *
- * ┌── PARITY MECHANICS & ARITHMETIC RULES ──────────────────────────────┐
- * │ • Modulo Operator (%): Computes the remainder of an integer division│
+ * ┌── PARITY MECHANICS & ARITHMETIC RULES ───────────────────────────── ─┐
+ * │ • Modulo Operator (%): Computes the remainder of an integer division │
  * │   operation. For any integer n, n % 2 yields exactly 0 or 1 (or -1   │
  * │   for negative odd values in Java arithmetic).                       │
  * │                                                                      │
