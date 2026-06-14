@@ -1,42 +1,54 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [01/06/26] → #2  [02/06/26] → #3  [03/06/26]                    │
  * │  #4  [04/06/26] → #5  [05/06/26] → #6  [06/06/26]                    │
- * │  #7  [07/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
- * │  #10 [00/06/26]                                                      │
+ * │  #7  [07/06/26] → #8  [08/06/26] → #9  [09/00/00]                    │
+ * │  #10 [00/00/00]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- * 
+ *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 4: Data Types                                                ║
+ * ║ PROBLEM : Java Data Types Declaration and Printing                   ║
  * ╚══════════════════════════════════════════════════════════════════════╝
- * 
+ *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Declare various primitive and reference data types supported by the  │
- * │ language, assign values, and print them out to verify correct type   │
- * │ initialization (e.g., displaying a numeric literal value like 8).    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Declare and initialize various primitive and reference data types   │
+ * │ in Java. Print their values to understand how different types       │
+ * │ store and represent data.                                           │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── CORE SPECIFICATIONS ──────────────────────────────────────────────┐
- * │ • Numeric Types   : Memory tracking for whole numbers and integers   │
- * │ • Fractional/Dec  : Floating-point precision fields                  │
- * │ • Logic / Text    : Boolean true/false markers and character values  │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ─────────────────────────────────────────────────────────┐
+ * │ Output :                                                           │
+ * │ Byte value: 8                                                      │
+ * │ Character value: a                                                 │
+ * │ Boolean value: false                                               │
+ * │ Float value: 34.0                                                  │
+ * │ Integer value: 108                                                 │
+ * │ Short value: 240                                                   │
+ * │ String value: Balram                                               │
+ * │ Long value: 222255555                                              │
+ * └────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Instantiation: Define precise type keywords matching structural   │
- * │                   value constraints (e.g., byte, int, float, double).│
- * │ 2. Assignment:    Populate each location with explicit data bounds.  │
- * │ 3. Evaluation:    Print variable contents directly to terminal.      │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ No input is required.                                               │
+ * │ Values must be assigned according to their respective data types.   │
+ * │ Float literals should use 'f' and long literals should use 'L'.     │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Syntax / Memory Allocation                             │
- * │                                                                      │
- * │ Time:   O(1) → Independent declarations and basic print evaluations  │
- * │                execute in completely fixed, constant time intervals. │
- * │                                                                      │
- * │ Space:  O(1) → Total memory footprint remains bound to a static count│
- * │                of standard data types with zero dynamic expansion.   │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Declare a byte variable and assign a small integer value.  │
+ * │ Step 2 : Declare char and boolean variables with valid values.      │
+ * │ Step 3 : Declare float, int, short, and long variables.             │
+ * │ Step 4 : Declare a String variable to store text data.              │
+ * │ Step 5 : Print all variable values using println().                 │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Data Types / Variables / Basic Output                               │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
 public class Data_Types {
@@ -45,38 +57,53 @@ public class Data_Types {
     }
 }
 
- /*╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 4: Data Types                                                ║
+ /*
+ * ╔══════════════════════════════════════════════════════════════════════╗
+ * ║ PROBLEM : Java Data Types Declaration and Printing                   ║
  * ╚══════════════════════════════════════════════════════════════════════╝
+ *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Declare various primitive and reference data types supported by the  │
- * │ language, assign values, and print them out to verify correct type   │
- * │ initialization (e.g., displaying a numeric literal value like 8).    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Declare and initialize various primitive and reference data types   │
+ * │ in Java. Print their values to understand how different types       │
+ * │ store and represent data.                                           │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── CORE SPECIFICATIONS ──────────────────────────────────────────────┐
- * │ • Numeric Types   : Memory tracking for whole numbers and integers   │
- * │ • Fractional/Dec  : Floating-point precision fields                  │
- * │ • Logic / Text    : Boolean true/false markers and character values  │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ─────────────────────────────────────────────────────────┐
+ * │ Output :                                                           │
+ * │ Byte value: 8                                                      │
+ * │ Character value: a                                                 │
+ * │ Boolean value: false                                               │
+ * │ Float value: 34.0                                                  │
+ * │ Integer value: 108                                                 │
+ * │ Short value: 240                                                   │
+ * │ String value: Balram                                               │
+ * │ Long value: 222255555                                              │
+ * └────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Instantiation: Define precise type keywords matching structural   │
- * │                   value constraints (e.g., byte, int, float, double).│
- * │ 2. Assignment:    Populate each location with explicit data bounds.  │
- * │ 3. Evaluation:    Print variable contents directly to terminal.      │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ No input is required.                                               │
+ * │ Values must be assigned according to their respective data types.   │
+ * │ Float literals should use 'f' and long literals should use 'L'.     │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Syntax / Memory Allocation                             │
- * │                                                                      │
- * │ Time:   O(1) → Independent declarations and basic print evaluations  │
- * │                execute in completely fixed, constant time intervals. │
- * │                                                                      │
- * │ Space:  O(1) → Total memory footprint remains bound to a static count│
- * │                of standard data types with zero dynamic expansion.   │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Declare a byte variable and assign a small integer value.  │
+ * │ Step 2 : Declare char and boolean variables with valid values.      │
+ * │ Step 3 : Declare float, int, short, and long variables.             │
+ * │ Step 4 : Declare a String variable to store text data.              │
+ * │ Step 5 : Print all variable values using println().                 │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Data Types / Variables / Basic Output                               │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
+
 // public class four {
 //     public static void main(String[] args) {
 //         // Declaring and initializing different data types

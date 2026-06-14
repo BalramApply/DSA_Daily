@@ -1,137 +1,134 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [06/06/26] → #2  [07/06/26] → #3  [08/06/26]                    │
+ * │  #1  [08/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 29: LARGEST OF TWO NUMBERS                                   ║
+ * ║ PROBLEM 38: POSITIVE NEGATIVE NUMBER CHECKER                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Analyze and trace the runtime output of a logically flawed           │
- * │ selection structure (`if-else`) that attempts to find the maximum    │
- * │ value between two variables but mistakenly checks a static baseline  │
- * │ literal threshold instead.                                           │
+ * │ Evaluate the mathematical sign of a given integer input to determine │
+ * │ whether it falls into a positive or negative structural domain using  │
+ * │ an isolated dual-selection (`if-else`) conditional block.             │
  * └──────────────────────────────────────────────────────────────────────┘
  *
- * ┌── LOGICAL FALLACY ANALYSIS ─────────────────────────────────────────┐
- * │ • Structural Intention: Finding the largest value requires a dynamic │
- * │   comparative relational operation between both inputs (e.g., A > B).│
+ * ┌── ZERO-BOUNDARY BOUNDS & LOGIC ─────────────────────────────────────┐
+ * │ • Origin Alignment: On a standard real number line, zero acts as a   │
+ * │   neutral origin. For this specific implementation matrix, zero is   │
+ * │   grouped inclusively into the positive numeric subset.              │
  * │                                                                      │
- * │ • Hardcoded Bug: The implementation utilizes a static literal condition│
- * │   (A >= 18). It completely isolates variable B from the evaluation,  │
- * │   causing semantic inaccuracy despite compiling cleanly.            │
+ * │ • Inclusive Comparison: Utilizing a non-strict greater-than-or-equal  │
+ * │   relational inequality (`>= 0`) cleanly maps zero and all positive  │
+ * │   integers to the true branch, isolating negative values to the `else`.│
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Inputs: A = 16, B = 13                                               │
- * │ Output: B IS LARGEST                                                 │
+ * │ 1. Negative Traversal Case:                                          │
+ * │    Input:  number = -12                                              │
+ * │    Check:  (-12 >= 0) ──> false                                      │
+ * │    Output: NUMBER IS NEGATIVE : -12                                  │
  * │                                                                      │
- * │ Trace Execution Flow:                                                │
- * │  • Check Condition: (A >= 18) -> (16 >= 18)                         │
- * │  • Evaluation:      false                                            │
- * │  • Branch Fallback: Bypasses the true branch, forcing execution flow │
- * │                     directly into the secondary `else` statement block.│
- * │                                                                      │
- * │ Semantic Error Paradox: Even though A (16) is numerically superior    │
- * │ to B (13), the faulty gating mechanism incorrectly prints:           │
- * │ "B IS LARGEST"                                                       │
+ * │ 2. Positive Traversal Case:                                          │
+ * │    Input:  number = 5                                                │
+ * │    Check:  (5 >= 0) ──> true                                         │
+ * │    Output: NUMBER IS POSITIVE : 5                                    │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation Step:  Define primitive integer spaces for inputs A    │
- * │                      and B within stack frame bounds.                │
- * │ 2. Defective Gating: Run the flawed conditional block to observe true │
- * │                      vs false execution pathways.                    │
- * │ 3. Output Logging:   Log the evaluated outcome to confirm how logic │
- * │                      bugs alter runtime facts.                       │
+ * │ 1. Input Allocation:  Initialize a local primitive signed integer     │
+ * │                       variable to serve as the evaluation target.    │
+ * │ 2. Sign Filtration:   Route the variable directly through an inclusive│
+ * │                       relational zero-boundary check frame.          │
+ * │ 3. Output Resolution: Route the distinct true and false execution     │
+ * │                       paths into customized standard console print logs.│
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Logical Bug Evaluation / Single-Selection Control Flow       │
- * │ Limit:  Operates on signed primitives; logic breaks mathematical truth│
+ * │ Type:   Signed Primitive Range Evaluation / Selection Control Flow   │
+ * │ Limit:  Symmetrically handles all positive, negative, and zero signed│
+ * │         integer data properties.                                     │
  * │                                                                      │
- * │ Time:   O(1) → Static literal comparisons process instantly within   │
- * │                uniform, constant processor cycles.                   │
+ * │ Time:   O(1) → Single comparison steps evaluate instantly at the hardware│
+ * │                level in constant, invariant execution clock cycles.  │
  * │                                                                      │
- * │ Space:  O(1) → Footprint remains fixed to local variable structures  │
- * │                with zero scaling dependency.                          │
+ * │ Space:  O(1) → Structural memory remains strictly pinned to local,   │
+ * │                non-scaling stack frame storage registers.            │
  * └──────────────────────────────────────────────────────────────────────┘
  */
-
-public class Largest_of_Two_Numbers {
+import java.util.Scanner;
+public class Positive_Negative_Number {
     public static void main(String args[]){
         
     }
 }
-/* 
+
+/**
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 13: Flawed Conditional Logic & Static Value Gating           ║
+ * ║ PROBLEM 22: POSITIVE NEGATIVE NUMBER CHECKER                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Analyze and trace the runtime output of a logically flawed          │
- * │ selection structure (`if-else`) that attempts to find the maximum    │
- * │ value between two variables but mistakenly checks a static baseline │
- * │ literal threshold instead.                                           │
+ * │ Evaluate the mathematical sign of a given integer input to determine │
+ * │ whether it falls into a positive or negative structural domain using  │
+ * │ an isolated dual-selection (`if-else`) conditional block.             │
  * └──────────────────────────────────────────────────────────────────────┘
  *
- * ┌── LOGICAL FALLACY ANALYSIS ─────────────────────────────────────────┐
- * │ • Structural Intention: Finding the largest value requires a dynamic │
- * │   comparative relational operation between both inputs (e.g., A > B).│
+ * ┌── ZERO-BOUNDARY BOUNDS & LOGIC ─────────────────────────────────────┐
+ * │ • Origin Alignment: On a standard real number line, zero acts as a   │
+ * │   neutral origin. For this specific implementation matrix, zero is   │
+ * │   grouped inclusively into the positive numeric subset.              │
  * │                                                                      │
- * │ • Hardcoded Bug: The implementation utilizes a static literal condition│
- * │   (A >= 18). It completely isolates variable B from the evaluation,  │
- * │   causing semantic inaccuracy despite compiling cleanly.            │
+ * │ • Inclusive Comparison: Utilizing a non-strict greater-than-or-equal  │
+ * │   relational inequality (`>= 0`) cleanly maps zero and all positive  │
+ * │   integers to the true branch, isolating negative values to the `else`.│
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Inputs: A = 16, B = 13                                               │
- * │ Output: B IS LARGEST                                                 │
+ * │ 1. Negative Traversal Case:                                          │
+ * │    Input:  number = -12                                              │
+ * │    Check:  (-12 >= 0) ──> false                                      │
+ * │    Output: NUMBER IS NEGATIVE : -12                                  │
  * │                                                                      │
- * │ Trace Execution Flow:                                                │
- * │  • Check Condition: (A >= 18) -> (16 >= 18)                         │
- * │  • Evaluation:      false                                            │
- * │  • Branch Fallback: Bypasses the true branch, forcing execution flow │
- * │                     directly into the secondary `else` statement block.│
- * │                                                                      │
- * │ Semantic Error Paradox: Even though A (16) is numerically superior    │
- * │ to B (13), the faulty gating mechanism incorrectly prints:           │
- * │ "B IS LARGEST"                                                       │
+ * │ 2. Positive Traversal Case:                                          │
+ * │    Input:  number = 5                                                │
+ * │    Check:  (5 >= 0) ──> true                                         │
+ * │    Output: NUMBER IS POSITIVE : 5                                    │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation Step:  Define primitive integer spaces for inputs A    │
- * │                      and B within stack frame bounds.                │
- * │ 2. Defective Gating: Run the flawed conditional block to observe true │
- * │                      vs false execution pathways.                    │
- * │ 3. Output Logging:   Log the evaluated outcome to confirm how logic │
- * │                      bugs alter runtime facts.                       │
+ * │ 1. Input Allocation:  Initialize a local primitive signed integer     │
+ * │                       variable to serve as the evaluation target.    │
+ * │ 2. Sign Filtration:   Route the variable directly through an inclusive│
+ * │                       relational zero-boundary check frame.          │
+ * │ 3. Output Resolution: Route the distinct true and false execution     │
+ * │                       paths into customized standard console print logs.│
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Logical Bug Evaluation / Single-Selection Control Flow       │
- * │ Limit:  Operates on signed primitives; logic breaks mathematical truth│
+ * │ Type:   Signed Primitive Range Evaluation / Selection Control Flow   │
+ * │ Limit:  Symmetrically handles all positive, negative, and zero signed│
+ * │         integer data properties.                                     │
  * │                                                                      │
- * │ Time:   O(1) → Static literal comparisons process instantly within   │
- * │                uniform, constant processor cycles.                   │
+ * │ Time:   O(1) → Single comparison steps evaluate instantly at the hardware│
+ * │                level in constant, invariant execution clock cycles.  │
  * │                                                                      │
- * │ Space:  O(1) → Footprint remains fixed to local variable structures  │
- * │                with zero scaling dependency.                          │
+ * │ Space:  O(1) → Structural memory remains strictly pinned to local,   │
+ * │                non-scaling stack frame storage registers.            │
  * └──────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Largest_of_Two_Numbers {
+// public class Positive_Negative_Number {
 //     public static void main(String args[]){
-//         int A = 16;
-//         int B = 13;
-//         if(A >= 18){
-//             System.out.println("A IS LARGEST");
+//         Scanner sc = new Scanner(System.in);
+//         System.out.print("ENTER THE NUMBER :");
+//         int num = sc.nextInt();
+//         if(num >= 0){
+//             System.out.print("NUMBER IS POSITIVE :"+num);
 //         }
 //         else{
-//              System.out.println("B IS LARGEST");
+//              System.out.print("NUMBER IS NEGETIVE :"+num);
 //         }
 //     }
 // }

@@ -1,41 +1,50 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [01/06/26] → #2  [02/06/26] → #3  [03/06/26]                    │
  * │  #4  [04/06/26] → #5  [05/06/26] → #6  [06/06/26]                    │
- * │  #7  [07/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
- * │  #10 [00/06/26]                                                      │
+ * │  #7  [07/06/26] → #8  [08/06/26] → #9  [09/00/00]                    │
+ * │  #10 [00/00/00]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- * 
+ *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 2: Star Pattern                                              ║
+ * ║ PROBLEM 02: Inverted Right-Angled Star Pattern                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
- * ┌── PROBLEM STATEMENT ─────────────────────────────────────────────────┐
- * │ Print a descending inverted right-angled triangle star pattern to    │
- * │ the console output.                                                  │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
+ * │ Print an inverted right-angled triangle star pattern where the      │
+ * │ number of stars decreases by one in each subsequent row.            │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── VISUAL TARGET ─────────────────────────────────────────────────────┐
- * │ * * * *                                                              │
- * │ * * *                                                                │
- * │ * *                                                                  │
- * │ *                                                                    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Output :                                                            │
+ * │ * * * *                                                             │
+ * │ * * *                                                               │
+ * │ * *                                                                 │
+ * │ *                                                                   │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ──────────────────────────────────────────────────────────┐
- * │ • Method: Execute a sequence of constant print operations, printing  │
- * │           each row manually with decreasing star counts.             │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ No input is required.                                               │
+ * │ Pattern consists of exactly 4 rows.                                 │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ──────────────────────────────────────────────┐
- * │ Type:   Basic Syntax / Pattern Output                                │
- * │                                                                      │
- * │ Time:   O(1) → The number of output statements is entirely fixed     │
- * │                and constant (4 rows total).                          │
- * │                                                                      │
- * │ Space:  O(1) → Runs in completely static memory with zero runtime    │
- * │                data structure tracking allocations.                  │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Print the first row containing 4 stars.                    │
+ * │ Step 2 : Print the second row containing 3 stars.                   │
+ * │ Step 3 : Print the third row containing 2 stars.                    │
+ * │ Step 4 : Print the fourth row containing 1 star.                    │
+ * │ Step 5 : Use println() to move to the next line after each row.     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Pattern Printing / Basic Output                                     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
+
 public class Star_Pattern {
     public static void main(String[] args) {
         
@@ -44,35 +53,43 @@ public class Star_Pattern {
 
 /* 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 2: Star Pattern                                              ║
+ * ║ PROBLEM : Inverted Right-Angled Star Pattern                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
- * ┌── PROBLEM STATEMENT ─────────────────────────────────────────────────┐
- * │ Print a descending inverted right-angled triangle star pattern to    │
- * │ the console output.                                                  │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
+ * │ Print an inverted right-angled triangle star pattern where the      │
+ * │ number of stars decreases by one in each subsequent row.            │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── VISUAL TARGET ─────────────────────────────────────────────────────┐
- * │ * * * *                                                              │
- * │ * * *                                                                │
- * │ * *                                                                  │
- * │ *                                                                    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Output :                                                            │
+ * │ * * * *                                                             │
+ * │ * * *                                                               │
+ * │ * *                                                                 │
+ * │ *                                                                   │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ──────────────────────────────────────────────────────────┐
- * │ • Method: Execute a sequence of constant print operations, printing  │
- * │           each row manually with decreasing star counts.             │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ No input is required.                                               │
+ * │ Pattern consists of exactly 4 rows.                                 │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ──────────────────────────────────────────────┐
- * │ Type:   Basic Syntax / Pattern Output                                │
- * │                                                                      │
- * │ Time:   O(1) → The number of output statements is entirely fixed     │
- * │                and constant (4 rows total).                          │
- * │                                                                      │
- * │ Space:  O(1) → Runs in completely static memory with zero runtime    │
- * │                data structure tracking allocations.                  │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Print the first row containing 4 stars.                    │
+ * │ Step 2 : Print the second row containing 3 stars.                   │
+ * │ Step 3 : Print the third row containing 2 stars.                    │
+ * │ Step 4 : Print the fourth row containing 1 star.                    │
+ * │ Step 5 : Use println() to move to the next line after each row.     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Pattern Printing / Basic Output                                     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
 // public class Star_Pattern {

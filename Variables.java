@@ -1,40 +1,47 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [01/06/26] → #2  [02/06/26] → #3  [03/06/26]                    │
  * │  #4  [04/06/26] → #5  [05/06/26] → #6  [06/06/26]                    │
- * │  #7  [07/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
- * │  #10 [00/06/26]                                                      │
+ * │  #7  [07/06/26] → #8  [08/06/26] → #9  [09/00/00]                    │
+ * │  #10 [00/00/00]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- * 
+ *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 3: Variables                                                 ║
+ * ║ PROBLEM 04: Variables Declaration and Printing                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Declare three unique variables (`a`, `b`, and `name`), assign them   │
- * │ appropriate initial values, and output them to the console stream.   │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Create integer variables a and b, and a string variable name.       │
+ * │ Store values in these variables and print them to the console.      │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── DATA TRACKING ────────────────────────────────────────────────────┐
- * │ • Variable 'a'    : Integer/Numeric Storage                         │
- * │ • Variable 'b'    : Integer/Numeric Storage                         │
- * │ • Variable 'name' : Character String Storage                        │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Output :                                                            │
+ * │ Initial value of a: 10                                              │
+ * │ Initial value of b: 5                                               │
+ * │ Name: Balram Patel                                                  │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocate variable space inside stack frames using standard types. │
- * │ 2. Populate variable fields with static placeholder values.          │
- * │ 3. Standard print processing executes sequentially across instances. │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ No input is required.                                               │
+ * │ Variables must be initialized before printing.                      │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Syntax / Memory Declaration                            │
- * │                                                                      │
- * │ Time:   O(1) → All lookups, allocations, and print instructions run  │
- * │                in uniform, constant computational time.              │
- * │                                                                      │
- * │ Space:  O(1) → Storage footprint remains static. Memory utilization  │
- * │                does not scale or depend on external input size.      │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Declare integer variable a and assign value 10.            │
+ * │ Step 2 : Declare integer variable b and assign value 5.             │
+ * │ Step 3 : Declare string variable name and assign a name.            │
+ * │ Step 4 : Print values of a and b using println().                   │
+ * │ Step 5 : Print the value of name using println().                   │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Variables and Basic Output                                          │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
 public class Variables {
@@ -43,12 +50,43 @@ public class Variables {
      }  
 }
 
-/* 3. VARIABLES
- * create a variable a, b and name then print it
- * T.C : O(1)
- * Since all operations run in constant time, the overall time complexity is O(1) (constant time).
- * S.C : O(1)
- * The program does not use dynamic memory allocation or data structures that grow with input size.
+/* ╔══════════════════════════════════════════════════════════════════════╗
+ * ║ PROBLEM : Variables Declaration and Printing                         ║
+ * ╚══════════════════════════════════════════════════════════════════════╝
+ *
+ * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
+ * │ Create integer variables a and b, and a string variable name.       │
+ * │ Store values in these variables and print them to the console.      │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Output :                                                            │
+ * │ Initial value of a: 10                                              │
+ * │ Initial value of b: 5                                               │
+ * │ Name: Balram Patel                                                  │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ No input is required.                                               │
+ * │ Variables must be initialized before printing.                      │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Declare integer variable a and assign value 10.            │
+ * │ Step 2 : Declare integer variable b and assign value 5.             │
+ * │ Step 3 : Declare string variable name and assign a name.            │
+ * │ Step 4 : Print values of a and b using println().                   │
+ * │ Step 5 : Print the value of name using println().                   │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Variables and Basic Output                                          │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
 // public class Variables {
