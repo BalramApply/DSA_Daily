@@ -6,7 +6,7 @@
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM : Java Data Types Declaration and Printing                   ║
+ * ║ PROBLEM 04: Java Data Types Declaration and Printing                 ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
@@ -104,32 +104,34 @@ public class Data_Types {
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-// public class four {
-//     public static void main(String[] args) {
-//         // Declaring and initializing different data types
-
-//         byte smallNumber = 8; // Stores small integer values (-128 to 127)
-//         System.out.println("Byte value: " + smallNumber);
-
-//         char character = 'a'; // Stores a single character
-//         System.out.println("Character value: " + character);
-
-//         boolean isFalse = false; // Stores true/false values
-//         System.out.println("Boolean value: " + isFalse);
-
-//         float floatValue = 34.0f; // Stores decimal numbers (Use 'f' for float literals)
-//         System.out.println("Float value: " + floatValue);
-
-//         int integerNumber = 108; // Stores integer values
-//         System.out.println("Integer value: " + integerNumber);
-
-//         short shortNumber = 240; // Stores short integer values (-32,768 to 32,767)
-//         System.out.println("Short value: " + shortNumber);
-
-//         String userName = "Balram"; // Stores a sequence of characters (String)
-//         System.out.println("String value: " + userName);
-
-//         long bigNumber = 222255555L; // Stores large integer values (Use 'L' for long literals)
-//         System.out.println("Long value: " + bigNumber);
-//     }
-// }
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ public class four {                                                  ║
+* ║     public static void main(String[] args) {                         ║
+* ║         // Declaring and initializing different data types           ║
+* ║                                                                      ║
+* ║         byte smallNumber = 8; // (-128 to 127)                       ║
+* ║         System.out.println("Byte value: " + smallNumber);            ║
+* ║                                                                      ║
+* ║         char character = 'a'; // Stores a single character           ║
+* ║         System.out.println("Character value: " + character);         ║
+* ║                                                                      ║
+* ║         boolean isFalse = false; // Stores true/false values         ║
+* ║         System.out.println("Boolean value: " + isFalse);             ║
+* ║                                                                      ║
+* ║         float floatValue = 34.0f; // Use 'f' for float literals      ║
+* ║         System.out.println("Float value: " + floatValue);            ║
+* ║                                                                      ║
+* ║         int integerNumber = 108; // Stores integer values            ║
+* ║         System.out.println("Integer value: " + integerNumber);       ║
+* ║                                                                      ║
+* ║         short shortNumber = 240; // (-32,768 to 32,767)              ║
+* ║         System.out.println("Short value: " + shortNumber);           ║
+* ║                                                                      ║
+* ║         String userName = "Balram"; // Stores a sequence of chars    ║
+* ║         System.out.println("String value: " + userName);             ║
+* ║                                                                      ║
+* ║         long bigNumber = 222255555L; // Use 'L' for long literals    ║
+* ║         System.out.println("Long value: " + bigNumber);              ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+*/╚══════════════════════════════════════════════════════════════════════╝

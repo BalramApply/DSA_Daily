@@ -1,62 +1,51 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [08/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #1  [08/06/26] → #2  [09/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 38: POSITIVE NEGATIVE NUMBER CHECKER                         ║
- * ╚══════════════════════════════════════════════════════════════════════╝
- *
- * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Evaluate the mathematical sign of a given integer input to determine │
- * │ whether it falls into a positive or negative structural domain using  │
- * │ an isolated dual-selection (`if-else`) conditional block.             │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── ZERO-BOUNDARY BOUNDS & LOGIC ─────────────────────────────────────┐
- * │ • Origin Alignment: On a standard real number line, zero acts as a   │
- * │   neutral origin. For this specific implementation matrix, zero is   │
- * │   grouped inclusively into the positive numeric subset.              │
- * │                                                                      │
- * │ • Inclusive Comparison: Utilizing a non-strict greater-than-or-equal  │
- * │   relational inequality (`>= 0`) cleanly maps zero and all positive  │
- * │   integers to the true branch, isolating negative values to the `else`.│
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ 1. Negative Traversal Case:                                          │
- * │    Input:  number = -12                                              │
- * │    Check:  (-12 >= 0) ──> false                                      │
- * │    Output: NUMBER IS NEGATIVE : -12                                  │
- * │                                                                      │
- * │ 2. Positive Traversal Case:                                          │
- * │    Input:  number = 5                                                │
- * │    Check:  (5 >= 0) ──> true                                         │
- * │    Output: NUMBER IS POSITIVE : 5                                    │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Input Allocation:  Initialize a local primitive signed integer     │
- * │                       variable to serve as the evaluation target.    │
- * │ 2. Sign Filtration:   Route the variable directly through an inclusive│
- * │                       relational zero-boundary check frame.          │
- * │ 3. Output Resolution: Route the distinct true and false execution     │
- * │                       paths into customized standard console print logs.│
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Signed Primitive Range Evaluation / Selection Control Flow   │
- * │ Limit:  Symmetrically handles all positive, negative, and zero signed│
- * │         integer data properties.                                     │
- * │                                                                      │
- * │ Time:   O(1) → Single comparison steps evaluate instantly at the hardware│
- * │                level in constant, invariant execution clock cycles.  │
- * │                                                                      │
- * │ Space:  O(1) → Structural memory remains strictly pinned to local,   │
- * │                non-scaling stack frame storage registers.            │
- * └──────────────────────────────────────────────────────────────────────┘
- */
+*
+* ╔══════════════════════════════════════════════════════════════════════╗
+* ║ PROBLEM 38: Determine Whether a Number is Positive or Negative       ║
+* ╚══════════════════════════════════════════════════════════════════════╝
+*
+* ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
+* │ Given an integer, determine whether it is positive or negative.     │
+* │                                                                     │
+* │ If the number is greater than or equal to 0, it is positive;        │
+* │ otherwise, it is negative.                                          │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+* │ Input  : num = -7                                                   │
+* │ Output : NUMBER IS NEGATIVE : -7                                    │
+* │ Explanation : Since -7 < 0, it falls into negative category.        │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+* │ • num is an integer                                                 │
+* │ • Zero is considered positive (as per given condition)              │
+* │ • Simple conditional check only                                     │
+* │ • Input is taken from user via Scanner                              │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+* │ Step 1 : Read integer input num                                     │
+* │ Step 2 : Check condition (num >= 0)                                 │
+* │ Step 3 : If true → print "POSITIVE"                                 │
+* │ Step 4 : Else → print "NEGATIVE"                                    │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+* │ Conditional Logic (Basic Sign Check)                                │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+* │ Time Complexity  : O(1)  (single comparison operation)              │
+* │ Space Complexity : O(1)  (constant memory usage)                    │
+* └─────────────────────────────────────────────────────────────────────┘
+  */
+
 import java.util.Scanner;
 public class Positive_Negative_Number {
     public static void main(String args[]){
@@ -64,71 +53,61 @@ public class Positive_Negative_Number {
     }
 }
 
-/**
- * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 22: POSITIVE NEGATIVE NUMBER CHECKER                         ║
- * ╚══════════════════════════════════════════════════════════════════════╝
- *
- * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Evaluate the mathematical sign of a given integer input to determine │
- * │ whether it falls into a positive or negative structural domain using  │
- * │ an isolated dual-selection (`if-else`) conditional block.             │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── ZERO-BOUNDARY BOUNDS & LOGIC ─────────────────────────────────────┐
- * │ • Origin Alignment: On a standard real number line, zero acts as a   │
- * │   neutral origin. For this specific implementation matrix, zero is   │
- * │   grouped inclusively into the positive numeric subset.              │
- * │                                                                      │
- * │ • Inclusive Comparison: Utilizing a non-strict greater-than-or-equal  │
- * │   relational inequality (`>= 0`) cleanly maps zero and all positive  │
- * │   integers to the true branch, isolating negative values to the `else`.│
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ 1. Negative Traversal Case:                                          │
- * │    Input:  number = -12                                              │
- * │    Check:  (-12 >= 0) ──> false                                      │
- * │    Output: NUMBER IS NEGATIVE : -12                                  │
- * │                                                                      │
- * │ 2. Positive Traversal Case:                                          │
- * │    Input:  number = 5                                                │
- * │    Check:  (5 >= 0) ──> true                                         │
- * │    Output: NUMBER IS POSITIVE : 5                                    │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Input Allocation:  Initialize a local primitive signed integer     │
- * │                       variable to serve as the evaluation target.    │
- * │ 2. Sign Filtration:   Route the variable directly through an inclusive│
- * │                       relational zero-boundary check frame.          │
- * │ 3. Output Resolution: Route the distinct true and false execution     │
- * │                       paths into customized standard console print logs.│
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Signed Primitive Range Evaluation / Selection Control Flow   │
- * │ Limit:  Symmetrically handles all positive, negative, and zero signed│
- * │         integer data properties.                                     │
- * │                                                                      │
- * │ Time:   O(1) → Single comparison steps evaluate instantly at the hardware│
- * │                level in constant, invariant execution clock cycles.  │
- * │                                                                      │
- * │ Space:  O(1) → Structural memory remains strictly pinned to local,   │
- * │                non-scaling stack frame storage registers.            │
- * └──────────────────────────────────────────────────────────────────────┘
- */
+/*
+* ╔══════════════════════════════════════════════════════════════════════╗
+* ║ PROBLEM 38: Determine Whether a Number is Positive or Negative       ║
+* ╚══════════════════════════════════════════════════════════════════════╝
+*
+* ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
+* │ Given an integer, determine whether it is positive or negative.     │
+* │                                                                     │
+* │ If the number is greater than or equal to 0, it is positive;        │
+* │ otherwise, it is negative.                                          │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+* │ Input  : num = -7                                                   │
+* │ Output : NUMBER IS NEGATIVE : -7                                    │
+* │ Explanation : Since -7 < 0, it falls into negative category.        │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+* │ • num is an integer                                                 │
+* │ • Zero is considered positive (as per given condition)              │
+* │ • Simple conditional check only                                     │
+* │ • Input is taken from user via Scanner                              │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+* │ Step 1 : Read integer input num                                     │
+* │ Step 2 : Check condition (num >= 0)                                 │
+* │ Step 3 : If true → print "POSITIVE"                                 │
+* │ Step 4 : Else → print "NEGATIVE"                                    │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+* │ Conditional Logic (Basic Sign Check)                                │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+* │ Time Complexity  : O(1)  (single comparison operation)              │
+* │ Space Complexity : O(1)  (constant memory usage)                    │
+* └─────────────────────────────────────────────────────────────────────┘
+  */
 
-// public class Positive_Negative_Number {
-//     public static void main(String args[]){
-//         Scanner sc = new Scanner(System.in);
-//         System.out.print("ENTER THE NUMBER :");
-//         int num = sc.nextInt();
-//         if(num >= 0){
-//             System.out.print("NUMBER IS POSITIVE :"+num);
-//         }
-//         else{
-//              System.out.print("NUMBER IS NEGETIVE :"+num);
-//         }
-//     }
-// }
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ public class Positive_Negative_Number {                              ║
+* ║     public static void main(String args[]){                          ║
+* ║         Scanner sc = new Scanner(System.in);                         ║
+* ║         System.out.print("ENTER THE NUMBER :");                      ║
+* ║         int num = sc.nextInt();                                      ║
+* ║                                                                      ║
+* ║         if(num >= 0){                                                ║
+* ║             System.out.print("NUMBER IS POSITIVE :"+num);            ║
+* ║         }                                                            ║
+* ║         else{                                                        ║
+* ║              System.out.print("NUMBER IS NEGATIVE :"+num);           ║
+* ║         }                                                            ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+*/╚══════════════════════════════════════════════════════════════════════╝

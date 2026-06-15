@@ -1,43 +1,50 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [02/06/26] → #2  [03/06/26] → #3  [04/06/26]                    │
  * │  #4  [05/06/26] → #5  [06/06/26] → #6  [07/06/26]                    │
- * │  #7  [08/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
- * │  #10 [00/06/26]                                                      │
- * └──────────────────────────────────────────────────────────────────────┘ 
- * 
+ * │  #7  [08/06/26] → #8  [09/06/26] → #9  [00/00/00]                    │
+ * │  #10 [00/00/00]                                                      │
+ * └──────────────────────────────────────────────────────────────────────┘
+ *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 8: User Input Multiplication                                 ║
+ * ║ PROBLEM 08: Multiplication of Two User Input Numbers                 ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Capture two integers dynamically from user input via the console,    │
- * │ compute their arithmetic product, and display the result.            │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Read two integers from the user through the console, calculate      │
+ * │ their product, and display the result.                              │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  2 3                                                          │
- * │ Output: 6                                                            │
- * │                                                                      │
- * │ Explanation: 2 * 3 = 6 (Dynamic evaluation from stream inputs)       │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Input  : 2 3                                                        │
+ * │ Output : Product: 6                                                 │
+ * │                                                                     │
+ * │ Explanation : 2 × 3 = 6                                             │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Initialization: Create a Scanner listener linked to System.in.    │
- * │ 2. Stream Capture: Extract the next two available integer tokens.     │
- * │ 3. Evaluation:     Multiply the extracted operands using the `*` flag.│
- * │ 4. Output:         Print the resulting value and close the stream.    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ Inputs must be valid integers.                                      │
+ * │ Values should be within the range of the int data type.             │
+ * │ Scanner object should be closed after use.                          │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Dynamic I/O & Basic Arithmetic                               │
- * │ Limit:  Operands must stay within language-specific integer bounds   │
- * │                                                                      │
- * │ Time:   O(1) → Processing a fixed pair of numerical inputs executes  │
- * │                in constant CPU instructions.                         │
- * │                                                                      │
- * │ Space:  O(1) → Utilizes a static set of primitive variables alongside│
- * │                a localized stream reference instance.                │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Create a Scanner object for user input.                    │
+ * │ Step 2 : Read the first integer from the user.                      │
+ * │ Step 3 : Read the second integer from the user.                     │
+ * │ Step 4 : Multiply both integers using the '*' operator.             │
+ * │ Step 5 : Store the result in a variable.                            │
+ * │ Step 6 : Print the calculated product.                              │
+ * │ Step 7 : Close the Scanner object.                                  │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Input / Output Handling + Arithmetic Operations                     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
 import java.util.Scanner;
@@ -48,62 +55,70 @@ public class Multiplication {
     }
 }
 
-/**
- * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 8: User Input Multiplication                                 ║
+/**╔══════════════════════════════════════════════════════════════════════╗
+ * ║ PROBLEM 09: Multiplication of Two User Input Numbers                 ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Capture two integers dynamically from user input via the console,    │
- * │ compute their arithmetic product, and display the result.            │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Read two integers from the user through the console, calculate      │
+ * │ their product, and display the result.                              │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  2 3                                                          │
- * │ Output: 6                                                            │
- * │                                                                      │
- * │ Explanation: 2 * 3 = 6 (Dynamic evaluation from stream inputs)       │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Input  : 2 3                                                        │
+ * │ Output : Product: 6                                                 │
+ * │                                                                     │
+ * │ Explanation : 2 × 3 = 6                                             │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Initialization: Create a Scanner listener linked to System.in.    │
- * │ 2. Stream Capture: Extract the next two available integer tokens.     │
- * │ 3. Evaluation:     Multiply the extracted operands using the `*` flag.│
- * │ 4. Output:         Print the resulting value and close the stream.    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ Inputs must be valid integers.                                      │
+ * │ Values should be within the range of the int data type.             │
+ * │ Scanner object should be closed after use.                          │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Dynamic I/O & Basic Arithmetic                               │
- * │ Limit:  Operands must stay within language-specific integer bounds   │
- * │                                                                      │
- * │ Time:   O(1) → Processing a fixed pair of numerical inputs executes   │
- * │                in constant CPU instructions.                         │
- * │                                                                      │
- * │ Space:  O(1) → Utilizes a static set of primitive variables alongside│
- * │                a localized stream reference instance.                │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Create a Scanner object for user input.                    │
+ * │ Step 2 : Read the first integer from the user.                      │
+ * │ Step 3 : Read the second integer from the user.                     │
+ * │ Step 4 : Multiply both integers using the '*' operator.             │
+ * │ Step 5 : Store the result in a variable.                            │
+ * │ Step 6 : Print the calculated product.                              │
+ * │ Step 7 : Close the Scanner object.                                  │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Input / Output Handling + Arithmetic Operations                     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
-// import java.util.*;
-// public class Multiplication {
-//     public static void main(String[] args) {
-//         //Creating a Scanner object to take user input
-//         Scanner sc = new Scanner(System.in);
-
-//         // Prompt the user to enter two numbers
-//         System.out.print("Enter first number: ");
-//         int a = sc.nextInt();
-
-//         System.out.print("Enter second number: ");
-//         int b = sc.nextInt();
-
-//         // Calculate the product of two numbers
-//         int product = a * b;
-
-//         // Display the result
-//         System.out.println("Product: " + product);
-
-//         // Close the scanner to prevent resource leak
-//         sc.close();
-//     }
-// }
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ import java.util.*;                                                  ║
+* ║ public class Multiplication {                                        ║
+* ║     public static void main(String[] args) {                         ║
+* ║         //Creating a Scanner object to take user input               ║
+* ║         Scanner sc = new Scanner(System.in);                         ║
+* ║                                                                      ║
+* ║         // Prompt the user to enter two numbers                      ║
+* ║         System.out.print("Enter first number: ");                    ║
+* ║         int a = sc.nextInt();                                        ║
+* ║                                                                      ║
+* ║         System.out.print("Enter second number: ");                   ║
+* ║         int b = sc.nextInt();                                        ║
+* ║                                                                      ║
+* ║         // Calculate the product of two numbers                      ║
+* ║         int product = a * b;                                         ║
+* ║                                                                      ║
+* ║         // Display the result                                        ║
+* ║         System.out.println("Product: " + product);                   ║
+* ║                                                                      ║
+* ║         // Close the scanner to prevent resource leak                ║
+* ║         sc.close();                                                  ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+*/╚══════════════════════════════════════════════════════════════════════╝

@@ -1,69 +1,59 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [04/06/26] → #2  [05/06/26] → #3  [06/06/26]                    │
- * │  #4  [07/06/26] → #5  [08/06/26] → #6  [00/06/26]                    │
+ * │  #4  [07/06/26] → #5  [08/06/26] → #6  [09/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- * 
+ *
  * ╔══════════════════════════════════════════════════════════════════════╗
  * ║ PROBLEM 19: Logical Operators & Short-Circuit Evaluation             ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate, evaluate, and analyze the behavioral outcomes of standard│
- * │ logical operators (&&, ||, !) when handling boolean expressions and │
- * │ condition chaining in Java.                                          │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Demonstrate the behavior of logical operators (&&, ||, !) and       │
+ * │ understand how short-circuit evaluation works with boolean          │
+ * │ expressions in Java.                                                │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── TRUTH TABLES & SHORT-CIRCUIT RULES ────────────────────────────────┐
- * │ • Logical AND (A && B): Yields true ONLY if both A and B are true.   │
- * │   Short-circuit feature: If A is false, B is not evaluated.          │
- * │                                                                      │
- * │ • Logical OR (A || B):  Yields true if at least one operand is true. │
- * │   Short-circuit feature: If A is true, B is not evaluated.           │
- * │                                                                      │
- * │ • Logical NOT (!A):     Unverts/negates the boolean state.           │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Input  : (3 < 2) && (3 < 5)                                         │
+ * │ Output : false                                                      │
+ * │                                                                     │
+ * │ Input  : (3 < 2) || (3 < 5)                                         │
+ * │ Output : true                                                       │
+ * │                                                                     │
+ * │ Input  : !(3 < 5)                                                   │
+ * │ Output : false                                                      │
+ * │                                                                     │
+ * │ Explanation :                                                       │
+ * │ AND requires both conditions to be true.                            │
+ * │ OR requires at least one condition to be true.                      │
+ * │ NOT reverses the boolean result.                                    │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── EXAMPLE CASES ────────────────────────────────────────────────────┐
- * │ 1. Logical AND:                                                      │
- * │    Input:  (3 < 2) && (3 < 5)                                        │
- * │    Output: false                                                     │
- * │    Explanation: First expression evaluates to false, terminating     │
- * │                 evaluation immediately due to short-circuit logic.   │
- * │                                                                      │
- * │ 2. Logical OR:                                                       │
- * │    Input:  (3 < 2) || (3 < 5)                                        │
- * │    Output: true                                                      │
- * │    Explanation: First expression is false, but secondary condition   │
- * │                 (3 < 5) evaluates to true, resulting in true.        │
- * │                                                                      │
- * │ 3. Logical NOT:                                                      │
- * │    Input:  !(3 < 5)                                                  │
- * │    Output: false                                                     │
- * │    Explanation: Condition (3 < 5) is true; the unary NOT operator     │
- * │                 flips it to false.                                   │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ Operands must evaluate to boolean values.                           │
+ * │ Short-circuiting may skip evaluation of later conditions.           │
+ * │ Logical operators cannot be applied directly to non-boolean types.  │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Condition Mocking:    Construct relational expressions that yield  │
- * │                          explicit boolean results (true or false).    │
- * │ 2. Boolean Compounding:  Apply &&, ||, and ! operators to evaluate    │
- * │                          combined truth states.                       │
- * │ 3. Result Inspection:    Log final evaluations to confirm proper     │
- * │                          short-circuit precedence.                    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Create boolean expressions using relational operators.     │
+ * │ Step 2 : Apply logical AND (&&) and observe the result.             │
+ * │ Step 3 : Apply logical OR (||) and observe the result.              │
+ * │ Step 4 : Apply logical NOT (!) to negate a condition.               │
+ * │ Step 5 : Print all evaluated boolean results.                       │
+ * │ Step 6 : Analyze short-circuit behavior during evaluation.          │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Boolean Logic & Control-Flow Short-Circuit Evaluation        │
- * │ Limit:  Operands must evaluate strictly to boolean expressions       │
- * │                                                                      │
- * │ Time:   O(1) → Static logical gating resolves instantaneously in the │
- * │                JVM environment using minimal cpu branching steps.    │
- * │                                                                      │
- * │ Space:  O(1) → Operates on transient variables or immediate stack    │
- * │                evaluations with zero dynamic memory overhead.        │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Boolean Logic / Logical Operators                                   │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
 public class Logical_Operators {
@@ -71,77 +61,70 @@ public class Logical_Operators {
         
     }
 }
-/**
+
+/*
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 19: Logical Operators & Short-Circuit Evaluation            ║
+ * ║ PROBLEM 19: Logical Operators & Short-Circuit Evaluation             ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate, evaluate, and analyze the behavioral outcomes of standard│
- * │ logical operators (&&, ||, !) when handling boolean expressions and │
- * │ condition chaining in Java.                                          │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Demonstrate the behavior of logical operators (&&, ||, !) and       │
+ * │ understand how short-circuit evaluation works with boolean          │
+ * │ expressions in Java.                                                │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── TRUTH TABLES & SHORT-CIRCUIT RULES ────────────────────────────────┐
- * │ • Logical AND (A && B): Yields true ONLY if both A and B are true.   │
- * │   Short-circuit feature: If A is false, B is not evaluated.          │
- * │                                                                      │
- * │ • Logical OR (A || B):  Yields true if at least one operand is true. │
- * │   Short-circuit feature: If A is true, B is not evaluated.           │
- * │                                                                      │
- * │ • Logical NOT (!A):     Unverts/negates the boolean state.           │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Input  : (3 < 2) && (3 < 5)                                         │
+ * │ Output : false                                                      │
+ * │                                                                     │
+ * │ Input  : (3 < 2) || (3 < 5)                                         │
+ * │ Output : true                                                       │
+ * │                                                                     │
+ * │ Input  : !(3 < 5)                                                   │
+ * │ Output : false                                                      │
+ * │                                                                     │
+ * │ Explanation :                                                       │
+ * │ AND requires both conditions to be true.                            │
+ * │ OR requires at least one condition to be true.                      │
+ * │ NOT reverses the boolean result.                                    │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── EXAMPLE CASES ────────────────────────────────────────────────────┐
- * │ 1. Logical AND:                                                      │
- * │    Input:  (3 < 2) && (3 < 5)                                        │
- * │    Output: false                                                     │
- * │    Explanation: First expression evaluates to false, terminating     │
- * │                 evaluation immediately due to short-circuit logic.   │
- * │                                                                      │
- * │ 2. Logical OR:                                                       │
- * │    Input:  (3 < 2) || (3 < 5)                                        │
- * │    Output: true                                                      │
- * │    Explanation: First expression is false, but secondary condition   │
- * │                 (3 < 5) evaluates to true, resulting in true.        │
- * │                                                                      │
- * │ 3. Logical NOT:                                                      │
- * │    Input:  !(3 < 5)                                                  │
- * │    Output: false                                                     │
- * │    Explanation: Condition (3 < 5) is true; the unary NOT operator     │
- * │                 flips it to false.                                   │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ Operands must evaluate to boolean values.                           │
+ * │ Short-circuiting may skip evaluation of later conditions.           │
+ * │ Logical operators cannot be applied directly to non-boolean types.  │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Condition Mocking:    Construct relational expressions that yield  │
- * │                          explicit boolean results (true or false).    │
- * │ 2. Boolean Compounding:  Apply &&, ||, and ! operators to evaluate    │
- * │                          combined truth states.                       │
- * │ 3. Result Inspection:    Log final evaluations to confirm proper     │
- * │                          short-circuit precedence.                    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Create boolean expressions using relational operators.     │
+ * │ Step 2 : Apply logical AND (&&) and observe the result.             │
+ * │ Step 3 : Apply logical OR (||) and observe the result.              │
+ * │ Step 4 : Apply logical NOT (!) to negate a condition.               │
+ * │ Step 5 : Print all evaluated boolean results.                       │
+ * │ Step 6 : Analyze short-circuit behavior during evaluation.          │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Boolean Logic & Control-Flow Short-Circuit Evaluation        │
- * │ Limit:  Operands must evaluate strictly to boolean expressions       │
- * │                                                                      │
- * │ Time:   O(1) → Static logical gating resolves instantaneously in the │
- * │                JVM environment using minimal cpu branching steps.    │
- * │                                                                      │
- * │ Space:  O(1) → Operates on transient variables or immediate stack   │
- * │                evaluations with zero dynamic memory overhead.        │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Boolean Logic / Logical Operators                                   │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Logical_Operators {
-//     public static void main(String[] args) {
-//         // Logical AND (&&) - Both conditions must be true
-//         System.out.println("AND OPERATOR " + ((3 < 2) && (3 < 5))); // false
-        
-//         // Logical OR (||) - At least one condition must be true
-//         System.out.println("OR OPERATOR " + ((3 < 2) || (3 < 5))); // true
-        
-//         // Logical NOT (!) - Negates the condition
-//         System.out.println("NOT OPERATOR" + (!(3 < 5))); // false
-//     }
-// }
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ public class Logical_Operators {                                     ║
+* ║     public static void main(String[] args) {                         ║
+* ║         // Logical AND (&&) - Both conditions must be true           ║
+* ║         System.out.println("AND OPERATOR " + ((3 < 2) && (3 < 5)));  ║
+* ║                                                                      ║
+* ║         // Logical OR (||) - At least one condition must be true     ║
+* ║         System.out.println("OR OPERATOR " + ((3 < 2) || (3 < 5)));   ║
+* ║                                                                      ║
+* ║         // Logical NOT (!) - Negates the condition                   ║
+* ║         System.out.println("NOT OPERATOR" + (!(3 < 5)));             ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+*/╚══════════════════════════════════════════════════════════════════════╝

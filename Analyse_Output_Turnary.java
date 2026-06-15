@@ -1,106 +1,125 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [07/06/26] → #2  [08/06/26] → #3  [09/06/26]                    │
+ * │  #1  [09/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
 *
 * ╔══════════════════════════════════════════════════════════════════════╗
-* ║ PROBLEM 34: Check Odd or Even using Ternary Operator                 ║
+* ║ PROBLEM 41: Ternary Operator Evaluation and Output Analysis          ║
 * ╚══════════════════════════════════════════════════════════════════════╝
 *
 * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
-* │ Given an integer n, determine whether it is even or odd using a     │
-* │ ternary operator.                                                   │
+* │ Given two integers a and b, evaluate ternary expressions to         │
+* │ determine a boolean result and the larger integer value.            │
 * │                                                                     │
-* │ If n is divisible by 2, output "even", otherwise output "odd".      │
+* │ The first expression checks whether a is less than b, while the     │
+* │ second expression selects the greater value between a and b.        │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
-* │ Input  : n = 55                                                     │
-* │ Output : odd                                                        │
-* │ Explanation : 55 % 2 = 1, so condition evaluates to "odd".          │
+* │ Input  : a = 63, b = 36                                             │
+* │ Output : false                                                      │
+* │          63                                                         │
+* │ Explanation :                                                       │
+* │ (a < b) → (63 < 36) → false, therefore x = false                    │
+* │ (a > b) → (63 > 36) → true, therefore y = a = 63                    │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
-* │ • n is an integer                                                   │
-* │ • Uses ternary operator only                                        │
-* │ • No loops or additional data structures                            │
+* │ • a and b are integers                                              │
+* │ • Uses ternary operator (? :)                                       │
+* │ • Uses relational operators (<, >)                                  │
+* │ • Constant number of evaluations                                    │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
-* │ Step 1 : Take integer input n                                       │
-* │ Step 2 : Evaluate condition (n % 2 == 0)                            │
-* │ Step 3 : If true → assign "even"                                    │
-* │ Step 4 : Else → assign "odd"                                        │
-* │ Step 5 : Print result                                               │
+* │ Step 1 : Initialize integers a and b                                │
+* │ Step 2 : Evaluate (a < b) using ternary operator                    │
+* │ Step 3 : Assign boolean result to x                                 │
+* │ Step 4 : Evaluate (a > b) using ternary operator                    │
+* │ Step 5 : Assign larger value to y                                   │
+* │ Step 6 : Print x and y                                              │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
-* │ Conditional Expression (Ternary Operator / Parity Check)            │
+* │ Conditional Logic (Ternary Operator Evaluation)                     │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
-* │ Time Complexity  : O(1)  (single modulo + condition evaluation)     │
-* │ Space Complexity : O(1)  (constant memory usage)                    │
+* │ Time Complexity  : O(1)  (constant-time comparisons)                │
+* │ Space Complexity : O(1)  (fixed number of variables)                │
 * └─────────────────────────────────────────────────────────────────────┘
   */
 
-
-public class Odd_Even_Turnary {
+public class Analyse_Output_Turnary {
     public static void main(String args[]){
-        
+        int a = 63, b = 36;
+        boolean x = (a < b)? true: false;
+                System.out.println(x);  // Ans = ?
+        int y = (a > b)? a : b;
+            System.out.println(y);  // Ans = ?
     }
 }
 
-/**
-* ╔══════════════════════════════════════════════════════════════════════╗
-* ║ PROBLEM 34: Check Odd or Even using Ternary Operator                 ║
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ PROBLEM 41: Ternary Operator Evaluation and Output Analysis          ║
 * ╚══════════════════════════════════════════════════════════════════════╝
 *
 * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
-* │ Given an integer n, determine whether it is even or odd using a     │
-* │ ternary operator.                                                   │
+* │ Given two integers a and b, evaluate ternary expressions to         │
+* │ determine a boolean result and the larger integer value.            │
 * │                                                                     │
-* │ If n is divisible by 2, output "even", otherwise output "odd".      │
+* │ The first expression checks whether a is less than b, while the     │
+* │ second expression selects the greater value between a and b.        │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
-* │ Input  : n = 55                                                     │
-* │ Output : odd                                                        │
-* │ Explanation : 55 % 2 = 1, so condition evaluates to "odd".          │
+* │ Input  : a = 63, b = 36                                             │
+* │ Output : false                                                      │
+* │          63                                                         │
+* │ Explanation :                                                       │
+* │ (a < b) → (63 < 36) → false, therefore x = false                    │
+* │ (a > b) → (63 > 36) → true, therefore y = a = 63                    │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
-* │ • n is an integer                                                   │
-* │ • Uses ternary operator only                                        │
-* │ • No loops or additional data structures                            │
+* │ • a and b are integers                                              │
+* │ • Uses ternary operator (? :)                                       │
+* │ • Uses relational operators (<, >)                                  │
+* │ • Constant number of evaluations                                    │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
-* │ Step 1 : Take integer input n                                       │
-* │ Step 2 : Evaluate condition (n % 2 == 0)                            │
-* │ Step 3 : If true → assign "even"                                    │
-* │ Step 4 : Else → assign "odd"                                        │
-* │ Step 5 : Print result                                               │
+* │ Step 1 : Initialize integers a and b                                │
+* │ Step 2 : Evaluate (a < b) using ternary operator                    │
+* │ Step 3 : Assign boolean result to x                                 │
+* │ Step 4 : Evaluate (a > b) using ternary operator                    │
+* │ Step 5 : Assign larger value to y                                   │
+* │ Step 6 : Print x and y                                              │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
-* │ Conditional Expression (Ternary Operator / Parity Check)            │
+* │ Conditional Logic (Ternary Operator Evaluation)                     │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
-* │ Time Complexity  : O(1)  (single modulo + condition evaluation)     │
-* │ Space Complexity : O(1)  (constant memory usage)                    │
+* │ Time Complexity  : O(1)  (constant-time comparisons)                │
+* │ Space Complexity : O(1)  (fixed number of variables)                │
 * └─────────────────────────────────────────────────────────────────────┘
   */
 
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Odd_Even_Turnary {                                      ║
+* ║ public class Analyse_Output_Turnary {                                ║
 * ║     public static void main(String args[]){                          ║
-* ║         int n = 55;                                                  ║
-* ║         String type = ((n % 2) == 0) ? "even" : "odd";               ║
-* ║         System.out.println(type);                                    ║
+* ║         int a = 63, b = 36;                                          ║
+* ║                                                                      ║
+* ║         boolean x = (a < b)? true: false;                            ║
+* ║         System.out.println(x);  // Ans = false                       ║
+* ║                                                                      ║
+* ║         int y = (a > b)? a : b;                                      ║
+* ║         System.out.println(y);  // Ans = 63                          ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
-*/╚══════════════════════════════════════════════════════════════════════╝
+* ╚══════════════════════════════════════════════════════════════════════╝
+*/

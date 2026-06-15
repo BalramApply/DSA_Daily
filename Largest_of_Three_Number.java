@@ -1,68 +1,52 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [07/06/26] → #2  [08/06/26] → #3  [00/06/26]                    │
+ * │  #1  [07/06/26] → #2  [08/06/26] → #3  [09/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- * 
- * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 33: LARGEST OF THREE NUMBER                                  ║
- * ╚══════════════════════════════════════════════════════════════════════╝
- *
- * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Isolate and identify the absolute maximum value among three distinct │
- * │ primitive integer inputs (a, b, and c) using an optimized logical    │
- * │ elimination branching pattern.                                       │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── CONDITIONAL ELIMINATION RULES ────────────────────────────────────┐
- * │ • Stepwise Elimination: The first condition checks if 'a' dominates   │
- * │   both 'b' and 'c'. If this fails, 'a' is proven not to be the maximum│
- * │   and is completely eliminated from future comparison checkpoints.   │
- * │                                                                      │
- * │ • Simplified Sub-Check: Once 'a' is eliminated, a single comparison  │
- * │   between 'b' and 'c' (`b >= c`) is sufficient to determine the      │
- * │   absolute maximum, reducing overall logical step execution depth.    │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Inputs: a = 1, b = 3, c = 6                                          │
- * │ Output: largest is c                                                 │
- * │                                                                      │
- * │ Gating Ladder Elimination:                                           │
- * │  • Check Tier 1: (a >= b && a >= c)                                  │
- * │                 -> (1 >= 3 && 1 >= 6)                                │
- * │                 -> false && false => false ['a' is eliminated]       │
- * │                                                                      │
- * │  • Check Tier 2: (b >= c) [Evaluated only because Tier 1 failed]     │
- * │                 -> (3 >= 6)                                          │
- * │                 -> false ['b' is eliminated]                         │
- * │                                                                      │
- * │  • Catch-All Else: Both 'a' and 'b' have been systematically dropped. │
- * │                 -> Implicit Winner => 'c'                            │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. State Ingestion: Allocate three primitive integer spaces to act   │
- * │                     as comparison elements.                          │
- * │ 2. Logic Cascading: Wire compound relational filters (`&&`, `>=`) into │
- * │                     a cascading structure to handle equality safely. │
- * │ 3. Value Logging:   Direct the unique winning execution string       │
- * │                     immediately to standard output targets.          │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Logical Elimination & Value Comparison Branching             │
- * │ Limit:  The use of non-strict operators (>=) cleanly tracks duplicate│
- * │         or identical max values without breaking execution.          │
- * │                                                                      │
- * │ Time:   O(1) → Resolves within a maximum of two comparison operations,│
- * │                running instantly in constant, fixed cycles.         │
- * │                                                                      │
- * │ Space:  O(1) → In-place evaluation confines memory footprint solely   │
- * │                to static local register frames with zero scaling.    │
- * └──────────────────────────────────────────────────────────────────────┘
- */
+*
+* ╔══════════════════════════════════════════════════════════════════════════╗
+* ║ PROBLEM 33: Find the Largest among Three Numbers using Conditional Logic ║
+* ╚══════════════════════════════════════════════════════════════════════════╝
+*
+* ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
+* │ Given three integers a, b, and c, determine the largest value among │
+* │ them using conditional statements.                                  │
+* │                                                                     │
+* │ The program compares all three numbers and prints which one is      │
+* │ the greatest.                                                       │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+* │ Input  : a = 1, b = 3, c = 6                                        │
+* │ Output : largest is c                                               │
+* │ Explanation : 6 is greater than both 1 and 3, so c is largest.      │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+* │ • a, b, c are integers                                              │
+* │ • Only conditional comparisons are used                             │
+* │ • No sorting or data structures involved                            │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+* │ Step 1 : Initialize three integers a, b, and c                      │
+* │ Step 2 : Compare a with b and c using logical AND condition         │
+* │ Step 3 : If a is greatest → print "largest is a"                    │
+* │ Step 4 : Else check if b ≥ c → print "largest is b"                 │
+* │ Step 5 : Otherwise → print "largest is c"                           │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+* │ Conditional Comparison (If-Else Ladder with Logical Operators)      │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+* │ Time Complexity  : O(1)  (constant number of comparisons)           │
+* │ Space Complexity : O(1)  (no extra memory used)                     │
+* └─────────────────────────────────────────────────────────────────────┘
+  */
+
 
 public class Largest_of_Three_Number {
     public static void main(String args[]){
@@ -70,79 +54,65 @@ public class Largest_of_Three_Number {
     }
 }
 
-/* 
- * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 33: Three-Variable Maximum Optimization                      ║
- * ╚══════════════════════════════════════════════════════════════════════╝
- *
- * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Isolate and identify the absolute maximum value among three distinct │
- * │ primitive integer inputs (a, b, and c) using an optimized logical    │
- * │ elimination branching pattern.                                       │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── CONDITIONAL ELIMINATION RULES ────────────────────────────────────┐
- * │ • Stepwise Elimination: The first condition checks if 'a' dominates   │
- * │   both 'b' and 'c'. If this fails, 'a' is proven not to be the maximum│
- * │   and is completely eliminated from future comparison checkpoints.   │
- * │                                                                      │
- * │ • Simplified Sub-Check: Once 'a' is eliminated, a single comparison  │
- * │   between 'b' and 'c' (`b >= c`) is sufficient to determine the      │
- * │   absolute maximum, reducing overall logical step execution depth.    │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Inputs: a = 1, b = 3, c = 6                                          │
- * │ Output: largest is c                                                 │
- * │                                                                      │
- * │ Gating Ladder Elimination:                                           │
- * │  • Check Tier 1: (a >= b && a >= c)                                  │
- * │                 -> (1 >= 3 && 1 >= 6)                                │
- * │                 -> false && false => false ['a' is eliminated]       │
- * │                                                                      │
- * │  • Check Tier 2: (b >= c) [Evaluated only because Tier 1 failed]     │
- * │                 -> (3 >= 6)                                          │
- * │                 -> false ['b' is eliminated]                         │
- * │                                                                      │
- * │  • Catch-All Else: Both 'a' and 'b' have been systematically dropped. │
- * │                 -> Implicit Winner => 'c'                            │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. State Ingestion: Allocate three primitive integer spaces to act   │
- * │                     as comparison elements.                          │
- * │ 2. Logic Cascading: Wire compound relational filters (`&&`, `>=`) into │
- * │                     a cascading structure to handle equality safely. │
- * │ 3. Value Logging:   Direct the unique winning execution string       │
- * │                     immediately to standard output targets.          │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Logical Elimination & Value Comparison Branching             │
- * │ Limit:  The use of non-strict operators (>=) cleanly tracks duplicate│
- * │         or identical max values without breaking execution.          │
- * │                                                                      │
- * │ Time:   O(1) → Resolves within a maximum of two comparison operations,│
- * │                running instantly in constant, fixed cycles.         │
- * │                                                                      │
- * │ Space:  O(1) → In-place evaluation confines memory footprint solely   │
- * │                to static local register frames with zero scaling.    │
- * └──────────────────────────────────────────────────────────────────────┘
- */
+/*
+* ╔══════════════════════════════════════════════════════════════════════════╗
+* ║ PROBLEM 33: Find the Largest among Three Numbers using Conditional Logic ║
+* ╚══════════════════════════════════════════════════════════════════════════╝
+*
+* ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
+* │ Given three integers a, b, and c, determine the largest value among │
+* │ them using conditional statements.                                  │
+* │                                                                     │
+* │ The program compares all three numbers and prints which one is      │
+* │ the greatest.                                                       │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+* │ Input  : a = 1, b = 3, c = 6                                        │
+* │ Output : largest is c                                               │
+* │ Explanation : 6 is greater than both 1 and 3, so c is largest.      │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+* │ • a, b, c are integers                                              │
+* │ • Only conditional comparisons are used                             │
+* │ • No sorting or data structures involved                            │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+* │ Step 1 : Initialize three integers a, b, and c                      │
+* │ Step 2 : Compare a with b and c using logical AND condition         │
+* │ Step 3 : If a is greatest → print "largest is a"                    │
+* │ Step 4 : Else check if b ≥ c → print "largest is b"                 │
+* │ Step 5 : Otherwise → print "largest is c"                           │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+* │ Conditional Comparison (If-Else Ladder with Logical Operators)      │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+* │ Time Complexity  : O(1)  (constant number of comparisons)           │
+* │ Space Complexity : O(1)  (no extra memory used)                     │
+* └─────────────────────────────────────────────────────────────────────┘
+  */
 
-// public class Largest_of_Three_Number {
-//     public static void main(String args[]){
-//         int a = 1;
-//         int b = 3;
-//         int c = 6;
-//         if(a >= b && (a >= c)){
-//             System.out.println("largest is a");
-//         }
-//         else if(b >= c){
-//             System.out.println("largest is b");
-//         }
-//         else{
-//             System.out.println("largest is c");
-//         } 
-//     }
-// }
+
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ public class Largest_of_Three_Number {                               ║
+* ║     public static void main(String args[]){                          ║
+* ║         int a = 1;                                                   ║
+* ║         int b = 3;                                                   ║
+* ║         int c = 6;                                                   ║
+* ║         if(a >= b && (a >= c)){                                      ║
+* ║             System.out.println("largest is a");                      ║
+* ║         }                                                            ║
+* ║         else if(b >= c){                                             ║
+* ║             System.out.println("largest is b");                      ║
+* ║         }                                                            ║
+* ║         else{                                                        ║
+* ║             System.out.println("largest is c");                      ║
+* ║         }                                                            ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+*/╚══════════════════════════════════════════════════════════════════════╝

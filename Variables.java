@@ -2,11 +2,11 @@
  * │  #1  [01/06/26] → #2  [02/06/26] → #3  [03/06/26]                    │
  * │  #4  [04/06/26] → #5  [05/06/26] → #6  [06/06/26]                    │
  * │  #7  [07/06/26] → #8  [08/06/26] → #9  [09/00/00]                    │
- * │  #10 [00/00/00]                                                      │
+ * │  #10 [10/00/00]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 04: Variables Declaration and Printing                         ║
+ * ║ PROBLEM 03: Variables Declaration and Printing                       ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
@@ -46,7 +46,7 @@
 
 public class Variables {
     public static void main (String args[]) {
-        
+       
      }  
 }
 
@@ -89,18 +89,21 @@ public class Variables {
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Variables {
-//     public static void main(String[] args) {
-//         // Declare and initialize integer variables
-//         int a = 10;
-//         int b = 5;
-
-//         // Print initial values
-//         System.out.println("Initial value of a: " + a);
-//         System.out.println("Initial value of b: " + b);
-
-//         // Declare and print a string variable
-//         String name = "Balram Patel";
-//         System.out.println("Name: " + name);
-//     }
-// }
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ public class Variables {                                             ║
+* ║     public static void main(String[] args) {                         ║
+* ║         // Declare and initialize integer variables                  ║
+* ║         int a = 10;                                                  ║
+* ║         int b = 5;                                                   ║
+* ║                                                                      ║
+* ║         // Print initial values                                      ║
+* ║         System.out.println("Initial value of a: " + a);              ║
+* ║         System.out.println("Initial value of b: " + b);              ║
+* ║                                                                      ║
+* ║         // Declare and print a string variable                       ║
+* ║         String name = "Balram Patel";                                ║
+* ║         System.out.println("Name: " + name);                         ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+* ╚══════════════════════════════════════════════════════════════════════╝
+*/

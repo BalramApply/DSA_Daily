@@ -1,12 +1,12 @@
-/* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
+/* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐continue-------------
  * │  #1  [01/06/26] → #2  [02/06/26] → #3  [03/06/26]                    │
  * │  #4  [04/06/26] → #5  [05/06/26] → #6  [06/06/26]                    │
  * │  #7  [07/06/26] → #8  [08/06/26] → #9  [09/00/00]                    │
- * │  #10 [00/00/00]                                                      │
+ * │  #10 [10/00/00]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 02: Inverted Right-Angled Star Pattern                         ║
+ * ║ PROBLEM 02: Inverted Right-Angled Star Pattern                       ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
@@ -92,12 +92,15 @@ public class Star_Pattern {
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Star_Pattern {
-//     public static void main(String[] args) {
-//         // Printing a right-angled triangle in reverse order
-//         System.out.println("* * * *"); // First row with 4 stars
-//         System.out.println("* * *");   // Second row with 3 stars
-//         System.out.println("* *");     // Third row with 2 stars
-//         System.out.println("*");       // Fourth row with 1 star
-//     }
-// }
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ public class Star_Pattern {                                          ║
+* ║     public static void main(String[] args) {                         ║
+* ║         // Printing a right-angled triangle in reverse order         ║
+* ║         System.out.println("* * * *"); // First row with 4 stars     ║
+* ║         System.out.println("* * *");   // Second row with 3 stars    ║
+* ║         System.out.println("* *");     // Third row with 2 stars     ║
+* ║         System.out.println("*");       // Fourth row with 1 star     ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+* ╚══════════════════════════════════════════════════════════════════════╝
+*/

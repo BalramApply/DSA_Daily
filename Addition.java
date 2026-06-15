@@ -1,44 +1,46 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [01/06/26] → #2  [02/06/26] → #3  [03/06/26]                    │
  * │  #4  [04/06/26] → #5  [05/06/26] → #6  [06/06/26]                    │
- * │  #7  [07/06/26] → #8  [08/06/26] → #9  [00/06/26]                    │
- * │  #10 [00/06/26]                                                      │
- * └──────────────────────────────────────────────────────────────────────┘ 
- * 
+ * │  #7  [07/06/26] → #8  [08/06/26] → #9  [09/00/00]                    │
+ * │  #10 [00/00/00]                                                      │
+ * └──────────────────────────────────────────────────────────────────────┘
+ *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 5: Simple Addition                                           ║
+ * ║ PROBLEM 05: Simple Addition of Two Numbers                           ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Compute the mathematical sum of two given integers and display the   │
- * │ final result to the standard output console.                         │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Given two integer values, calculate their sum and display the       │
+ * │ result on the console.                                              │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  a = 1, b = 2                                                 │
- * │ Output: 3                                                            │
- * │                                                                      │
- * │ Explanation: 1 + 2 = 3 (Arithmetic evaluation)                       │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Input  : a = 10, b = 20                                             │
+ * │ Output : Sum: 30                                                    │
+ * │                                                                     │
+ * │ Explanation : 10 + 20 = 30                                          │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation: Define two integer variables to hold the operand     │
- * │                values.                                               │
- * │ 2. Arithmetic: Execute binary addition operation (`+`) on variables. │
- * │ 3. Storage:    Assign the evaluated total into a destination value.  │
- * │ 4. Output:     Print the final sum directly to the screen.           │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ Values should be within the valid range of the int data type.       │
+ * │ No user input is required in this implementation.                   │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Arithmetic Operation                                   │
- * │ Limit:  Operands must reside within standard signed integer limits   │
- * │                                                                      │
- * │ Time:   O(1) → Addition and assignment execute in a single CPU cycle │
- * │                independent of input scale.                           │
- * │                                                                      │
- * │ Space:  O(1) → Memory requirements are bound to fixed primitive stack│
- * │                registers with zero auxiliary scaling.                │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Declare and initialize two integer variables.              │
+ * │ Step 2 : Add both numbers using the '+' operator.                   │
+ * │ Step 3 : Store the result in a third variable.                      │
+ * │ Step 4 : Print the calculated sum.                                  │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Arithmetic Operations / Basic Mathematics                           │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
 public class Addition {
@@ -47,41 +49,42 @@ public class Addition {
     }
 }
 
-/**
- * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 5: Simple Addition                                           ║
+/* ╔══════════════════════════════════════════════════════════════════════╗
+ * ║ PROBLEM : Simple Addition of Two Numbers                             ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Compute the mathematical sum of two given integers and display the   │
- * │ final result to the standard output console.                         │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Given two integer values, calculate their sum and display the       │
+ * │ result on the console.                                              │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  a = 1, b = 2                                                 │
- * │ Output: 3                                                            │
- * │                                                                      │
- * │ Explanation: 1 + 2 = 3 (Arithmetic evaluation)                       │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Input  : a = 10, b = 20                                             │
+ * │ Output : Sum: 30                                                    │
+ * │                                                                     │
+ * │ Explanation : 10 + 20 = 30                                          │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation: Define two integer variables to hold the operand     │
- * │                values.                                               │
- * │ 2. Arithmetic: Execute binary addition operation (`+`) on variables. │
- * │ 3. Storage:    Assign the evaluated total into a destination value.  │
- * │ 4. Output:     Print the final sum directly to the screen.           │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ Values should be within the valid range of the int data type.       │
+ * │ No user input is required in this implementation.                   │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Arithmetic Operation                                   │
- * │ Limit:  Operands must reside within standard signed integer limits   │
- * │                                                                      │
- * │ Time:   O(1) → Addition and assignment execute in a single CPU cycle │
- * │                independent of input scale.                           │
- * │                                                                      │
- * │ Space:  O(1) → Memory requirements are bound to fixed primitive stack│
- * │                registers with zero auxiliary scaling.                │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Declare and initialize two integer variables.              │
+ * │ Step 2 : Add both numbers using the '+' operator.                   │
+ * │ Step 3 : Store the result in a third variable.                      │
+ * │ Step 4 : Print the calculated sum.                                  │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Arithmetic Operations / Basic Mathematics                           │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
 // public class Addition {

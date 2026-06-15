@@ -1,106 +1,148 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [07/06/26] → #2  [08/06/26] → #3  [09/06/26]                    │
+ * │  #1  [09/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
 *
 * ╔══════════════════════════════════════════════════════════════════════╗
-* ║ PROBLEM 34: Check Odd or Even using Ternary Operator                 ║
+* ║ PROBLEM 42: Leap Year Detection using Logical Operators              ║
 * ╚══════════════════════════════════════════════════════════════════════╝
 *
 * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
-* │ Given an integer n, determine whether it is even or odd using a     │
-* │ ternary operator.                                                   │
+* │ Given a year, determine whether it is a leap year based on the      │
+* │ Gregorian calendar rules.                                           │
 * │                                                                     │
-* │ If n is divisible by 2, output "even", otherwise output "odd".      │
+* │ A year is a leap year if it is divisible by 4 and either not        │
+* │ divisible by 100 or divisible by 400.                               │
+* │ Print intermediate boolean evaluations and the final result.        │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
-* │ Input  : n = 55                                                     │
-* │ Output : odd                                                        │
-* │ Explanation : 55 % 2 = 1, so condition evaluates to "odd".          │
+* │ Input  : year = 2000                                                │
+* │ Output : true                                                       │
+* │          false                                                      │
+* │          true                                                       │
+* │          2000 IS A LEAP YEAR                                        │
+* │ Explanation :                                                       │
+* │ x = (2000 % 4 == 0)      → true                                     │
+* │ y = (2000 % 100 != 0)    → false                                    │
+* │ z = (2000 % 100 == 0 && 2000 % 400 == 0) → true                     │
+* │ Final Condition: x && (y || z)                                      │
+* │                 = true && (false || true)                           │
+* │                 = true                                              │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
-* │ • n is an integer                                                   │
-* │ • Uses ternary operator only                                        │
-* │ • No loops or additional data structures                            │
+* │ • year is a positive integer                                        │
+* │ • Gregorian leap year rules are applied                             │
+* │ • Uses modulo (%) and logical operators                             │
+* │ • No loops or additional data structures required                   │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
-* │ Step 1 : Take integer input n                                       │
-* │ Step 2 : Evaluate condition (n % 2 == 0)                            │
-* │ Step 3 : If true → assign "even"                                    │
-* │ Step 4 : Else → assign "odd"                                        │
-* │ Step 5 : Print result                                               │
+* │ Step 1 : Initialize the year value                                  │
+* │ Step 2 : Check divisibility by 4 and store in x                     │
+* │ Step 3 : Check non-divisibility by 100 and store in y               │
+* │ Step 4 : Check divisibility by both 100 and 400 and store in  z     │
+* │ Step 5 : Evaluate x && (y || z)                                     │
+* │ Step 6 : Print whether the year is a leap year or not               │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
-* │ Conditional Expression (Ternary Operator / Parity Check)            │
+* │ Mathematical Validation (Leap Year Rule Evaluation)                 │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
-* │ Time Complexity  : O(1)  (single modulo + condition evaluation)     │
-* │ Space Complexity : O(1)  (constant memory usage)                    │
+* │ Time Complexity  : O(1)  (fixed number of modulo and logical checks)│
+* │ Space Complexity : O(1)  (constant auxiliary variables)             │
 * └─────────────────────────────────────────────────────────────────────┘
   */
 
-
-public class Odd_Even_Turnary {
+public class Calendar_Year {
     public static void main(String args[]){
         
     }
 }
 
-/**
+/* 
+*
 * ╔══════════════════════════════════════════════════════════════════════╗
-* ║ PROBLEM 34: Check Odd or Even using Ternary Operator                 ║
+* ║ PROBLEM 42: Leap Year Detection using Logical Operators              ║
 * ╚══════════════════════════════════════════════════════════════════════╝
 *
 * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
-* │ Given an integer n, determine whether it is even or odd using a     │
-* │ ternary operator.                                                   │
+* │ Given a year, determine whether it is a leap year based on the      │
+* │ Gregorian calendar rules.                                           │
 * │                                                                     │
-* │ If n is divisible by 2, output "even", otherwise output "odd".      │
+* │ A year is a leap year if it is divisible by 4 and either not        │
+* │ divisible by 100 or divisible by 400.                               │
+* │ Print intermediate boolean evaluations and the final result.        │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
-* │ Input  : n = 55                                                     │
-* │ Output : odd                                                        │
-* │ Explanation : 55 % 2 = 1, so condition evaluates to "odd".          │
+* │ Input  : year = 2000                                                │
+* │ Output : true                                                       │
+* │          false                                                      │
+* │          true                                                       │
+* │          2000 IS A LEAP YEAR                                        │
+* │ Explanation :                                                       │
+* │ x = (2000 % 4 == 0)      → true                                     │
+* │ y = (2000 % 100 != 0)    → false                                    │
+* │ z = (2000 % 100 == 0 && 2000 % 400 == 0) → true                     │
+* │ Final Condition: x && (y || z)                                      │
+* │                 = true && (false || true)                           │
+* │                 = true                                              │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
-* │ • n is an integer                                                   │
-* │ • Uses ternary operator only                                        │
-* │ • No loops or additional data structures                            │
+* │ • year is a positive integer                                        │
+* │ • Gregorian leap year rules are applied                             │
+* │ • Uses modulo (%) and logical operators                             │
+* │ • No loops or additional data structures required                   │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
-* │ Step 1 : Take integer input n                                       │
-* │ Step 2 : Evaluate condition (n % 2 == 0)                            │
-* │ Step 3 : If true → assign "even"                                    │
-* │ Step 4 : Else → assign "odd"                                        │
-* │ Step 5 : Print result                                               │
+* │ Step 1 : Initialize the year value                                  │
+* │ Step 2 : Check divisibility by 4 and store in x                     │
+* │ Step 3 : Check non-divisibility by 100 and store in y               │
+* │ Step 4 : Check divisibility by both 100 and 400 and store in  z     │
+* │ Step 5 : Evaluate x && (y || z)                                     │
+* │ Step 6 : Print whether the year is a leap year or not               │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
-* │ Conditional Expression (Ternary Operator / Parity Check)            │
+* │ Mathematical Validation (Leap Year Rule Evaluation)                 │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
-* │ Time Complexity  : O(1)  (single modulo + condition evaluation)     │
-* │ Space Complexity : O(1)  (constant memory usage)                    │
+* │ Time Complexity  : O(1)  (fixed number of modulo and logical checks)│
+* │ Space Complexity : O(1)  (constant auxiliary variables)             │
 * └─────────────────────────────────────────────────────────────────────┘
   */
 
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Odd_Even_Turnary {                                      ║
+* ║ public class Calendar_Year {                                         ║
 * ║     public static void main(String args[]){                          ║
-* ║         int n = 55;                                                  ║
-* ║         String type = ((n % 2) == 0) ? "even" : "odd";               ║
-* ║         System.out.println(type);                                    ║
+* ║         int year = 2000;                                             ║
+* ║                                                                      ║
+* ║         boolean x = (year % 4 ) == 0;                                ║
+* ║         System.out.println(x); // Output: true                       ║
+* ║                                                                      ║
+* ║         boolean y = (year % 100 ) != 0;                              ║
+* ║         System.out.println(y); // Output: false                      ║
+* ║                                                                      ║
+* ║         boolean z = ((year % 100 == 0 ) && (year % 400 == 0));       ║
+* ║         System.out.println(z); // Output: true                       ║
+* ║                                                                      ║
+* ║         if(x && (y || z)){                                           ║
+* ║             System.out.println(year+" IS A LEAP YEAR :");            ║
+* ║             // Output: 2000 IS A LEAP YEAR :                         ║
+* ║         }                                                            ║
+* ║         else{                                                        ║
+* ║             System.out.println(year+" IS NOT A LEAP YEAR :");        ║
+* ║         }                                                            ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
-*/╚══════════════════════════════════════════════════════════════════════╝
+* ╚══════════════════════════════════════════════════════════════════════╝
+*/

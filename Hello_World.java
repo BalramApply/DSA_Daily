@@ -2,11 +2,11 @@
  * │  #1  [01/06/26] → #2  [02/06/26] → #3  [03/06/26]                    │
  * │  #4  [04/06/26] → #5  [05/06/26] → #6  [06/06/26]                    │
  * │  #7  [07/06/26] → #8  [08/06/26] → #9  [09/00/00]                    │
- * │  #10 [00/00/00]                                                      │
+ * │  #10 [10/00/00]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 01: Hello World                                                ║
+ * ║ PROBLEM 01: Hello World                                              ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
@@ -52,7 +52,7 @@ public class Hello_World {
 
 /* 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM : Hello World                                                ║
+ * ║ PROBLEM 01: Hello World                                              ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
@@ -90,13 +90,17 @@ public class Hello_World {
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-// public class one {
-//     public static void main(String[] args) {
-//         // Printing "Hello World" with a newline using \n
-//         System.out.print("Hello World\n");
+/* ╔══════════════════════════════════════════════════════════════════════╗
+ * ║ public class one {                                                   ║
+ * ║     public static void main(String[] args) {                         ║
+ * ║         // Printing "Hello World" with a newline using \n            ║
+ * ║         System.out.print("Hello World\n");                           ║
+ * ║                                                                      ║
+ * ║         // Printing "Hello World" with automatic newline             ║
+ * ║         System.out.println("Hello World");                           ║
+ * ║         System.out.print("Hello World");                             ║
+ * ║     }                                                                ║
+ * ║ }                                                                    ║
+ * ╚══════════════════════════════════════════════════════════════════════╝
+ */
 
-//         // Printing "Hello World" with automatic newline
-//         System.out.println("Hello World");
-//         System.out.print("Hello World");
-//     }
-// }

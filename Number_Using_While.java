@@ -1,106 +1,119 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [07/06/26] → #2  [08/06/26] → #3  [09/06/26]                    │
+ * │  #1  [09/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
 *
 * ╔══════════════════════════════════════════════════════════════════════╗
-* ║ PROBLEM 34: Check Odd or Even using Ternary Operator                 ║
+* ║ PROBLEM 44: Print Numbers from 1 to 10 using While Loop              ║
 * ╚══════════════════════════════════════════════════════════════════════╝
 *
 * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
-* │ Given an integer n, determine whether it is even or odd using a     │
-* │ ternary operator.                                                   │
+* │ Print all integers from 1 to 10 in ascending order using a while    │
+* │ loop.                                                               │
 * │                                                                     │
-* │ If n is divisible by 2, output "even", otherwise output "odd".      │
+* │ The loop should start from 1, print each number, and terminate      │
+* │ after printing 10.                                                  │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
-* │ Input  : n = 55                                                     │
-* │ Output : odd                                                        │
-* │ Explanation : 55 % 2 = 1, so condition evaluates to "odd".          │
+* │ Input  : counter = 1                                                │
+* │ Output : 1 2 3 4 5 6 7 8 9 10                                       │
+* │ Explanation : The counter starts at 1 and increments by 1 after     │
+* │ each iteration until it reaches 10.                                 │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
-* │ • n is an integer                                                   │
-* │ • Uses ternary operator only                                        │
-* │ • No loops or additional data structures                            │
+* │ • Use a while loop                                                  │
+* │ • Starting value = 1                                                │
+* │ • Ending value = 10                                                 │
+* │ • Increment counter by 1 in each iteration                          │
+* │ • Numbers are printed in ascending order                            │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
-* │ Step 1 : Take integer input n                                       │
-* │ Step 2 : Evaluate condition (n % 2 == 0)                            │
-* │ Step 3 : If true → assign "even"                                    │
-* │ Step 4 : Else → assign "odd"                                        │
-* │ Step 5 : Print result                                               │
+* │ Step 1 : Initialize counter = 1                                     │
+* │ Step 2 : Check condition (counter <= 10)                            │
+* │ Step 3 : Print the current value of counter                         │
+* │ Step 4 : Increment counter by 1                                     │
+* │ Step 5 : Repeat until counter becomes 11                            │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
-* │ Conditional Expression (Ternary Operator / Parity Check)            │
+* │ Iteration (While Loop Traversal)                                    │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
-* │ Time Complexity  : O(1)  (single modulo + condition evaluation)     │
-* │ Space Complexity : O(1)  (constant memory usage)                    │
+* │ Time Complexity  : O(n), where n = 10 iterations                    │
+* │ Space Complexity : O(1) (constant extra memory)                     │
 * └─────────────────────────────────────────────────────────────────────┘
   */
 
-
-public class Odd_Even_Turnary {
-    public static void main(String args[]){
+public class Number_Using_While {
+        public static void main(String args[]){
         
     }
 }
 
-/**
+/* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
+ * │  #1  [09/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
+ * │  #10 [00/06/26]                                                      │
+ * └──────────────────────────────────────────────────────────────────────┘
+*
 * ╔══════════════════════════════════════════════════════════════════════╗
-* ║ PROBLEM 34: Check Odd or Even using Ternary Operator                 ║
+* ║ PROBLEM 44: Print Numbers from 1 to 10 using While Loop              ║
 * ╚══════════════════════════════════════════════════════════════════════╝
 *
 * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
-* │ Given an integer n, determine whether it is even or odd using a     │
-* │ ternary operator.                                                   │
+* │ Print all integers from 1 to 10 in ascending order using a while    │
+* │ loop.                                                               │
 * │                                                                     │
-* │ If n is divisible by 2, output "even", otherwise output "odd".      │
+* │ The loop should start from 1, print each number, and terminate      │
+* │ after printing 10.                                                  │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
-* │ Input  : n = 55                                                     │
-* │ Output : odd                                                        │
-* │ Explanation : 55 % 2 = 1, so condition evaluates to "odd".          │
+* │ Input  : counter = 1                                                │
+* │ Output : 1 2 3 4 5 6 7 8 9 10                                       │
+* │ Explanation : The counter starts at 1 and increments by 1 after     │
+* │ each iteration until it reaches 10.                                 │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
-* │ • n is an integer                                                   │
-* │ • Uses ternary operator only                                        │
-* │ • No loops or additional data structures                            │
+* │ • Use a while loop                                                  │
+* │ • Starting value = 1                                                │
+* │ • Ending value = 10                                                 │
+* │ • Increment counter by 1 in each iteration                          │
+* │ • Numbers are printed in ascending order                            │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
-* │ Step 1 : Take integer input n                                       │
-* │ Step 2 : Evaluate condition (n % 2 == 0)                            │
-* │ Step 3 : If true → assign "even"                                    │
-* │ Step 4 : Else → assign "odd"                                        │
-* │ Step 5 : Print result                                               │
+* │ Step 1 : Initialize counter = 1                                     │
+* │ Step 2 : Check condition (counter <= 10)                            │
+* │ Step 3 : Print the current value of counter                         │
+* │ Step 4 : Increment counter by 1                                     │
+* │ Step 5 : Repeat until counter becomes 11                            │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
-* │ Conditional Expression (Ternary Operator / Parity Check)            │
+* │ Iteration (While Loop Traversal)                                    │
 * └─────────────────────────────────────────────────────────────────────┘
 *
 * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
-* │ Time Complexity  : O(1)  (single modulo + condition evaluation)     │
-* │ Space Complexity : O(1)  (constant memory usage)                    │
+* │ Time Complexity  : O(n), where n = 10 iterations                    │
+* │ Space Complexity : O(1) (constant extra memory)                     │
 * └─────────────────────────────────────────────────────────────────────┘
   */
 
-/*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Odd_Even_Turnary {                                      ║
-* ║     public static void main(String args[]){                          ║
-* ║         int n = 55;                                                  ║
-* ║         String type = ((n % 2) == 0) ? "even" : "odd";               ║
-* ║         System.out.println(type);                                    ║
-* ║     }                                                                ║
-* ║ }                                                                    ║
-*/╚══════════════════════════════════════════════════════════════════════╝
+// public class Number_Using_While {
+//         public static void main(String args[]){
+//         int counter = 1;
+//         while(counter <= 10){
+//             System.out.print(counter+" ");
+//             counter++;
+//         }
+//     }
+// }

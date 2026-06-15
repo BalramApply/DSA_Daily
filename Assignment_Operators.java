@@ -1,56 +1,53 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [05/06/26] → #2  [06/06/26] → #3  [07/06/26]                    │
- * │  #4  [08/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #4  [08/06/26] → #5  [09/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- * 
+ *
  * ╔══════════════════════════════════════════════════════════════════════╗
  * ║ PROBLEM 21: Assignment Operators                                     ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate, evaluate, and trace the step-by-step state changes      │
- * │ of a single primitive variable undergoing successive transformations   │
- * │ using compound assignment operators (+=, -=, *=, /=, %=) in Java.    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Demonstrate the use of compound assignment operators (+=, -=, *=,   │
+ * │ /=, %=) on an integer variable and observe how its value changes    │
+ * │ after each operation.                                               │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── COMPOUND BEHAVIOR & implicit CASTING ──────────────────────────────┐
- * │ • Structural Equivalence: E1 op= E2 is evaluated as E1 = (type)(E1 op E2)│
- * │ • Hidden Benefit: Compound assignment operators automatically inject  │
- * │   an implicit narrowing cast to the destination type, preventing     │
- * │   compile-time type mismatch errors.                                 │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Input : a = 50                                                      │
+ * │                                                                     │
+ * │ a += 2  → 52                                                        │
+ * │ a -= 3  → 49                                                        │
+ * │ a *= 2  → 98                                                        │
+ * │ a /= 5  → 19                                                        │
+ * │ a %= 2  → 1                                                         │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── EXAMPLE SEQUENTIAL TRACE ─────────────────────────────────────────┐
- * │ Initial State: a = 50                                                │
- * │                                                                      │
- * │  • Operation: a += 2  │ Evaluation: 50 + 2  │ Resultant State: a = 52│
- * │  • Operation: a -= 3  │ Evaluation: 52 - 3  │ Resultant State: a = 49│
- * │  • Operation: a *= 2  │ Evaluation: 49 * 2  │ Resultant State: a = 98│
- * │  • Operation: a /= 5  │ Evaluation: 98 / 5  │ Resultant State: a = 19│
- * │  • Operation: a %= 2  │ Evaluation: 19 % 2  │ Resultant State: a = 1 │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ 1. Variable must be initialized before applying compound operators. │
+ * │ 2. Division operator requires divisor ≠ 0.                          │
+ * │ 3. Variable should be of a numeric data type.                       │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Seed Value:      Instantiate a single tracking primitive integer   │
- * │                     initialized to its baseline value.                │
- * │ 2. Inline Mutation: Chain compound updates down a linear sequential   │
- * │                     execution track to continuously alter memory.     │
- * │ 3. Step Logging:    Print out the immediate localized variable value │
- * │                     after each individual transformation step.        │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Initialize integer variable a with value 50.               │
+ * │ Step 2 : Apply += operator and print updated value.                 │
+ * │ Step 3 : Apply -= operator and print updated value.                 │
+ * │ Step 4 : Apply *= operator and print updated value.                 │
+ * │ Step 5 : Apply /= operator and print updated value.                 │
+ * │ Step 6 : Apply %= operator and print updated value.                 │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Sequential Compound Mutation Analysis                        │
- * │ Limit:  Target container must be an initialized modifiable variable  │
- * │                                                                      │
- * │ Time:   O(1) → Local lookup, math evaluation, and re-assignment      │
- * │                execute as atomic steps in constant processing cycles.│
- * │                                                                      │
- * │ Space:  O(1) → Mutation occurs purely in-place, restricting space     │
- * │                overhead to a solitary persistent stack allocation.    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Compound Assignment Operators / Variable State Mutation             │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time Complexity  : O(1)                                             │
+ * │ Space Complexity : O(1)                                             │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
 public class Assignment_Operators {
@@ -58,71 +55,70 @@ public class Assignment_Operators {
         
     }
 }
-/**
+/* 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 05: Compound Assignment Operators & Variable Mutation        ║
+ * ║ PROBLEM 21: Compound Assignment Operators & Variable Mutation        ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate, evaluate, and trace the step-by-step state changes      │
- * │ of a single primitive variable undergoing successive transformations   │
- * │ using compound assignment operators (+=, -=, *=, /=, %=) in Java.    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Demonstrate the use of compound assignment operators (+=, -=, *=,   │
+ * │ /=, %=) on an integer variable and observe how its value changes    │
+ * │ after each operation.                                               │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── COMPOUND BEHAVIOR & implicit CASTING ──────────────────────────────┐
- * │ • Structural Equivalence: E1 op= E2 is evaluated as E1 = (type)(E1 op E2)│
- * │ • Hidden Benefit: Compound assignment operators automatically inject  │
- * │   an implicit narrowing cast to the destination type, preventing     │
- * │   compile-time type mismatch errors.                                 │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Input : a = 50                                                      │
+ * │                                                                     │
+ * │ a += 2  → 52                                                        │
+ * │ a -= 3  → 49                                                        │
+ * │ a *= 2  → 98                                                        │
+ * │ a /= 5  → 19                                                        │
+ * │ a %= 2  → 1                                                         │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── EXAMPLE SEQUENTIAL TRACE ─────────────────────────────────────────┐
- * │ Initial State: a = 50                                                │
- * │                                                                      │
- * │  • Operation: a += 2  │ Evaluation: 50 + 2  │ Resultant State: a = 52│
- * │  • Operation: a -= 3  │ Evaluation: 52 - 3  │ Resultant State: a = 49│
- * │  • Operation: a *= 2  │ Evaluation: 49 * 2  │ Resultant State: a = 98│
- * │  • Operation: a /= 5  │ Evaluation: 98 / 5  │ Resultant State: a = 19│
- * │  • Operation: a %= 2  │ Evaluation: 19 % 2  │ Resultant State: a = 1 │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ 1. Variable must be initialized before applying compound operators. │
+ * │ 2. Division operator requires divisor ≠ 0.                          │
+ * │ 3. Variable should be of a numeric data type.                       │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Seed Value:      Instantiate a single tracking primitive integer   │
- * │                     initialized to its baseline value.                │
- * │ 2. Inline Mutation: Chain compound updates down a linear sequential   │
- * │                     execution track to continuously alter memory.     │
- * │ 3. Step Logging:    Print out the immediate localized variable value │
- * │                     after each individual transformation step.        │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Initialize integer variable a with value 50.               │
+ * │ Step 2 : Apply += operator and print updated value.                 │
+ * │ Step 3 : Apply -= operator and print updated value.                 │
+ * │ Step 4 : Apply *= operator and print updated value.                 │
+ * │ Step 5 : Apply /= operator and print updated value.                 │
+ * │ Step 6 : Apply %= operator and print updated value.                 │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Sequential Compound Mutation Analysis                        │
- * │ Limit:  Target container must be an initialized modifiable variable  │
- * │                                                                      │
- * │ Time:   O(1) → Local lookup, math evaluation, and re-assignment      │
- * │                execute as atomic steps in constant processing cycles.│
- * │                                                                      │
- * │ Space:  O(1) → Mutation occurs purely in-place, restricting space     │
- * │                overhead to a solitary persistent stack allocation.    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Compound Assignment Operators / Variable State Mutation             │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time Complexity  : O(1)                                             │
+ * │ Space Complexity : O(1)                                             │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Assignment_Operators {
-//     public static void main(String args[]){
-//         int a = 50;
-//         a += 2;
-//         System.out.println("ADDITION ASSIGNMENT : "+a);
-
-//         a -= 3;
-//         System.out.println("SUBTRACTION ASSIGNMENT : "+a);
-
-//         a *= 2;
-//         System.out.println("MULTIPLICATION ASSIGNMENT : "+a);
-
-//         a /= 5;
-//         System.out.println("DIVISION ASSIGNMENT : "+a);
-
-//         a %= 2;
-//         System.out.println("MODULAS ASSIGNMENT : "+a);
-//     }
-// }
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ public class Assignment_Operators {                                  ║
+* ║     public static void main(String args[]){                          ║
+* ║         int a = 50;                                                  ║
+* ║         a += 2;                                                      ║
+* ║         System.out.println("ADDITION ASSIGNMENT : "+a);              ║
+* ║                                                                      ║
+* ║         a -= 3;                                                      ║
+* ║         System.out.println("SUBTRACTION ASSIGNMENT : "+a);           ║
+* ║                                                                      ║
+* ║         a *= 2;                                                      ║
+* ║         System.out.println("MULTIPLICATION ASSIGNMENT : "+a);        ║
+* ║                                                                      ║
+* ║         a /= 5;                                                      ║
+* ║         System.out.println("DIVISION ASSIGNMENT : "+a);              ║
+* ║                                                                      ║
+* ║         a %= 2;                                                      ║
+* ║         System.out.println("MODULAS ASSIGNMENT : "+a);               ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+*/╚══════════════════════════════════════════════════════════════════════╝

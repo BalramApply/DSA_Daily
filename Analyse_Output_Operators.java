@@ -1,67 +1,53 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [05/06/26] → #2  [06/06/26] → #3  [07/06/26]                    │
- * │  #4  [08/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #4  [08/06/26] → #5  [09/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- * 
+ *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 23: Independent Conditionals & Compound Logic                ║
+ * ║ PROBLEM 23: ANALYSE OUTPUT OPERATORS                                 ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Analyze, evaluate, and trace the control flow of multiple independent │
- * │ conditional blocks evaluating compound boolean expressions across   │
- * │ three distinct primitive integer variables.                          │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Demonstrate the behavior of multiple independent if statements      │
+ * │ using compound logical conditions (&&) and observe which blocks     │
+ * │ execute based on the evaluated boolean expressions.                 │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── EVALUATION MECHANICS ─────────────────────────────────────────────┐
- * │ • Independent Branches: Unlike an if-else chain, consecutive, flat  │
- * │   if-statements are completely decoupled. Every single condition is  │
- * │   evaluated sequentially regardless of previous matches.             │
- * │                                                                      │
- * │ • Logical Operator Precedence: Relational and arithmetic operators   │
- * │   (+, <, <=) take precedence over short-circuit logical AND (&&).     │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Input : x = 200, y = 500, z = 200                                   │
+ * │ Output:                                                             │
+ * │ JAVA                                                                │
+ * │                                                                     │
+ * │ Explanation:                                                        │
+ * │ (x > y && y > z)          → false                                   │
+ * │ (z < y && z <= x)         → true  → Prints "JAVA"                   │
+ * │ ((y+200)<x && (y+150)<z)  → false                                   │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Input: x = 200, y = 500, z = 200                                     │
- * │ Output:                                                              │
- * │   JAVA                                                               │
- * │                                                                      │
- * │ Step-by-Step Gating Evaluation:                                      │
- * │  • Block 1: (x > y && y > z)                                         │
- * │             -> (200 > 500 && 500 > 200)                               │
- * │             -> false && true  => false [Saves execution; "HELLO" skip]│
- * │                                                                      │
- * │  • Block 2: (z < y && z <= x)                                         │
- * │             -> (200 < 500 && 200 <= 200)                             │
- * │             -> true && true   => true  ["JAVA" is printed]            │
- * │                                                                      │
- * │  • Block 3: ((y + 200) < x && (y + 150) < z)                         │
- * │             -> (700 < 200 && 650 < 200)                               │
- * │             -> false && false => false ["HELLO JAVA" skip]            │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ 1. x, y, and z must be valid integer values.                        │
+ * │ 2. Each if statement executes independently.                        │
+ * │ 3. Logical AND (&&) requires both conditions to be true.            │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation State: Initialize primitive integer boundaries for     │
- * │                      variables x, y, and z.                          │
- * │ 2. Parallel Parsing: Execute independent conditional checks without  │
- * │                      early exit control mechanisms.                  │
- * │ 3. Output Trigger:   Route matching blocks directly to standard      │
- * │                      system console logs.                            │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Initialize variables x, y, and z.                          │
+ * │ Step 2 : Evaluate the first compound condition.                     │
+ * │ Step 3 : Evaluate the second compound condition.                    │
+ * │ Step 4 : Evaluate the third compound condition.                     │
+ * │ Step 5 : Print messages for conditions that evaluate to true.       │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Independent Control Flow & Conditional Logic Analysis       │
- * │ Limit:  Operands must be valid numeric primitive types                │
- * │                                                                      │
- * │ Time:   O(1) → Static logical comparison chains resolve within fixed │
- * │                clock cycles on the standard execution thread.       │
- * │                                                                      │
- * │ Space:  O(1) → Storage footprint remains entirely stable within structural│
- * │                thread register limits with zero allocations.          │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Conditional Statements / Logical AND Evaluation                     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time Complexity  : O(1)                                             │
+ * │ Space Complexity : O(1)                                             │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
 public class Analyse_Output_Operators {
@@ -81,80 +67,68 @@ public class Analyse_Output_Operators {
         }
     }
 }
-/**
+/*
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 07: Independent Conditionals & Compound Logic                ║
+ * ║ PROBLEM 23: Independent Conditionals & Compound Logic                ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Analyze, evaluate, and trace the control flow of multiple independent │
- * │ conditional blocks evaluating compound boolean expressions across   │
- * │ three distinct primitive integer variables.                          │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Demonstrate the behavior of multiple independent if statements      │
+ * │ using compound logical conditions (&&) and observe which blocks     │
+ * │ execute based on the evaluated boolean expressions.                 │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── EVALUATION MECHANICS ─────────────────────────────────────────────┐
- * │ • Independent Branches: Unlike an if-else chain, consecutive, flat  │
- * │   if-statements are completely decoupled. Every single condition is  │
- * │   evaluated sequentially regardless of previous matches.             │
- * │                                                                      │
- * │ • Logical Operator Precedence: Relational and arithmetic operators   │
- * │   (+, <, <=) take precedence over short-circuit logical AND (&&).     │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Input : x = 200, y = 500, z = 200                                   │
+ * │ Output:                                                             │
+ * │ JAVA                                                                │
+ * │                                                                     │
+ * │ Explanation:                                                        │
+ * │ (x > y && y > z)          → false                                   │
+ * │ (z < y && z <= x)         → true  → Prints "JAVA"                   │
+ * │ ((y+200)<x && (y+150)<z)  → false                                   │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Input: x = 200, y = 500, z = 200                                     │
- * │ Output:                                                              │
- * │   JAVA                                                               │
- * │                                                                      │
- * │ Step-by-Step Gating Evaluation:                                      │
- * │  • Block 1: (x > y && y > z)                                         │
- * │             -> (200 > 500 && 500 > 200)                               │
- * │             -> false && true  => false [Saves execution; "HELLO" skip]│
- * │                                                                      │
- * │  • Block 2: (z < y && z <= x)                                         │
- * │             -> (200 < 500 && 200 <= 200)                             │
- * │             -> true && true   => true  ["JAVA" is printed]            │
- * │                                                                      │
- * │  • Block 3: ((y + 200) < x && (y + 150) < z)                         │
- * │             -> (700 < 200 && 650 < 200)                               │
- * │             -> false && false => false ["HELLO JAVA" skip]            │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ 1. x, y, and z must be valid integer values.                        │
+ * │ 2. Each if statement executes independently.                        │
+ * │ 3. Logical AND (&&) requires both conditions to be true.            │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Allocation State: Initialize primitive integer boundaries for     │
- * │                      variables x, y, and z.                          │
- * │ 2. Parallel Parsing: Execute independent conditional checks without  │
- * │                      early exit control mechanisms.                  │
- * │ 3. Output Trigger:   Route matching blocks directly to standard      │
- * │                      system console logs.                            │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Initialize variables x, y, and z.                          │
+ * │ Step 2 : Evaluate the first compound condition.                     │
+ * │ Step 3 : Evaluate the second compound condition.                    │
+ * │ Step 4 : Evaluate the third compound condition.                     │
+ * │ Step 5 : Print messages for conditions that evaluate to true.       │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Independent Control Flow & Conditional Logic Analysis       │
- * │ Limit:  Operands must be valid numeric primitive types                │
- * │                                                                      │
- * │ Time:   O(1) → Static logical comparison chains resolve within fixed │
- * │                clock cycles on the standard execution thread.       │
- * │                                                                      │
- * │ Space:  O(1) → Storage footprint remains entirely stable within structural│
- * │                thread register limits with zero allocations.          │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Conditional Statements / Logical AND Evaluation                     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time Complexity  : O(1)                                             │
+ * │ Space Complexity : O(1)                                             │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
-// public class Analyse_Output_Operators {
-//     public static void main(String arga[]){
-//         int x = 200, y = 500, z = 200;
-
-//         if(x > y && y > z){
-//             System.out.println("HELLO");    // ans = ?
-//         }
-
-//          if(z < y && z <= x){
-//             System.out.println("JAVA"); // ans = ?
-//         }
-
-//          if((y + 200) < x && (y + 150) < z){
-//             System.out.println("HELLO JAVA");   // ans = ?
-//         }
-//     }
-// }
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ public class Analyse_Output_Operators {                              ║
+* ║     public static void main(String arga[]){                          ║
+* ║         int x = 200, y = 500, z = 200;                               ║
+* ║                                                                      ║
+* ║         if(x > y && y > z){                                          ║
+* ║             System.out.println("HELLO");    // No Output (False)     ║
+* ║         }                                                            ║
+* ║                                                                      ║
+* ║          if(z < y && z <= x){                                        ║
+* ║             System.out.println("JAVA"); // Output: JAVA (True)       ║
+* ║         }                                                            ║
+* ║                                                                      ║
+* ║          if((y + 200) < x && (y + 150) < z){                         ║
+* ║             System.out.println("HELLO JAVA");   // No Output (False) ║
+* ║         }                                                            ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+*/╚══════════════════════════════════════════════════════════════════════╝

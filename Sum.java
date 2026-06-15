@@ -1,43 +1,50 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [02/06/26] → #2  [03/06/26] → #3  [04/06/26]                    │
  * │  #4  [05/06/26] → #5  [06/06/26] → #6  [07/06/26]                    │
- * │  #7  [08/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
- * │  #10 [00/06/26]                                                      │
- * └──────────────────────────────────────────────────────────────────────┘ 
- * 
+ * │  #7  [08/06/26] → #8  [09/06/26] → #9  [00/00/00]                    │
+ * │  #10 [00/00/00]                                                      │
+ * └──────────────────────────────────────────────────────────────────────┘
+ *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 7: User Input Addition                                       ║
+ * ║ PROBLEM 07: Addition of Two User Input Numbers                       ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Capture two integers dynamically from user input via the console,    │
- * │ compute their arithmetic sum, and display the result.                │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Read two integers from the user through the console, calculate      │
+ * │ their sum, and display the result.                                  │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  1 2                                                          │
- * │ Output: 3                                                            │
- * │                                                                      │
- * │ Explanation: 1 + 2 = 3 (Dynamic evaluation from stream inputs)       │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Input  : 1 2                                                        │
+ * │ Output : Sum: 3                                                     │
+ * │                                                                     │
+ * │ Explanation : 1 + 2 = 3                                             │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Initialization: Create a Scanner listener linked to System.in.    │
- * │ 2. Stream Capture: Extract the next two available integer tokens.     │
- * │ 3. Evaluation:     Sum the extracted operands using the `+` operator.│
- * │ 4. Output:         Print the resulting value and close the stream.    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ Inputs must be valid integers.                                      │
+ * │ Values should be within the range of the int data type.             │
+ * │ Scanner object should be closed after use.                          │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Dynamic I/O & Basic Arithmetic                               │
- * │ Limit:  Operands must stay within language-specific integer bounds   │
- * │                                                                      │
- * │ Time:   O(1) → Processing a fixed pair of numerical inputs executes  │
- * │                in constant CPU instructions.                         │
- * │                                                                      │
- * │ Space:  O(1) → Utilizes a static set of primitive variables alongside│
- * │                a localized stream reference instance.                │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Create a Scanner object for user input.                    │
+ * │ Step 2 : Read the first integer from the user.                      │
+ * │ Step 3 : Read the second integer from the user.                     │
+ * │ Step 4 : Add both integers using the '+' operator.                  │
+ * │ Step 5 : Store the result in a variable.                            │
+ * │ Step 6 : Print the calculated sum.                                  │
+ * │ Step 7 : Close the Scanner object.                                  │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Input / Output Handling + Arithmetic Operations                     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
 import java.util.Scanner;
@@ -47,63 +54,71 @@ public class Sum {
     }
 }
 
-/* 
- * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 7: User Input Addition                                       ║
+/* ╔══════════════════════════════════════════════════════════════════════╗
+ * ║ PROBLEM 08: Addition of Two User Input Numbers                       ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Capture two integers dynamically from user input via the console,    │
- * │ compute their arithmetic sum, and display the result.                │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Read two integers from the user through the console, calculate      │
+ * │ their sum, and display the result.                                  │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input:  1 2                                                          │
- * │ Output: 3                                                            │
- * │                                                                      │
- * │ Explanation: 1 + 2 = 3 (Dynamic evaluation from stream inputs)       │
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Input  : 1 2                                                        │
+ * │ Output : Sum: 3                                                     │
+ * │                                                                     │
+ * │ Explanation : 1 + 2 = 3                                             │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Initialization: Create a Scanner listener linked to System.in.    │
- * │ 2. Stream Capture: Extract the next two available integer tokens.     │
- * │ 3. Evaluation:     Sum the extracted operands using the `+` operator.│
- * │ 4. Output:         Print the resulting value and close the stream.    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ Inputs must be valid integers.                                      │
+ * │ Values should be within the range of the int data type.             │
+ * │ Scanner object should be closed after use.                          │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Dynamic I/O & Basic Arithmetic                               │
- * │ Limit:  Operands must stay within language-specific integer bounds   │
- * │                                                                      │
- * │ Time:   O(1) → Processing a fixed pair of numerical inputs executes   │
- * │                in constant CPU instructions.                         │
- * │                                                                      │
- * │ Space:  O(1) → Utilizes a static set of primitive variables alongside│
- * │                a localized stream reference instance.                │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Create a Scanner object for user input.                    │
+ * │ Step 2 : Read the first integer from the user.                      │
+ * │ Step 3 : Read the second integer from the user.                     │
+ * │ Step 4 : Add both integers using the '+' operator.                  │
+ * │ Step 5 : Store the result in a variable.                            │
+ * │ Step 6 : Print the calculated sum.                                  │
+ * │ Step 7 : Close the Scanner object.                                  │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Input / Output Handling + Arithmetic Operations                     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time  : O(1)                                                        │
+ * │ Space : O(1)                                                        │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
 
-// import java.util.Scanner;
-
-// public class Sum {
-//     public static void main(String[] args) {
-//         // Create a Scanner object to take user input
-//         Scanner scanner = new Scanner(System.in);
-
-//         // Prompt the user for input
-//         System.out.print("Enter first number: ");
-//         int firstNumber = scanner.nextInt();
-        
-//         System.out.print("Enter second number: ");
-//         int secondNumber = scanner.nextInt();
-
-//         // Calculate the sum
-//         int sum = firstNumber + secondNumber;
-
-//         // Display the result
-//         System.out.println("Sum: " + sum);
-
-//         // Close the scanner
-//         scanner.close();
-//     }
-// }
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ import java.util.Scanner;                                            ║
+* ║                                                                      ║
+* ║ public class Sum {                                                   ║
+* ║     public static void main(String[] args) {                         ║
+* ║         // Create a Scanner object to take user input                ║
+* ║         Scanner scanner = new Scanner(System.in);                    ║
+* ║                                                                      ║
+* ║         // Prompt the user for input                                 ║
+* ║         System.out.print("Enter first number: ");                    ║
+* ║         int firstNumber = scanner.nextInt();                         ║
+* ║                                                                      ║
+* ║         System.out.print("Enter second number: ");                   ║
+* ║         int secondNumber = scanner.nextInt();                        ║
+* ║                                                                      ║
+* ║         // Calculate the sum                                         ║
+* ║         int sum = firstNumber + secondNumber;                        ║
+* ║                                                                      ║
+* ║         // Display the result                                        ║
+* ║         System.out.println("Sum: " + sum);                           ║
+* ║                                                                      ║
+* ║         // Close the scanner                                         ║
+* ║         scanner.close();                                             ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+*/╚══════════════════════════════════════════════════════════════════════╝

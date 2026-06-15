@@ -6,7 +6,7 @@
  * └──────────────────────────────────────────────────────────────────────┘ 
  * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 9: Area of a Circle                                          ║
+ * ║ PROBLEM 09: Area of a Circle                                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
@@ -22,14 +22,14 @@
  * │ Explanation: Area = 3.14 * 5 * 5 = 78.5 (Approximated using π ≈ 3.14)│
  * └──────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
+ * ┌── APPROACH ──────────────────────────────────────────────────────────┐
  * │ 1. Initialization: Create a Scanner listener linked to System.in.    │
  * │ 2. Stream Capture: Extract the incoming floating-point radius value. │
  * │ 3. Evaluation:     Compute geometric product via π * radius * radius.│
- * │ 4. Output:         Print the calculated double/float area value.      │
+ * │ 4. Output:         Print the calculated double/float area value.     │
  * └──────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
+ * ┌── METRICS & COMPLEXITY ──────────────────────────────────────────────┐
  * │ Type:   Formula-Based Geometric Calculation                          │
  * │ Limit:  Radius must be a non-negative numerical value (r ≥ 0)        │
  * │                                                                      │
@@ -51,7 +51,7 @@ public class Area_of_Circle {
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 9: Area of a Circle                                          ║
+ * ║ PROBLEM 09: Area of a Circle                                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
@@ -67,14 +67,14 @@ public class Area_of_Circle {
  * │ Explanation: Area = 3.14 * 5 * 5 = 78.5 (Approximated using π ≈ 3.14)│
  * └──────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
+ * ┌── APPROACH ──────────────────────────────────────────────────────────┐
  * │ 1. Initialization: Create a Scanner listener linked to System.in.    │
  * │ 2. Stream Capture: Extract the incoming floating-point radius value. │
  * │ 3. Evaluation:     Compute geometric product via π * radius * radius.│
- * │ 4. Output:         Print the calculated double/float area value.      │
+ * │ 4. Output:         Print the calculated double/float area value.     │
  * └──────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
+ * ┌── METRICS & COMPLEXITY ──────────────────────────────────────────────┐
  * │ Type:   Formula-Based Geometric Calculation                          │
  * │ Limit:  Radius must be a non-negative numerical value (r ≥ 0)        │
  * │                                                                      │
@@ -85,22 +85,24 @@ public class Area_of_Circle {
  * │                registers alongside the standard input reader.        │
  * └──────────────────────────────────────────────────────────────────────┘
  */
-// import java.util.*;
-// public class Area_of_Circle {
-//     public static void main(String[] args) {
-//         // Creating a Scanner object to take user input
-//         Scanner sc = new Scanner(System.in);
-
-//         // Prompt the user to enter the radius of the circle
-//         System.out.print("Enter the radius of the circle: ");
-//         float radius = sc.nextFloat(); // Taking float input for radius
-
-//         // Calculate the area of the circle using the formula: π * r^2
-//         float area = 3.14f * radius * radius;
-
-//         // Display the calculated area
-//         System.out.println("Area of the circle: " + area);
-//     }
-// }
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ import java.util.*;                                                  ║
+* ║ public class Area_of_Circle {                                        ║
+* ║     public static void main(String[] args) {                         ║
+* ║         // Creating a Scanner object to take user input              ║
+* ║         Scanner sc = new Scanner(System.in);                         ║
+* ║                                                                      ║
+* ║         // Prompt the user to enter the radius of the circle         ║
+* ║         System.out.print("Enter the radius of the circle: ");        ║
+* ║         float radius = sc.nextFloat(); // Taking float input         ║
+* ║                                                                      ║
+* ║         // Calculate the area of the circle using formula: π * r^2   ║
+* ║         float area = 3.14f * radius * radius;                        ║
+* ║                                                                      ║
+* ║         // Display the calculated area                               ║
+* ║         System.out.println("Area of the circle: " + area);           ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+*/╚══════════════════════════════════════════════════════════════════════╝
 
 

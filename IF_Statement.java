@@ -1,60 +1,51 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [06/06/26] → #2  [07/06/26] → #3  [08/06/26]                    │
- * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #4  [09/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- * 
- * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 27: NUMBER GREATER THEN 5                                    ║
- * ╚══════════════════════════════════════════════════════════════════════╝
- *
- * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Validate an integer input against a fixed threshold boundary using an     │
- * │ isolated single-selection conditional statement (`if`), executing standard│
- * │ console output only when the condition evaluates to true.            │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── CONDITIONAL EXECUTION MECHANICS ──────────────────────────────────┐
- * │ • Single-Selection: The `if` statement isolates an expression block. │
- * │   If the boolean condition passes, control flows into the nested     │
- * │   statement block; if false, execution bypasses the block entirely.  │
- * │                                                                      │
- * │ • Zero Fallback: Without an accompanying `else` branch, a false      │
- * │   evaluation yields no operational side effects or fallback outputs.  │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Input:  number = 10                                                  │
- * │                                                                      │
- * │ Condition Checking:                                                  │
- * │  • Expression: (number > 5)                                          │
- * │  • Evaluation: (10 > 5) ──> true                                     │
- * │                                                                      │
- * │ Output Log:                                                          │
- * │   Number is greater than 5                                           │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. State Setup:        Declare and allocate a local primitive integer │
- * │                        variable named `number`.                      │
- * │ 2. Relational Gating:  Insert an `if` control block bound to a strict │
- * │                        greater-than relational expression (`>`).     │
- * │ 3. Execution Routing:  Nest the standard output console string print │
- * │                        directly within the true execution path.      │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Selection Control Flow / Decision Making               │
- * │ Limit:  Operates symmetrically across all signed integer values      │
- * │                                                                      │
- * │ Time:   O(1) → Branch evaluation and jump choices execute instantly  │
- * │                at the processor level within stable, fixed cycles.   │
- * │                                                                      │
- * │ Space:  O(1) → Memory overhead is completely restricted to a single   │
- * │                non-scaling thread register slot.                      │
- * └──────────────────────────────────────────────────────────────────────┘
- */
+*
+* ╔══════════════════════════════════════════════════════════════════════╗
+* ║ PROBLEM 27: Basic Conditional Check using IF Statement               ║
+* ╚══════════════════════════════════════════════════════════════════════╝
+*
+* ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
+* │ Given an integer number, check whether it is greater than 5.        │
+* │ If the condition is true, print a message along with the number.    │
+* │ Otherwise, no output is produced.                                   │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+* │ Input  : number = 10                                                │
+* │ Output : NUMBER IS GREATER THEN 5 : 10                              │
+* │ Explanation : Since 10 > 5, the condition becomes true and message  │
+* │ is printed.                                                         │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+* │ • number is an integer                                              │
+* │ • Single conditional check only                                     │
+* │ • No loops or complex branching required                            │
+* │ • Comparison is strictly greater than (>)                           │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+* │ Step 1 : Initialize integer variable number                         │
+* │ Step 2 : Check condition (number > 5)                               │
+* │ Step 3 : If condition is true, print the message                    │
+* │ Step 4 : If false, terminate program without output                 │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+* │ Conditional Statements (IF Control Flow)                            │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+* │ Time Complexity  : O(1)  (single comparison operation)              │
+* │ Space Complexity : O(1)  (constant memory usage)                    │
+* └─────────────────────────────────────────────────────────────────────┘
+  */
+
 
 public class IF_Statement {
     public static void main(String[] args) {
@@ -62,63 +53,59 @@ public class IF_Statement {
     }
 }
 
-/**
- * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 11: Single-Selection Conditional Branching                   ║
- * ╚══════════════════════════════════════════════════════════════════════╝
- *
- * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Validate an integer input against a fixed threshold boundary using an │
- * │ isolated single-selection conditional statement (`if`), executing standard│
- * │ console output only when the condition evaluates to true.            │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── CONDITIONAL EXECUTION MECHANICS ──────────────────────────────────┐
- * │ • Single-Selection: The `if` statement isolates an expression block. │
- * │   If the boolean condition passes, control flows into the nested     │
- * │   statement block; if false, execution bypasses the block entirely.  │
- * │                                                                      │
- * │ • Zero Fallback: Without an accompanying `else` branch, a false      │
- * │   evaluation yields no operational side effects or fallback outputs.  │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Input:  number = 10                                                  │
- * │                                                                      │
- * │ Condition Checking:                                                  │
- * │  • Expression: (number > 5)                                          │
- * │  • Evaluation: (10 > 5) ──> true                                     │
- * │                                                                      │
- * │ Output Log:                                                          │
- * │   Number is greater than 5                                           │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. State Setup:        Declare and allocate a local primitive integer │
- * │                        variable named `number`.                      │
- * │ 2. Relational Gating:  Insert an `if` control block bound to a strict │
- * │                        greater-than relational expression (`>`).     │
- * │ 3. Execution Routing:  Nest the standard output console string print │
- * │                        directly within the true execution path.      │
- * └──────────────────────────────────────────────────────────────────────┘
- *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Basic Selection Control Flow / Decision Making               │
- * │ Limit:  Operates symmetrically across all signed integer values      │
- * │                                                                      │
- * │ Time:   O(1) → Branch evaluation and jump choices execute instantly  │
- * │                at the processor level within stable, fixed cycles.   │
- * │                                                                      │
- * │ Space:  O(1) → Memory overhead is completely restricted to a single   │
- * │                non-scaling thread register slot.                      │
- * └──────────────────────────────────────────────────────────────────────┘
- */
+/* 
+* ╔══════════════════════════════════════════════════════════════════════╗
+* ║ PROBLEM 27: Basic Conditional Check using IF Statement               ║
+* ╚══════════════════════════════════════════════════════════════════════╝
+*
+* ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
+* │ Given an integer number, check whether it is greater than 5.        │
+* │ If the condition is true, print a message along with the number.    │
+* │ Otherwise, no output is produced.                                   │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+* │ Input  : number = 10                                                │
+* │ Output : NUMBER IS GREATER THEN 5 : 10                              │
+* │ Explanation : Since 10 > 5, the condition becomes true and message  │
+* │ is printed.                                                         │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+* │ • number is an integer                                              │
+* │ • Single conditional check only                                     │
+* │ • No loops or complex branching required                            │
+* │ • Comparison is strictly greater than (>)                           │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+* │ Step 1 : Initialize integer variable number                         │
+* │ Step 2 : Check condition (number > 5)                               │
+* │ Step 3 : If condition is true, print the message                    │
+* │ Step 4 : If false, terminate program without output                 │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+* │ Conditional Statements (IF Control Flow)                            │
+* └─────────────────────────────────────────────────────────────────────┘
+*
+* ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+* │ Time Complexity  : O(1)  (single comparison operation)              │
+* │ Space Complexity : O(1)  (constant memory usage)                    │
+* └─────────────────────────────────────────────────────────────────────┘
+  */
 
-// public class IF_Statement {
-//     public static void main(String[] args) {
-//         int number = 10;
-//         if (number > 5) {
-//             System.out.println("NUMBER IS GREATER THEN 5 : "+number);
-//         }
-//     }
-// }
+
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ public class Analyse_Output_Expressopn_1 {                           ║
+* ║     public static void main(String args[]){                          ║
+* ║         int x = 10, y = 5;                                           ║
+* ║                                                                      ║
+* ║         int exp1 = (y * (x / y + x / y));                            ║
+* ║         int exp2 = (y * x / y + y * x + y);                          ║
+* ║                                                                      ║
+* ║         System.out.println("VALUE IS :"+exp1);  // Ans : 20          ║
+* ║         System.out.print("VALUE IS :"+exp2);    // Ans : 65          ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+*/╚══════════════════════════════════════════════════════════════════════╝

@@ -1,72 +1,57 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [05/06/26] → #2  [06/06/26] → #3  [07/06/26]                    │
- * │  #4  [08/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #4  [08/06/26] → #5  [09/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- * 
+ *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 24: Interdependent Compound Mutations                        ║
+ * ║ PROBLEM 24: ANALYSE OUTPUT ASSIGNMENT OPERATORS                      ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Trace, track, and evaluate the final state transitions of three      │
- * │ co-dependent primitive integer variables undergoing a linear sequence│
- * │ of compound assignment mutations and mathematical parenthetical expressions.│
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Demonstrate how multiple variables are affected by sequential       │
+ * │ compound assignment operations and observe how earlier mutations    │
+ * │ influence later calculations.                                       │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── STATE DEPENDENCY RULES ───────────────────────────────────────────┐
- * │ • Sequential Overwriting: Unlike concurrent evaluation, each step     │
- * │   commits immediately to memory. Subsequent lines read the newly     │
- * │   mutated storage boundaries, creating a rolling state dependency.   │
- * │                                                                      │
- * │ • Fractional Drop: Integer division operations drop fractional remainders│
- * │   completely when numerator bounds fall below denominator scales.    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Initial Values : x = 2, y = 2, z = 2                                │
+ * │                                                                     │
+ * │ x += y  → x = 4                                                     │
+ * │ y -= z  → y = 0                                                     │
+ * │ z /= (x + y) → 2 / 4 = 0                                            │
+ * │                                                                     │
+ * │ Output:                                                             │
+ * │ X IS : 4                                                            │
+ * │ Y IS : 0                                                            │
+ * │ Z IS : 0                                                            │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Initial State: x = 2, y = 2, z = 2                                   │
- * │                                                                      │
- * │ Step-by-Step State Mutation:                                         │
- * │  • Operation 1: x += y                                               │
- * │                 -> x = x + y  => 2 + 2                               │
- * │                 -> Mutated State: [x = 4]                            │
- * │                                                                      │
- * │  • Operation 2: y -= z                                               │
- * │                 -> y = y - z  => 2 - 2                               │
- * │                 -> Mutated State: [y = 0]                            │
- * │                                                                      │
- * │  • Operation 3: z /= (x + y)                                         │
- * │                 -> z = z / (4 + 0) -> 2 / 4                          │
- * │                 -> Truncation Factor: 0.5 drops down to 0            │
- * │                 -> Mutated State: [z = 0]                            │
- * │                                                                      │
- * │ Final Log Output:                                                    │
- * │   X IS :4                                                            │
- * │   Y IS :0                                                            │
- * │   Z IS :0                                                            │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ 1. Variables must be initialized before use.                        │
+ * │ 2. Denominator (x + y) must not be zero.                            │
+ * │ 3. Integer division truncates decimal values.                       │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Seed State:        Instantiate variables x, y, and z to identical │
- * │                       uniform primitive baselines.                   │
- * │ 2. Pipeline Execution: Process math layers linearly, feeding previous │
- * │                       outputs directly into subsequent step inputs.  │
- * │ 3. Value Capture:     Print the persistent localized state metrics   │
- * │                       simultaneously into console logging targets.   │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Initialize x, y, and z with value 2.                       │
+ * │ Step 2 : Update x using compound addition assignment.               │
+ * │ Step 3 : Update y using compound subtraction assignment.            │
+ * │ Step 4 : Update z using compound division assignment.               │
+ * │ Step 5 : Print the final values of x, y, and z.                     │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Interdependent Mutation & Mathematical Truncation Analysis    │
- * │ Limit:  Combined expressions must avoid explicit zero denominators   │
- * │                                                                      │
- * │ Time:   O(1) → Execution runs downstream across single, non-looping   │
- * │                machine instructions using uniform thread cycles.     │
- * │                                                                      │
- * │ Space:  O(1) → Mutation handles items in-place, holding space stable │
- * │                within static local allocation windows.               │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Compound Assignment Operators / State Transition Analysis           │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time Complexity  : O(1)                                             │
+ * │ Space Complexity : O(1)                                             │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
+
 public class Analyse_Output_Assignment_Operators {
     public static void main(String args[]){
         int x, y, z;
@@ -78,77 +63,64 @@ public class Analyse_Output_Assignment_Operators {
         System.out.println(" X IS :" +x+"\n Y IS :"+y+"\n Z IS :"+z); // Ans x : , y : , z : ,
     }
 }
-/**
- * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 08: Interdependent Compound Mutations                        ║
+/* ╔══════════════════════════════════════════════════════════════════════╗
+ * ║ PROBLEM 24: ANALYSE OUTPUT ASSIGNMENT OPERATORS                      ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Trace, track, and evaluate the final state transitions of three      │
- * │ co-dependent primitive integer variables undergoing a linear sequence│
- * │ of compound assignment mutations and mathematical parenthetical expressions.│
- * └──────────────────────────────────────────────────────────────────────┘
+ * │ Demonstrate how multiple variables are affected by sequential       │
+ * │ compound assignment operations and observe how earlier mutations    │
+ * │ influence later calculations.                                       │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── STATE DEPENDENCY RULES ───────────────────────────────────────────┐
- * │ • Sequential Overwriting: Unlike concurrent evaluation, each step     │
- * │   commits immediately to memory. Subsequent lines read the newly     │
- * │   mutated storage boundaries, creating a rolling state dependency.   │
- * │                                                                      │
- * │ • Fractional Drop: Integer division operations drop fractional remainders│
- * │   completely when numerator bounds fall below denominator scales.    │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
+ * │ Initial Values : x = 2, y = 2, z = 2                                │
+ * │                                                                     │
+ * │ x += y  → x = 4                                                     │
+ * │ y -= z  → y = 0                                                     │
+ * │ z /= (x + y) → 2 / 4 = 0                                            │
+ * │                                                                     │
+ * │ Output:                                                             │
+ * │ X IS : 4                                                            │
+ * │ Y IS : 0                                                            │
+ * │ Z IS : 0                                                            │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── EXAMPLE TRACE ANALYSIS ───────────────────────────────────────────┐
- * │ Initial State: x = 2, y = 2, z = 2                                   │
- * │                                                                      │
- * │ Step-by-Step State Mutation:                                         │
- * │  • Operation 1: x += y                                               │
- * │                 -> x = x + y  => 2 + 2                               │
- * │                 -> Mutated State: [x = 4]                            │
- * │                                                                      │
- * │  • Operation 2: y -= z                                               │
- * │                 -> y = y - z  => 2 - 2                               │
- * │                 -> Mutated State: [y = 0]                            │
- * │                                                                      │
- * │  • Operation 3: z /= (x + y)                                         │
- * │                 -> z = z / (4 + 0) -> 2 / 4                          │
- * │                 -> Truncation Factor: 0.5 drops down to 0            │
- * │                 -> Mutated State: [z = 0]                            │
- * │                                                                      │
- * │ Final Log Output:                                                    │
- * │   X IS :4                                                            │
- * │   Y IS :0                                                            │
- * │   Z IS :0                                                            │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
+ * │ 1. Variables must be initialized before use.                        │
+ * │ 2. Denominator (x + y) must not be zero.                            │
+ * │ 3. Integer division truncates decimal values.                       │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── APPROACH ─────────────────────────────────────────────────────────┐
- * │ 1. Seed State:        Instantiate variables x, y, and z to identical │
- * │                       uniform primitive baselines.                   │
- * │ 2. Pipeline Execution: Process math layers linearly, feeding previous │
- * │                       outputs directly into subsequent step inputs.  │
- * │ 3. Value Capture:     Print the persistent localized state metrics   │
- * │                       simultaneously into console logging targets.   │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
+ * │ Step 1 : Initialize x, y, and z with value 2.                       │
+ * │ Step 2 : Update x using compound addition assignment.               │
+ * │ Step 3 : Update y using compound subtraction assignment.            │
+ * │ Step 4 : Update z using compound division assignment.               │
+ * │ Step 5 : Print the final values of x, y, and z.                     │
+ * └─────────────────────────────────────────────────────────────────────┘
  *
- * ┌── METRICS & COMPLEXITY ─────────────────────────────────────────────┐
- * │ Type:   Interdependent Mutation & Mathematical Truncation Analysis    │
- * │ Limit:  Combined expressions must avoid explicit zero denominators   │
- * │                                                                      │
- * │ Time:   O(1) → Execution runs downstream across single, non-looping   │
- * │                machine instructions using uniform thread cycles.     │
- * │                                                                      │
- * │ Space:  O(1) → Mutation handles items in-place, holding space stable │
- * │                within static local allocation windows.               │
- * └──────────────────────────────────────────────────────────────────────┘
+ * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
+ * │ Compound Assignment Operators / State Transition Analysis           │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
+ * │ Time Complexity  : O(1)                                             │
+ * │ Space Complexity : O(1)                                             │
+ * └─────────────────────────────────────────────────────────────────────┘
  */
-// public class Analyse_Output_Assignment_Operators {
-//     public static void main(String args[]){
-//         int x, y, z;
 
-//         x = y = z = 2;
-//         x += y;
-//         y -= z;
-//         z /= (x + y);
-//         System.out.println("X IS :" +x+"\n Y IS :"+y+"\n Z IS :"+z); // Ans x : , y : , z : ,
-//     }
-// }
+/*╔══════════════════════════════════════════════════════════════════════╗
+* ║ public class Analyse_Output_Assignment_Operators {                   ║
+* ║     public static void main(String args[]){                          ║
+* ║         int x, y, z;                                                 ║
+* ║                                                                      ║
+* ║         x = y = z = 2;                                               ║
+* ║         x += y;                                                      ║
+* ║         y -= z;                                                      ║
+* ║         z /= (x + y);                                                ║
+* ║         System.out.println("X IS :" +x+"\n Y IS :"+y+"\n Z IS :"+z); ║
+* ║         // Ans x : 4, y : 0, z : 0                                   ║
+* ║     }                                                                ║
+* ║ }                                                                    ║
+*/╚══════════════════════════════════════════════════════════════════════╝
