@@ -1,113 +1,118 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [02/06/26] → #2  [03/06/26] → #3  [04/06/26]                    │
- * │  #4  [05/06/26] → #5  [06/06/26] → #6  [07/06/26]                    │
- * │  #7  [08/06/26] → #8  [09/06/26] → #9  [10/06/26]                    │
- * │  #10 [11/06/26]                                                      │
+ * │  #1  [10/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
+ * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
+ * ║ PROBLEM 50: Print "Hello World" 10 Times Using a Do-While Loop       ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate implicit type conversion (widening conversion) in Java. │
- * │ Assign an int value to a long variable and display the result.      │
- * │ Java automatically converts the smaller data type into a larger     │
- * │ compatible data type without requiring explicit casting.            │
+ * │ Write a program to print the string "hello world" exactly           │
+ * │ 10 times using a do-while loop.                                     │
+ * │ The loop must execute at least once before checking the condition.  │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : int a = 68                                                 │
- * │ Output : Value of b: 68                                             │
- * │                                                                     │
- * │ Explanation : The int value is automatically promoted to long       │
- * │ during assignment.                                                  │
+ * │ Input  : None                                                       │
+ * │ Output :                                                            │
+ * │ hello world                                                         │
+ * │ hello world                                                         │
+ * │ ...                                                                 │
+ * │ (Printed exactly 10 times)                                          │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Source value must be within the valid range of the int data type.   │
- * │ Widening conversion must be between compatible primitive types.     │
- * │ No explicit type casting is required.                               │
+ * │ • Must use a do-while loop.                                         │
+ * │ • Loop counter starts from 1.                                       │
+ * │ • Continue execution while counter ≤ 10.                            │
+ * │ • Output should be printed exactly 10 times.                        │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare and initialize an int variable.                    │
- * │ Step 2 : Declare a long variable.                                   │
- * │ Step 3 : Assign the int value to the long variable.                 │
- * │ Step 4 : Java performs automatic widening conversion.               │
- * │ Step 5 : Print the value stored in the long variable.               │
+ * │ Step 1 : Initialize the counter variable to 1.                      │
+ * │ Step 2 : Enter the do block and print "hello world".                │
+ * │ Step 3 : Increment the counter by 1.                                │
+ * │ Step 4 : Check whether counter ≤ 10.                                │
+ * │ Step 5 : Repeat until the condition becomes false.                  │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Type Conversion / Widening Casting                                  │
+ * │ Iteration (Do-While Loop)                                           │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(1)                                             │
+ * │                    (Fixed 10 iterations; can also be expressed      │
+ * │                     as O(10), which simplifies to O(1).)            │
+ * │ Space Complexity : O(1)                                             │
+ * │                    (Uses only one counter variable.)                │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-public class Type_Conversion {
-    public static void main(String[] args) {
+public class Hello_World_do_While_Loop {
+    public static void main(String args[]){
         
     }
 }
-
-/* ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
+/* 
+ * ╔══════════════════════════════════════════════════════════════════════╗
+ * ║ PROBLEM 50: Print "Hello World" 10 Times Using a Do-While Loop       ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate implicit type conversion (widening conversion) in Java. │
- * │ Assign an int value to a long variable and display the result.      │
- * │ Java automatically converts the smaller data type into a larger     │
- * │ compatible data type without requiring explicit casting.            │
+ * │ Write a program to print the string "hello world" exactly           │
+ * │ 10 times using a do-while loop.                                     │
+ * │ The loop must execute at least once before checking the condition.  │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : int a = 68                                                 │
- * │ Output : Value of b: 68                                             │
- * │                                                                     │
- * │ Explanation : The int value is automatically promoted to long       │
- * │ during assignment.                                                  │
+ * │ Input  : None                                                       │
+ * │ Output :                                                            │
+ * │ hello world                                                         │
+ * │ hello world                                                         │
+ * │ ...                                                                 │
+ * │ (Printed exactly 10 times)                                          │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Source value must be within the valid range of the int data type.   │
- * │ Widening conversion must be between compatible primitive types.     │
- * │ No explicit type casting is required.                               │
+ * │ • Must use a do-while loop.                                         │
+ * │ • Loop counter starts from 1.                                       │
+ * │ • Continue execution while counter ≤ 10.                            │
+ * │ • Output should be printed exactly 10 times.                        │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare and initialize an int variable.                    │
- * │ Step 2 : Declare a long variable.                                   │
- * │ Step 3 : Assign the int value to the long variable.                 │
- * │ Step 4 : Java performs automatic widening conversion.               │
- * │ Step 5 : Print the value stored in the long variable.               │
+ * │ Step 1 : Initialize the counter variable to 1.                      │
+ * │ Step 2 : Enter the do block and print "hello world".                │
+ * │ Step 3 : Increment the counter by 1.                                │
+ * │ Step 4 : Check whether counter ≤ 10.                                │
+ * │ Step 5 : Repeat until the condition becomes false.                  │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Type Conversion / Widening Casting                                  │
+ * │ Iteration (Do-While Loop)                                           │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(1)                                             │
+ * │                    (Fixed 10 iterations; can also be expressed      │
+ * │                     as O(10), which simplifies to O(1).)            │
+ * │ Space Complexity : O(1)                                             │
+ * │                    (Uses only one counter variable.)                │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Type_Conversion {                                       ║
-* ║     public static void main(String[] args) {                         ║
-* ║         // Declare an integer variable                               ║
-* ║         int a = 68;                                                  ║
-* ║                                                                      ║
-* ║         // Implicit type casting (widening) from int to long         ║
-* ║         long b = a;                                                  ║
-* ║                                                                      ║
-* ║         // Print the value of 'b'                                    ║
-* ║         System.out.println("Value of b: " + b);                      ║
+* ║ public class Hello_World_do_While_Loop {                             ║
+* ║     public static void main(String args[]){                          ║
+* ║         int counter = 1;                                             ║
+* ║         do{                                                          ║
+* ║             System.out.println("hello world");                       ║
+* ║             counter++;                                               ║
+* ║         }while(counter <= 10);                                       ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
 * ╚══════════════════════════════════════════════════════════════════════╝

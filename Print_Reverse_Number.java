@@ -1,114 +1,103 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [02/06/26] → #2  [03/06/26] → #3  [04/06/26]                    │
- * │  #4  [05/06/26] → #5  [06/06/26] → #6  [07/06/26]                    │
- * │  #7  [08/06/26] → #8  [09/06/26] → #9  [10/06/26]                    │
- * │  #10 [11/06/26]                                                      │
+ * │  #1  [10/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
+ * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
+ * ║ PROBLEM 48: Print Digits of a Number in Reverse Order                ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate implicit type conversion (widening conversion) in Java. │
- * │ Assign an int value to a long variable and display the result.      │
- * │ Java automatically converts the smaller data type into a larger     │
- * │ compatible data type without requiring explicit casting.            │
+ * │ Given a positive integer, print its digits in reverse order using   │
+ * │ a while loop.                                                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : int a = 68                                                 │
- * │ Output : Value of b: 68                                             │
- * │                                                                     │
- * │ Explanation : The int value is automatically promoted to long       │
- * │ during assignment.                                                  │
+ * │ Input  : 1234                                                       │
+ * │ Output : 4321                                                       │
+ * │ Explanation: Digits are extracted from right to left and printed.   │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Source value must be within the valid range of the int data type.   │
- * │ Widening conversion must be between compatible primitive types.     │
- * │ No explicit type casting is required.                               │
+ * │ • Input should be a positive integer                                │
+ * │ • Continue until the number becomes 0                               │
+ * │ • Use a while loop                                                  │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare and initialize an int variable.                    │
- * │ Step 2 : Declare a long variable.                                   │
- * │ Step 3 : Assign the int value to the long variable.                 │
- * │ Step 4 : Java performs automatic widening conversion.               │
- * │ Step 5 : Print the value stored in the long variable.               │
+ * │ Step 1 : Store the number in variable n                             │
+ * │ Step 2 : Extract the last digit using n % 10                        │
+ * │ Step 3 : Print the extracted digit                                  │
+ * │ Step 4 : Remove the last digit using n = n / 10                     │
+ * │ Step 5 : Repeat until n becomes 0                                   │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Type Conversion / Widening Casting                                  │
+ * │ Iteration (Digit Extraction Using While Loop)                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(d), where d = number of digits                 │
+ * │ Space Complexity : O(1)                                             │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-public class Type_Conversion {
+public class Print_Reverse_Number {
     public static void main(String[] args) {
         
     }
 }
 
-/* ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 10: Type Conversion (Int to Long)                            ║
+/*
+ * ╔══════════════════════════════════════════════════════════════════════╗
+ * ║ PROBLEM 48: Print Digits of a Number in Reverse Order                ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate implicit type conversion (widening conversion) in Java. │
- * │ Assign an int value to a long variable and display the result.      │
- * │ Java automatically converts the smaller data type into a larger     │
- * │ compatible data type without requiring explicit casting.            │
+ * │ Given a positive integer, print its digits in reverse order using   │
+ * │ a while loop.                                                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : int a = 68                                                 │
- * │ Output : Value of b: 68                                             │
- * │                                                                     │
- * │ Explanation : The int value is automatically promoted to long       │
- * │ during assignment.                                                  │
+ * │ Input  : 1234                                                       │
+ * │ Output : 4321                                                       │
+ * │ Explanation: Digits are extracted from right to left and printed.   │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Source value must be within the valid range of the int data type.   │
- * │ Widening conversion must be between compatible primitive types.     │
- * │ No explicit type casting is required.                               │
+ * │ • Input should be a positive integer                                │
+ * │ • Continue until the number becomes 0                               │
+ * │ • Use a while loop                                                  │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare and initialize an int variable.                    │
- * │ Step 2 : Declare a long variable.                                   │
- * │ Step 3 : Assign the int value to the long variable.                 │
- * │ Step 4 : Java performs automatic widening conversion.               │
- * │ Step 5 : Print the value stored in the long variable.               │
+ * │ Step 1 : Store the number in variable n                             │
+ * │ Step 2 : Extract the last digit using n % 10                        │
+ * │ Step 3 : Print the extracted digit                                  │
+ * │ Step 4 : Remove the last digit using n = n / 10                     │
+ * │ Step 5 : Repeat until n becomes 0                                   │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Type Conversion / Widening Casting                                  │
+ * │ Iteration (Digit Extraction Using While Loop)                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(d), where d = number of digits                 │
+ * │ Space Complexity : O(1)                                             │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-/*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Type_Conversion {                                       ║
-* ║     public static void main(String[] args) {                         ║
-* ║         // Declare an integer variable                               ║
-* ║         int a = 68;                                                  ║
-* ║                                                                      ║
-* ║         // Implicit type casting (widening) from int to long         ║
-* ║         long b = a;                                                  ║
-* ║                                                                      ║
-* ║         // Print the value of 'b'                                    ║
-* ║         System.out.println("Value of b: " + b);                      ║
-* ║     }                                                                ║
-* ║ }                                                                    ║
-* ╚══════════════════════════════════════════════════════════════════════╝
-*/
+// public class Print_Reverse_Number {
+//     public static void main(String[] args) {
+//         int n = 1234;
+
+//         while (n > 0) {
+//             int last = n % 10;
+//             System.out.print(last);
+//             n = n / 10;
+//         }
+//     }
+// }
