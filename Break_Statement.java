@@ -1,126 +1,114 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [04/06/26] → #2  [05/06/26] → #3  [06/06/26]                    │
- * │  #4  [07/06/26] → #5  [08/06/26] → #6  [09/06/26]                    │
- * │  #7  [10/06/26] → #8  [11/06/26] → #9  [00/06/26]                    │
+ * │  #1  [11/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 16: Expression Type Evaluation                               ║
+ * ║ PROBLEM 51: Print Numbers Until 3 Using Break Statement              ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Analyze a mixed arithmetic expression and determine the final       │
- * │ resulting data type using Java's implicit type promotion rules.     │
+ * │ Print numbers from 1 to 10 using a for loop.                        │
+ * │ Immediately terminate the loop when the current value becomes 3     │
+ * │ by using the break statement.                                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Expression : (f * b) + (i % c) - (d * s)                            │
- * │ Output     : RESULT OF THE EXPRESSION IS : -60303.6596...           │
- * │                                                                     │
- * │ Explanation :                                                       │
- * │ All smaller types are promoted according to Java's binary rules.    │
- * │ Final result is evaluated as a double due to presence of `double`.  │
+ * │ Input  : None                                                       │
+ * │ Output :                                                            │
+ * │ 1                                                                   │
+ * │ 2                                                                   │
+ * │ Explanation : When i becomes 3, the break statement executes,       │
+ * │ terminating the loop before printing 3.                             │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Primitive arithmetic follows Java type promotion hierarchy.         │
- * │ Any expression containing double results in double output.          │
- * │ Character values are converted to ASCII/Unicode integers.           │
+ * │ • Use a for loop from 1 to 10.                                      │
+ * │ • Terminate the loop when i == 3.                                   │
+ * │ • Do not print the value 3 or any numbers after it.                 │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare variables of types byte, char, short, int, float,  │
- * │          and double.                                                │
- * │ Step 2 : Evaluate expression using Java operator precedence.        │
- * │ Step 3 : Apply automatic type promotion rules during evaluation.    │
- * │ Step 4 : Store final result in a double variable.                   │
- * │ Step 5 : Print the computed result.                                 │
+ * │ Step 1 : Initialize a for loop from i = 1 to 10.                    │
+ * │ Step 2 : Check whether i equals 3.                                  │
+ * │ Step 3 : If true, execute the break statement to exit the loop.     │
+ * │ Step 4 : Otherwise, print the current value of i.                   │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Expression Evaluation / Type Promotion Rules                        │
+ * │ Iteration + Conditional Break                                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(1)                                             │
+ * │                    (Loop terminates after reaching i = 3, executing │
+ * │                     only two print operations.)                     │
+ * │ Space Complexity : O(1)                                             │
+ * │                    (Uses constant extra memory.)                    │
  * └─────────────────────────────────────────────────────────────────────┘
  */
-
-public class Expression_Type {
-    public static void main(String args[]) {
-        byte b = 4;
-        char c = 'a';   // ASCII value of 'a' is 97
-        short s = 512;
-        int i = 1000;
-        float f = 3.14f;
-        double d = 99.9954;
-
-        // Calculation breakdown
-        double result = (f * b) + (i % c) - (d * s);
-        System.out.println("RESULT OF THE EXPRESSION IS : "+result); // Expected Output : 
+public class Break_Statement {
+     public static void main(String args[]){
+        
     }
 }
-
-/*
+/* 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 16: Expression Type Evaluation                               ║
+ * ║ PROBLEM 51: Print Numbers Until 3 Using Break Statement              ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Analyze a mixed arithmetic expression and determine the final       │
- * │ resulting data type using Java's implicit type promotion rules.     │
+ * │ Print numbers from 1 to 10 using a for loop.                        │
+ * │ Immediately terminate the loop when the current value becomes 3     │
+ * │ by using the break statement.                                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Expression : (f * b) + (i % c) - (d * s)                            │
- * │ Output     : RESULT OF THE EXPRESSION IS : -60303.6596...           │
- * │                                                                     │
- * │ Explanation :                                                       │
- * │ All smaller types are promoted according to Java's binary rules.    │
- * │ Final result is evaluated as a double due to presence of `double`.  │
+ * │ Input  : None                                                       │
+ * │ Output :                                                            │
+ * │ 1                                                                   │
+ * │ 2                                                                   │
+ * │ Explanation : When i becomes 3, the break statement executes,       │
+ * │ terminating the loop before printing 3.                             │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Primitive arithmetic follows Java type promotion hierarchy.         │
- * │ Any expression containing double results in double output.          │
- * │ Character values are converted to ASCII/Unicode integers.           │
+ * │ • Use a for loop from 1 to 10.                                      │
+ * │ • Terminate the loop when i == 3.                                   │
+ * │ • Do not print the value 3 or any numbers after it.                 │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare variables of types byte, char, short, int, float,  │
- * │          and double.                                                │
- * │ Step 2 : Evaluate expression using Java operator precedence.        │
- * │ Step 3 : Apply automatic type promotion rules during evaluation.    │
- * │ Step 4 : Store final result in a double variable.                   │
- * │ Step 5 : Print the computed result.                                 │
+ * │ Step 1 : Initialize a for loop from i = 1 to 10.                    │
+ * │ Step 2 : Check whether i equals 3.                                  │
+ * │ Step 3 : If true, execute the break statement to exit the loop.     │
+ * │ Step 4 : Otherwise, print the current value of i.                   │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Expression Evaluation / Type Promotion Rules                        │
+ * │ Iteration + Conditional Break                                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(1)                                             │
+ * │                    (Loop terminates after reaching i = 3, executing │
+ * │                     only two print operations.)                     │
+ * │ Space Complexity : O(1)                                             │
+ * │                    (Uses constant extra memory.)                    │
  * └─────────────────────────────────────────────────────────────────────┘
  */
-
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Expression_Type {                                       ║
-* ║     public static void main(String args[]) {                         ║
-* ║         byte b = 4;                                                  ║
-* ║         char c = 'a';   // ASCII value of 'a' is 97                  ║
-* ║         short s = 512;                                               ║
-* ║         int i = 1000;                                                ║
-* ║         float f = 3.14f;                                             ║
-* ║         double d = 99.9954;                                          ║
-* ║                                                                      ║
-* ║         // Calculation breakdown                                     ║
-* ║         double result = (f * b) + (i % c) - (d * s);                 ║
-* ║         System.out.println("RESULT OF THE EXPRESSION IS : "+result); ║
-* ║         // Expected Output : -51154.0856                             ║
+* ║ public class Break_Statement {                                       ║
+* ║      public static void main(String args[]){                         ║
+* ║         for(int i=1; i<=10; i++){                                    ║
+* ║             if(i == 3){                                              ║
+* ║                 break;                                               ║
+* ║             }                                                        ║
+* ║             System.out.print(i+" ");                                 ║
+* ║         }                                                            ║
+* ║         // Ans: 1 2                                                  ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
 * ╚══════════════════════════════════════════════════════════════════════╝

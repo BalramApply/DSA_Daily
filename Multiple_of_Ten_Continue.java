@@ -1,126 +1,140 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [04/06/26] → #2  [05/06/26] → #3  [06/06/26]                    │
- * │  #4  [07/06/26] → #5  [08/06/26] → #6  [09/06/26]                    │
- * │  #7  [10/06/26] → #8  [11/06/26] → #9  [00/06/26]                    │
+ * │  #1  [11/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 16: Expression Type Evaluation                               ║
+ * ║ PROBLEM 54: Print User Input Except Multiples of 10                  ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Analyze a mixed arithmetic expression and determine the final       │
- * │ resulting data type using Java's implicit type promotion rules.     │
+ * │ Continuously accept integer input from the user.                    │
+ * │ Print each entered number unless it is a multiple of 10.            │
+ * │ Use the continue statement to skip printing multiples of 10 while   │
+ * │ allowing the loop to continue accepting further input.              │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Expression : (f * b) + (i % c) - (d * s)                            │
- * │ Output     : RESULT OF THE EXPRESSION IS : -60303.6596...           │
+ * │ Input  : 5                                                          │
+ * │ Output : number was : 5                                             │
  * │                                                                     │
- * │ Explanation :                                                       │
- * │ All smaller types are promoted according to Java's binary rules.    │
- * │ Final result is evaluated as a double due to presence of `double`.  │
+ * │ Input  : 10                                                         │
+ * │ Output : (No output)                                                │
+ * │                                                                     │
+ * │ Input  : 27                                                         │
+ * │ Output : number was : 27                                            │
+ * │                                                                     │
+ * │ Explanation : Multiples of 10 are skipped using the continue        │
+ * │ statement, while all other numbers are printed.                     │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Primitive arithmetic follows Java type promotion hierarchy.         │
- * │ Any expression containing double results in double output.          │
- * │ Character values are converted to ASCII/Unicode integers.           │
+ * │ • User may enter any integer value.                                 │
+ * │ • Program runs indefinitely using do-while(true).                   │
+ * │ • Must use the continue statement.                                  │
+ * │ • Multiples of 10 must not be printed.                              │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare variables of types byte, char, short, int, float,  │
- * │          and double.                                                │
- * │ Step 2 : Evaluate expression using Java operator precedence.        │
- * │ Step 3 : Apply automatic type promotion rules during evaluation.    │
- * │ Step 4 : Store final result in a double variable.                   │
- * │ Step 5 : Print the computed result.                                 │
+ * │ Step 1 : Create a Scanner object to read user input.                │
+ * │ Step 2 : Use an infinite do-while loop.                             │
+ * │ Step 3 : Read an integer from the user.                             │
+ * │ Step 4 : Check if the number is divisible by 10.                    │
+ * │ Step 5 : If divisible, execute continue to skip printing.           │
+ * │ Step 6 : Otherwise, print the entered number.                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Expression Evaluation / Type Promotion Rules                        │
+ * │ Iteration + Conditional Continue (Do-While Loop)                    │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(k)                                             │
+ * │                    where k is the number of user inputs processed.  │
+ * │                    Each iteration performs constant-time work.       │
+ * │ Space Complexity : O(1)                                             │
+ * │                    Uses constant extra memory.                      │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-public class Expression_Type {
-    public static void main(String args[]) {
-        byte b = 4;
-        char c = 'a';   // ASCII value of 'a' is 97
-        short s = 512;
-        int i = 1000;
-        float f = 3.14f;
-        double d = 99.9954;
+import java.util.Scanner;
 
-        // Calculation breakdown
-        double result = (f * b) + (i % c) - (d * s);
-        System.out.println("RESULT OF THE EXPRESSION IS : "+result); // Expected Output : 
+public class Multiple_of_Ten_Continue {
+    public static void main(String args[]){
+       
     }
 }
-
-/*
+/* 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 16: Expression Type Evaluation                               ║
+ * ║ PROBLEM 54: Print User Input Except Multiples of 10                  ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Analyze a mixed arithmetic expression and determine the final       │
- * │ resulting data type using Java's implicit type promotion rules.     │
+ * │ Continuously accept integer input from the user.                    │
+ * │ Print each entered number unless it is a multiple of 10.            │
+ * │ Use the continue statement to skip printing multiples of 10 while   │
+ * │ allowing the loop to continue accepting further input.              │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Expression : (f * b) + (i % c) - (d * s)                            │
- * │ Output     : RESULT OF THE EXPRESSION IS : -60303.6596...           │
+ * │ Input  : 5                                                          │
+ * │ Output : number was : 5                                             │
  * │                                                                     │
- * │ Explanation :                                                       │
- * │ All smaller types are promoted according to Java's binary rules.    │
- * │ Final result is evaluated as a double due to presence of `double`.  │
+ * │ Input  : 10                                                         │
+ * │ Output : (No output)                                                │
+ * │                                                                     │
+ * │ Input  : 27                                                         │
+ * │ Output : number was : 27                                            │
+ * │                                                                     │
+ * │ Explanation : Multiples of 10 are skipped using the continue        │
+ * │ statement, while all other numbers are printed.                     │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Primitive arithmetic follows Java type promotion hierarchy.         │
- * │ Any expression containing double results in double output.          │
- * │ Character values are converted to ASCII/Unicode integers.           │
+ * │ • User may enter any integer value.                                 │
+ * │ • Program runs indefinitely using do-while(true).                   │
+ * │ • Must use the continue statement.                                  │
+ * │ • Multiples of 10 must not be printed.                              │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare variables of types byte, char, short, int, float,  │
- * │          and double.                                                │
- * │ Step 2 : Evaluate expression using Java operator precedence.        │
- * │ Step 3 : Apply automatic type promotion rules during evaluation.    │
- * │ Step 4 : Store final result in a double variable.                   │
- * │ Step 5 : Print the computed result.                                 │
+ * │ Step 1 : Create a Scanner object to read user input.                │
+ * │ Step 2 : Use an infinite do-while loop.                             │
+ * │ Step 3 : Read an integer from the user.                             │
+ * │ Step 4 : Check if the number is divisible by 10.                    │
+ * │ Step 5 : If divisible, execute continue to skip printing.           │
+ * │ Step 6 : Otherwise, print the entered number.                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Expression Evaluation / Type Promotion Rules                        │
+ * │ Iteration + Conditional Continue (Do-While Loop)                    │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(k)                                             │
+ * │                    where k is the number of user inputs processed.  │
+ * │                    Each iteration performs constant-time work.       │
+ * │ Space Complexity : O(1)                                             │
+ * │                    Uses constant extra memory.                      │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Expression_Type {                                       ║
-* ║     public static void main(String args[]) {                         ║
-* ║         byte b = 4;                                                  ║
-* ║         char c = 'a';   // ASCII value of 'a' is 97                  ║
-* ║         short s = 512;                                               ║
-* ║         int i = 1000;                                                ║
-* ║         float f = 3.14f;                                             ║
-* ║         double d = 99.9954;                                          ║
-* ║                                                                      ║
-* ║         // Calculation breakdown                                     ║
-* ║         double result = (f * b) + (i % c) - (d * s);                 ║
-* ║         System.out.println("RESULT OF THE EXPRESSION IS : "+result); ║
-* ║         // Expected Output : -51154.0856                             ║
+* ║ import java.util.Scanner;                                            ║
+* ║ public class Multiple_of_Ten_Continue {                              ║
+* ║     public static void main(String args[]){                          ║
+* ║         Scanner sc = new Scanner(System.in);                         ║
+* ║         do{                                                          ║
+* ║             System.out.print("ENTER THE NUMBER :");                  ║
+* ║             int n = sc.nextInt();                                    ║
+* ║             if(n % 10 == 0){                                         ║
+* ║                 continue;                                            ║
+* ║             }                                                        ║
+* ║             System.out.println("number was :"+ n);                   ║
+* ║         }while(true);                                                ║
+* ║         // Ans: Skips printing for multiples of 10, keeps looping    ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
 * ╚══════════════════════════════════════════════════════════════════════╝
