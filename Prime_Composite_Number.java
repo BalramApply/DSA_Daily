@@ -1,131 +1,144 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [03/06/26] → #2  [04/06/26] → #3  [05/06/26]                    │
- * │  #4  [06/06/26] → #5  [07/06/26] → #6  [08/06/26]                    │
- * │  #7  [09/06/26] → #8  [10/06/26] → #9  [11/06/26]                    │
- * │  #10 [12/06/26]                                                      │
+ * │  #1  [11/06/26] → #2  [12/06/26] → #3  [00/06/26]                    │
+ * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
+ * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 11: Explicit Type Casting                                    ║
+ * ║ PROBLEM 55: Check Whether a Number is Prime or Composite             ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate explicit type casting (narrowing conversion) in Java.   │
- * │ Convert a float value into an int and a char value into its         │
- * │ corresponding ASCII/Unicode integer representation.                 │
+ * │ Given an integer n, determine whether it is a prime number or       │
+ * │ a composite number.                                                 │
+ * │ A prime number has exactly two factors: 1 and itself.               │
+ * │ A composite number has more than two factors.                       │
+ * │ Special case: 1 is neither prime nor composite.                     │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : float marks = 99.99f                                       │
- * │ Output : Integer value of marks: 99                                 │
+ * │ Input  : 7                                                          │
+ * │ Output : n is prime                                                 │
+ * │ Explanation : 7 is divisible only by 1 and 7.                       │
  * │                                                                     │
- * │ Input  : char ch = 'a'                                              │
- * │ Output : ASCII value of 'a': 97                                     │
- * │                                                                     │
- * │ Explanation :                                                       │
- * │ 99.99f becomes 99 after explicit casting to int.                    │
- * │ Character 'a' is represented by integer value 97.                   │
+ * │ Input  : 12                                                         │
+ * │ Output : n is composite                                             │
+ * │ Explanation : 12 has divisors other than 1 and itself.              │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Explicit casting is required when converting float to int.          │
- * │ Fractional digits are truncated during narrowing conversion.        │
- * │ Character values can be converted to their numeric code values.     │
+ * │ • n ≥ 1                                                             │
+ * │ • Handle edge case when n == 1.                                     │
+ * │ • Check divisibility only up to √n for optimization.                │
+ * │ • Integer input only.                                               │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare and initialize a float variable.                   │
- * │ Step 2 : Cast the float value to int using (int).                   │
- * │ Step 3 : Print the converted integer value.                         │
- * │ Step 4 : Declare and initialize a char variable.                    │
- * │ Step 5 : Cast the char value to int using (int).                    │
- * │ Step 6 : Print the ASCII/Unicode value of the character.            │
+ * │ Step 1 : Read input integer n.                                      │
+ * │ Step 2 : If n == 1, directly print "neither prime nor composite".   │
+ * │ Step 3 : Assume number is prime initially (isPrime = true).         │
+ * │ Step 4 : Loop from i = 2 to i ≤ √n.                                 │
+ * │ Step 5 : If n % i == 0, mark isPrime = false and break loop.        │
+ * │ Step 6 : After loop, if isPrime is true → prime else composite.     │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Type Conversion / Explicit Casting (Narrowing)                      │
+ * │ Optimized Primality Check (Iteration up to Square Root)             │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(√n)                                            │
+ * │                    Only checks divisibility up to square root.      │
+ * │ Space Complexity : O(1)                                             │
+ * │                    Uses constant extra variables.                   │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-public class Type_Casting {
-    public static void main(String[] args) {
+import java.util.Scanner;
+public class Prime_Composite_Number {
+    public static void main(String args[]) {
         
     }
 }
 
 /* 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 11: Explicit Type Casting                                    ║
+ * ║ PROBLEM 55: Check Whether a Number is Prime or Composite             ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate explicit type casting (narrowing conversion) in Java.   │
- * │ Convert a float value into an int and a char value into its         │
- * │ corresponding ASCII/Unicode integer representation.                 │
+ * │ Given an integer n, determine whether it is a prime number or       │
+ * │ a composite number.                                                 │
+ * │ A prime number has exactly two factors: 1 and itself.               │
+ * │ A composite number has more than two factors.                       │
+ * │ Special case: 1 is neither prime nor composite.                     │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : float marks = 99.99f                                       │
- * │ Output : Integer value of marks: 99                                 │
+ * │ Input  : 7                                                          │
+ * │ Output : n is prime                                                 │
+ * │ Explanation : 7 is divisible only by 1 and 7.                       │
  * │                                                                     │
- * │ Input  : char ch = 'a'                                              │
- * │ Output : ASCII value of 'a': 97                                     │
- * │                                                                     │
- * │ Explanation :                                                       │
- * │ 99.99f becomes 99 after explicit casting to int.                    │
- * │ Character 'a' is represented by integer value 97.                   │
+ * │ Input  : 12                                                         │
+ * │ Output : n is composite                                             │
+ * │ Explanation : 12 has divisors other than 1 and itself.              │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Explicit casting is required when converting float to int.          │
- * │ Fractional digits are truncated during narrowing conversion.        │
- * │ Character values can be converted to their numeric code values.     │
+ * │ • n ≥ 1                                                             │
+ * │ • Handle edge case when n == 1.                                     │
+ * │ • Check divisibility only up to √n for optimization.                │
+ * │ • Integer input only.                                               │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare and initialize a float variable.                   │
- * │ Step 2 : Cast the float value to int using (int).                   │
- * │ Step 3 : Print the converted integer value.                         │
- * │ Step 4 : Declare and initialize a char variable.                    │
- * │ Step 5 : Cast the char value to int using (int).                    │
- * │ Step 6 : Print the ASCII/Unicode value of the character.            │
+ * │ Step 1 : Read input integer n.                                      │
+ * │ Step 2 : If n == 1, directly print "neither prime nor composite".   │
+ * │ Step 3 : Assume number is prime initially (isPrime = true).         │
+ * │ Step 4 : Loop from i = 2 to i ≤ √n.                                 │
+ * │ Step 5 : If n % i == 0, mark isPrime = false and break loop.        │
+ * │ Step 6 : After loop, if isPrime is true → prime else composite.     │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Type Conversion / Explicit Casting (Narrowing)                      │
+ * │ Optimized Primality Check (Iteration up to Square Root)             │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(√n)                                            │
+ * │                    Only checks divisibility up to square root.      │
+ * │ Space Complexity : O(1)                                             │
+ * │                    Uses constant extra variables.                   │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Type_Casting {                                          ║
-* ║     public static void main(String[] args) {                         ║
-* ║         // Declaring a floating-point variable                       ║
-* ║         float marks = 99.99f;                                        ║
+* ║ import java.util.Scanner;                                            ║
+* ║ public class Prime_Composite_Number {                                ║
+* ║     public static void main(String args[]) {                         ║
+* ║         Scanner sc = new Scanner(System.in);                         ║
+* ║         int n = sc.nextInt();                                        ║
+* ║         boolean isPrime = true;                                      ║
 * ║                                                                      ║
-* ║         // Typecasting float to int (removes decimal part)           ║
-* ║         int mark = (int) marks;                                      ║
-* ║                                                                      ║
-* ║         // Printing the integer value                                ║
-* ║         System.out.println("Integer value of marks: " + mark);       ║
-* ║                                                                      ║
-* ║         // Declaring a character variable                            ║
-* ║         char ch = 'a';                                               ║
-* ║                                                                      ║
-* ║         // Typecasting char to int (ASCII value of 'a')              ║
-* ║         int num = (int) ch;                                          ║
-* ║                                                                      ║
-* ║         // Printing the ASCII value of character 'a'                 ║
-* ║         System.out.println("ASCII value of 'a': " + num);            ║
+* ║         if (n <= 1) {                                                ║
+* ║             System.out.println("n is neither prime nor composite");  ║
+* ║         } else if (n == 2) {                                         ║
+* ║             System.out.println("n is prime");                        ║
+* ║         } else {                                                     ║
+* ║             // Note: Condition should be i <= Math.sqrt(n)           ║
+* ║             for (int i = 2; i <= Math.sqrt(n); i++) {                ║
+* ║                 if (n % i == 0) {                                    ║
+* ║                     isPrime = false;                                 ║
+* ║                     break;                                           ║
+* ║                 }                                                    ║
+* ║             }                                                        ║
+* ║             if (isPrime == true) {                                   ║
+* ║                 System.out.println("n is prime");                    ║
+* ║             } else {                                                 ║
+* ║                 System.out.println("n is composite");                ║
+* ║             }                                                        ║
+* ║         }                                                            ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
 * ╚══════════════════════════════════════════════════════════════════════╝

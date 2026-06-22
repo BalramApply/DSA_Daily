@@ -1,7 +1,7 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [05/06/26] → #2  [06/06/26] → #3  [07/06/26]                    │
  * │  #4  [08/06/26] → #5  [09/06/26] → #6  [10/06/26]                    │
- * │  #7  [11/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
+ * │  #7  [11/06/26] → #8  [12/06/26] → #9  [13/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
@@ -58,8 +58,8 @@ public class Analyse_Output {
         int exp1 = (x * y / x);
         int exp2 = (x * (y / x ));
 
-        System.out.println("EXPRESSION FIRST IS :"+exp1);   // ans = 
-        System.out.print("EXPRESSION SECOND IS :"+exp2);    // ans = 
+        System.out.println("EXPRESSION FIRST IS : "+exp1);   // ans = 
+        System.out.print("EXPRESSION SECOND IS : "+exp2);    // ans = 
     }
 }
 

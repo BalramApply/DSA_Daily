@@ -1,131 +1,141 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [03/06/26] → #2  [04/06/26] → #3  [05/06/26]                    │
- * │  #4  [06/06/26] → #5  [07/06/26] → #6  [08/06/26]                    │
- * │  #7  [09/06/26] → #8  [10/06/26] → #9  [11/06/26]                    │
- * │  #10 [12/06/26]                                                      │
+ * │  #1  [12/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
+ * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 11: Explicit Type Casting                                    ║
+ * ║ PROBLEM 58: Find the Factorial of a Number                           ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate explicit type casting (narrowing conversion) in Java.   │
- * │ Convert a float value into an int and a char value into its         │
- * │ corresponding ASCII/Unicode integer representation.                 │
+ * │ Given a non-negative integer n, compute its factorial.              │
+ * │ The factorial of a number is the product of all positive integers   │
+ * │ from 1 to n.                                                        │
+ * │ Factorial is denoted by n!                                          │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : float marks = 99.99f                                       │
- * │ Output : Integer value of marks: 99                                 │
- * │                                                                     │
- * │ Input  : char ch = 'a'                                              │
- * │ Output : ASCII value of 'a': 97                                     │
+ * │ Input  : 5                                                          │
+ * │ Output : FACTORIAL IS : 120                                         │
  * │                                                                     │
  * │ Explanation :                                                       │
- * │ 99.99f becomes 99 after explicit casting to int.                    │
- * │ Character 'a' is represented by integer value 97.                   │
+ * │ 5! = 1 × 2 × 3 × 4 × 5 = 120                                        │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Explicit casting is required when converting float to int.          │
- * │ Fractional digits are truncated during narrowing conversion.        │
- * │ Character values can be converted to their numeric code values.     │
+ * │ • n ≥ 0                                                             │
+ * │ • Factorial of 0 is 1.                                              │
+ * │ • Result should fit within the integer data type used.              │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare and initialize a float variable.                   │
- * │ Step 2 : Cast the float value to int using (int).                   │
- * │ Step 3 : Print the converted integer value.                         │
- * │ Step 4 : Declare and initialize a char variable.                    │
- * │ Step 5 : Cast the char value to int using (int).                    │
- * │ Step 6 : Print the ASCII/Unicode value of the character.            │
+ * │ Step 1 : Read the input number n.                                   │
+ * │ Step 2 : Initialize fact = 1.                                       │
+ * │ Step 3 : Iterate from i = 1 to n.                                   │
+ * │ Step 4 : Multiply fact by i in each iteration.                      │
+ * │ Step 5 : After the loop, print the value of fact.                   │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
+ * │ Input : 5                                                           │
+ * │ fact = 1                                                            │
+ * │ i = 1 → fact = 1                                                    │
+ * │ i = 2 → fact = 2                                                    │
+ * │ i = 3 → fact = 6                                                    │
+ * │ i = 4 → fact = 24                                                   │
+ * │ i = 5 → fact = 120                                                  │
+ * │ Output : FACTORIAL IS : 120                                         │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Type Conversion / Explicit Casting (Narrowing)                      │
+ * │ Iterative Multiplication (For Loop)                                 │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(n)                                             │
+ * │                    The loop executes n times.                       │
+ * │ Space Complexity : O(1)                                             │
+ * │                    Uses constant extra memory.                      │
  * └─────────────────────────────────────────────────────────────────────┘
  */
-
-public class Type_Casting {
+import java.util.Scanner;
+public class Factorial {
     public static void main(String[] args) {
         
     }
 }
-
 /* 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 11: Explicit Type Casting                                    ║
+ * ║ PROBLEM 58: Find the Factorial of a Number                           ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate explicit type casting (narrowing conversion) in Java.   │
- * │ Convert a float value into an int and a char value into its         │
- * │ corresponding ASCII/Unicode integer representation.                 │
+ * │ Given a non-negative integer n, compute its factorial.              │
+ * │ The factorial of a number is the product of all positive integers   │
+ * │ from 1 to n.                                                        │
+ * │ Factorial is denoted by n!                                          │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : float marks = 99.99f                                       │
- * │ Output : Integer value of marks: 99                                 │
- * │                                                                     │
- * │ Input  : char ch = 'a'                                              │
- * │ Output : ASCII value of 'a': 97                                     │
+ * │ Input  : 5                                                          │
+ * │ Output : FACTORIAL IS : 120                                         │
  * │                                                                     │
  * │ Explanation :                                                       │
- * │ 99.99f becomes 99 after explicit casting to int.                    │
- * │ Character 'a' is represented by integer value 97.                   │
+ * │ 5! = 1 × 2 × 3 × 4 × 5 = 120                                        │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Explicit casting is required when converting float to int.          │
- * │ Fractional digits are truncated during narrowing conversion.        │
- * │ Character values can be converted to their numeric code values.     │
+ * │ • n ≥ 0                                                             │
+ * │ • Factorial of 0 is 1.                                              │
+ * │ • Result should fit within the integer data type used.              │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Declare and initialize a float variable.                   │
- * │ Step 2 : Cast the float value to int using (int).                   │
- * │ Step 3 : Print the converted integer value.                         │
- * │ Step 4 : Declare and initialize a char variable.                    │
- * │ Step 5 : Cast the char value to int using (int).                    │
- * │ Step 6 : Print the ASCII/Unicode value of the character.            │
+ * │ Step 1 : Read the input number n.                                   │
+ * │ Step 2 : Initialize fact = 1.                                       │
+ * │ Step 3 : Iterate from i = 1 to n.                                   │
+ * │ Step 4 : Multiply fact by i in each iteration.                      │
+ * │ Step 5 : After the loop, print the value of fact.                   │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
+ * │ Input : 5                                                           │
+ * │ fact = 1                                                            │
+ * │ i = 1 → fact = 1                                                    │
+ * │ i = 2 → fact = 2                                                    │
+ * │ i = 3 → fact = 6                                                    │
+ * │ i = 4 → fact = 24                                                   │
+ * │ i = 5 → fact = 120                                                  │
+ * │ Output : FACTORIAL IS : 120                                         │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Type Conversion / Explicit Casting (Narrowing)                      │
+ * │ Iterative Multiplication (For Loop)                                 │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time  : O(1)                                                        │
- * │ Space : O(1)                                                        │
+ * │ Time Complexity  : O(n)                                             │
+ * │                    The loop executes n times.                       │
+ * │ Space Complexity : O(1)                                             │
+ * │                    Uses constant extra memory.                      │
  * └─────────────────────────────────────────────────────────────────────┘
  */
-
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Type_Casting {                                          ║
+* ║ import java.util.Scanner;                                            ║
+* ║ public class Factorial {                                             ║
 * ║     public static void main(String[] args) {                         ║
-* ║         // Declaring a floating-point variable                       ║
-* ║         float marks = 99.99f;                                        ║
+* ║         Scanner sc = new Scanner(System.in);                         ║
+* ║         int fact = 1;                                                ║
+* ║         System.out.print("ENTER THE NUMBER : ");                     ║
+* ║         int n = sc.nextInt();                                        ║
 * ║                                                                      ║
-* ║         // Typecasting float to int (removes decimal part)           ║
-* ║         int mark = (int) marks;                                      ║
-* ║                                                                      ║
-* ║         // Printing the integer value                                ║
-* ║         System.out.println("Integer value of marks: " + mark);       ║
-* ║                                                                      ║
-* ║         // Declaring a character variable                            ║
-* ║         char ch = 'a';                                               ║
-* ║                                                                      ║
-* ║         // Typecasting char to int (ASCII value of 'a')              ║
-* ║         int num = (int) ch;                                          ║
-* ║                                                                      ║
-* ║         // Printing the ASCII value of character 'a'                 ║
-* ║         System.out.println("ASCII value of 'a': " + num);            ║
+* ║         for(int i=1; i<=n; i++){                                     ║
+* ║             fact *= i;                                               ║
+* ║         }                                                            ║
+* ║         System.out.println("FACTORIAL IS : "+fact);                  ║
+* ║         // Note: Works correctly for small non-negative integers.    ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
 * ╚══════════════════════════════════════════════════════════════════════╝

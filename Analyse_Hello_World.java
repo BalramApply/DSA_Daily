@@ -1,143 +1,158 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [11/06/26] → #2  [12/06/26] → #3  [13/06/26]                    │
+ * │  #1  [12/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 53: Print Numbers from 1 to 10 While Skipping 3              ║
+ * ║ PROBLEM 56: Count the Number of Times "hello" is Printed             ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Print all numbers from 1 to 10 using a for loop.                    │
- * │ Skip printing the number 3 by using the continue statement.         │
- * │ Continue executing the remaining iterations of the loop.            │
+ * │ Analyze the given for loop and determine how many times the         │
+ * │ string "hello" is printed. The loop variable is modified both       │
+ * │ inside the loop body and by the for-loop increment statement.       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : None                                                       │
  * │ Output :                                                            │
- * │ 1                                                                   │
- * │ 2                                                                   │
- * │ 4                                                                   │
- * │ 5                                                                   │
- * │ 6                                                                   │
- * │ 7                                                                   │
- * │ 8                                                                   │
- * │ 9                                                                   │
- * │ 10                                                                  │
+ * │ hello                                                               │
+ * │ hello                                                               │
+ * │                                                                     │
  * │ Explanation :                                                       │
- * │ When i becomes 3, the continue statement skips the print            │
- * │ operation and proceeds directly to the next iteration.              │
+ * │ The loop executes only two iterations before the condition          │
+ * │ i < 5 becomes false.                                                │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ • Use a for loop from 1 to 10.                                      │
- * │ • Must use the continue statement.                                  │
- * │ • Skip only the number 3.                                           │
- * │ • Print all remaining numbers in ascending order.                   │
+ * │ • Initial value: i = 0                                              │
+ * │ • Loop condition: i < 5                                             │
+ * │ • Inside loop: i += 2                                               │
+ * │ • For-loop increment: i++                                           │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Initialize a for loop from 1 to 10.                        │
- * │ Step 2 : Check whether the current number is 3.                     │
- * │ Step 3 : If true, execute continue to skip the current iteration.   │
- * │ Step 4 : Otherwise, print the current number.                       │
- * │ Step 5 : Repeat until all values from 1 to 10 are processed.        │
+ * │ Step 1 : Initialize i = 0.                                          │
+ * │ Step 2 : Print "hello".                                             │
+ * │ Step 3 : Increase i by 2 inside the loop.                           │
+ * │ Step 4 : Execute the for-loop increment (i++).                      │
+ * │ Step 5 : Repeat until i < 5 becomes false.                          │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
+ * │ Iteration 1 : i = 0                                                 │
+ * │               Print "hello"                                         │
+ * │               i += 2 → i = 2                                        │
+ * │               for increment → i = 3                                 │
+ * │                                                                     │
+ * │ Iteration 2 : i = 3                                                 │
+ * │               Print "hello"                                         │
+ * │               i += 2 → i = 5                                        │
+ * │               for increment → i = 6                                 │
+ * │                                                                     │
+ * │ Condition: 6 < 5 → false                                            │
+ * │ Total prints = 2                                                    │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Iteration + Conditional Continue                                    │
+ * │ Iterative Loop Analysis                                             │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time Complexity  : O(n)                                             │
- * │                    where n = total loop iterations (10).            │
- * │                    Since n is fixed, it can also be considered O(1).│
+ * │ Time Complexity  : O(1)                                             │
+ * │                    Executes a fixed number of iterations (2).       │
  * │ Space Complexity : O(1)                                             │
  * │                    Uses constant extra memory.                      │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-public class Continue_Statement {
-    public static void main(String args[]){
-        
+public class Analyse_Hello_World{
+    public static void main(String[] args) {
+        for(int i=0; i<5; i++){
+            System.out.println("hello");    // Ans : 
+            i += 2;
+        }
     }
 }
-/* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [11/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
- * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
- * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
- * │  #10 [00/06/26]                                                      │
- * └──────────────────────────────────────────────────────────────────────┘
- *
+/* 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 53: Print Numbers from 1 to 10 While Skipping 3              ║
+ * ║ PROBLEM 56: Count the Number of Times "hello" is Printed             ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Print all numbers from 1 to 10 using a for loop.                    │
- * │ Skip printing the number 3 by using the continue statement.         │
- * │ Continue executing the remaining iterations of the loop.            │
+ * │ Analyze the given for loop and determine how many times the         │
+ * │ string "hello" is printed. The loop variable is modified both       │
+ * │ inside the loop body and by the for-loop increment statement.       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : None                                                       │
  * │ Output :                                                            │
- * │ 1                                                                   │
- * │ 2                                                                   │
- * │ 4                                                                   │
- * │ 5                                                                   │
- * │ 6                                                                   │
- * │ 7                                                                   │
- * │ 8                                                                   │
- * │ 9                                                                   │
- * │ 10                                                                  │
+ * │ hello                                                               │
+ * │ hello                                                               │
+ * │                                                                     │
  * │ Explanation :                                                       │
- * │ When i becomes 3, the continue statement skips the print            │
- * │ operation and proceeds directly to the next iteration.              │
+ * │ The loop executes only two iterations before the condition          │
+ * │ i < 5 becomes false.                                                │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ • Use a for loop from 1 to 10.                                      │
- * │ • Must use the continue statement.                                  │
- * │ • Skip only the number 3.                                           │
- * │ • Print all remaining numbers in ascending order.                   │
+ * │ • Initial value: i = 0                                              │
+ * │ • Loop condition: i < 5                                             │
+ * │ • Inside loop: i += 2                                               │
+ * │ • For-loop increment: i++                                           │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Initialize a for loop from 1 to 10.                        │
- * │ Step 2 : Check whether the current number is 3.                     │
- * │ Step 3 : If true, execute continue to skip the current iteration.   │
- * │ Step 4 : Otherwise, print the current number.                       │
- * │ Step 5 : Repeat until all values from 1 to 10 are processed.        │
+ * │ Step 1 : Initialize i = 0.                                          │
+ * │ Step 2 : Print "hello".                                             │
+ * │ Step 3 : Increase i by 2 inside the loop.                           │
+ * │ Step 4 : Execute the for-loop increment (i++).                      │
+ * │ Step 5 : Repeat until i < 5 becomes false.                          │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
+ * │ Iteration 1 : i = 0                                                 │
+ * │               Print "hello"                                         │
+ * │               i += 2 → i = 2                                        │
+ * │               for increment → i = 3                                 │
+ * │                                                                     │
+ * │ Iteration 2 : i = 3                                                 │
+ * │               Print "hello"                                         │
+ * │               i += 2 → i = 5                                        │
+ * │               for increment → i = 6                                 │
+ * │                                                                     │
+ * │ Condition: 6 < 5 → false                                            │
+ * │ Total prints = 2                                                    │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Iteration + Conditional Continue                                    │
+ * │ Iterative Loop Analysis                                             │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time Complexity  : O(n)                                             │
- * │                    where n = total loop iterations (10).            │
- * │                    Since n is fixed, it can also be considered O(1).│
+ * │ Time Complexity  : O(1)                                             │
+ * │                    Executes a fixed number of iterations (2).       │
  * │ Space Complexity : O(1)                                             │
  * │                    Uses constant extra memory.                      │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Continue_Statement {                                    ║
-* ║     public static void main(String args[]){                          ║
-* ║         for(int i=1; i<=10; i++){                                    ║
-* ║             if(i == 3){                                              ║
-* ║                 continue;                                            ║
-* ║             }                                                        ║
-* ║             System.out.println(i);                                   ║
+* ║ public class Analyse_Hello_World{                                    ║
+* ║     public static void main(String[] args) {                         ║
+* ║         for(int i=0; i<5; i++){                                      ║
+* ║             System.out.println("hello");                             ║
+* ║             i += 2;                                                  ║
 * ║         }                                                            ║
-* ║         // Ans: Output will print numbers 1 to 10, skipping 3        ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
+* ╠══════════════════════════════════════════════════════════════════════╣
+* ║  Execution Breakdown:                                                ║
+* ║  1. i = 0 (0 < 5 is true)  -> Prints "hello", i becomes 2, i++ -> 3  ║
+* ║  2. i = 3 (3 < 5 is true)  -> Prints "hello", i becomes 5, i++ -> 6  ║
+* ║  3. i = 6 (6 < 5 is false) -> Loop terminates                        ║
+* ║                                                                      ║
+* ║  Ans: Prints "hello" 2 times                                         ║
 * ╚══════════════════════════════════════════════════════════════════════╝
 */

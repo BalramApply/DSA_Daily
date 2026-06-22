@@ -1,5 +1,5 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [11/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #1  [11/06/26] → #2  [12/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
@@ -53,7 +53,7 @@
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
  * │ Time Complexity  : O(k)                                             │
  * │                    where k is the number of user inputs processed.  │
- * │                    Each iteration performs constant-time work.       │
+ * │                    Each iteration performs constant-time work.      │
  * │ Space Complexity : O(1)                                             │
  * │                    Uses constant extra memory.                      │
  * └─────────────────────────────────────────────────────────────────────┘
@@ -63,7 +63,14 @@ import java.util.Scanner;
 
 public class Multiple_of_Ten_Continue {
     public static void main(String args[]){
-       
+       Scanner sc=new Scanner(System.in);
+       do {
+        int n=sc.nextInt();
+        if (n%10 == 0) {
+            continue;
+        }
+        System.out.println("multi-10 is "+n);
+       } while (true);
     }
 }
 /* 

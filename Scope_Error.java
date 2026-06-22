@@ -1,142 +1,158 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [11/06/26] → #2  [12/06/26] → #3  [13/06/26]                    │
+ * │  #1  [12/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 53: Print Numbers from 1 to 10 While Skipping 3              ║
+ * ║ PROBLEM 60: Find the Scope Error in a For Loop Variable              ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Print all numbers from 1 to 10 using a for loop.                    │
- * │ Skip printing the number 3 by using the continue statement.         │
- * │ Continue executing the remaining iterations of the loop.            │
+ * │ Analyze the given Java program and identify why it fails to         │
+ * │ compile. The program attempts to print the value of the loop        │
+ * │ variable after the for loop has finished executing.                 │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : None                                                       │
- * │ Output :                                                            │
- * │ 1                                                                   │
- * │ 2                                                                   │
- * │ 4                                                                   │
- * │ 5                                                                   │
- * │ 6                                                                   │
- * │ 7                                                                   │
- * │ 8                                                                   │
- * │ 9                                                                   │
- * │ 10                                                                  │
+ * │ Code :                                                              │
+ * │ for(int i = 0; i <= 5; i++) {                                       │
+ * │     System.out.println(i);                                          │
+ * │ }                                                                   │
+ * │ System.out.println(i);                                              │
+ * │                                                                     │
+ * │ Result : Compilation Error                                          │
+ * │                                                                     │
  * │ Explanation :                                                       │
- * │ When i becomes 3, the continue statement skips the print            │
- * │ operation and proceeds directly to the next iteration.              │
+ * │ The variable 'i' is declared inside the for loop and has            │
+ * │ block scope. It cannot be accessed after the loop ends.             │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ • Use a for loop from 1 to 10.                                      │
- * │ • Must use the continue statement.                                  │
- * │ • Skip only the number 3.                                           │
- * │ • Print all remaining numbers in ascending order.                   │
+ * │ • Variables declared inside '{}' have block scope.                  │
+ * │ • Loop variables exist only within the for-loop block.              │
+ * │ • Accessing them outside the loop causes a compilation error.       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Initialize a for loop from 1 to 10.                        │
- * │ Step 2 : Check whether the current number is 3.                     │
- * │ Step 3 : If true, execute continue to skip the current iteration.   │
- * │ Step 4 : Otherwise, print the current number.                       │
- * │ Step 5 : Repeat until all values from 1 to 10 are processed.        │
+ * │ Step 1 : Observe where the variable 'i' is declared.                │
+ * │ Step 2 : Identify its scope (inside the for loop only).             │
+ * │ Step 3 : Notice that the program tries to use 'i' after the loop.   │
+ * │ Step 4 : Conclude that 'i' is out of scope.                         │
+ * │ Step 5 : Fix by declaring 'i' before the for loop if needed later.  │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
+ * │ i = 0 → Print 0                                                     │
+ * │ i = 1 → Print 1                                                     │
+ * │ i = 2 → Print 2                                                     │
+ * │ i = 3 → Print 3                                                     │
+ * │ i = 4 → Print 4                                                     │
+ * │ i = 5 → Print 5                                                     │
+ * │ Loop ends → 'i' goes out of scope                                  │
+ * │ Next statement: System.out.print(i); → Compilation Error            │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Iteration + Conditional Continue                                    │
+ * │ Variable Scope Analysis (Block Scope)                               │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time Complexity  : O(n)                                             │
- * │                    where n = total loop iterations (10).            │
- * │                    Since n is fixed, it can also be considered O(1).│
+ * │ Time Complexity  : O(1)                                             │
+ * │                    This is a compile-time scope analysis.           │
  * │ Space Complexity : O(1)                                             │
- * │                    Uses constant extra memory.                      │
+ * │                    No extra memory is used.                         │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-public class Continue_Statement {
+public class Scope_Error {
     public static void main(String args[]){
-        
+        for(int i =0; i<=5; i++){
+            System.out.println("i = "+i);
+        }
+    //    System.out.print("i after the loop ="+i);    // Ans : block scope
     }
 }
+
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [11/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #1  [12/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 53: Print Numbers from 1 to 10 While Skipping 3              ║
+ * ║ PROBLEM 60: Find the Scope Error in a For Loop Variable              ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Print all numbers from 1 to 10 using a for loop.                    │
- * │ Skip printing the number 3 by using the continue statement.         │
- * │ Continue executing the remaining iterations of the loop.            │
+ * │ Analyze the given Java program and identify why it fails to         │
+ * │ compile. The program attempts to print the value of the loop        │
+ * │ variable after the for loop has finished executing.                 │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : None                                                       │
- * │ Output :                                                            │
- * │ 1                                                                   │
- * │ 2                                                                   │
- * │ 4                                                                   │
- * │ 5                                                                   │
- * │ 6                                                                   │
- * │ 7                                                                   │
- * │ 8                                                                   │
- * │ 9                                                                   │
- * │ 10                                                                  │
+ * │ Code :                                                              │
+ * │ for(int i = 0; i <= 5; i++) {                                       │
+ * │     System.out.println(i);                                          │
+ * │ }                                                                   │
+ * │ System.out.println(i);                                              │
+ * │                                                                     │
+ * │ Result : Compilation Error                                          │
+ * │                                                                     │
  * │ Explanation :                                                       │
- * │ When i becomes 3, the continue statement skips the print            │
- * │ operation and proceeds directly to the next iteration.              │
+ * │ The variable 'i' is declared inside the for loop and has            │
+ * │ block scope. It cannot be accessed after the loop ends.             │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ • Use a for loop from 1 to 10.                                      │
- * │ • Must use the continue statement.                                  │
- * │ • Skip only the number 3.                                           │
- * │ • Print all remaining numbers in ascending order.                   │
+ * │ • Variables declared inside '{}' have block scope.                  │
+ * │ • Loop variables exist only within the for-loop block.              │
+ * │ • Accessing them outside the loop causes a compilation error.       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Initialize a for loop from 1 to 10.                        │
- * │ Step 2 : Check whether the current number is 3.                     │
- * │ Step 3 : If true, execute continue to skip the current iteration.   │
- * │ Step 4 : Otherwise, print the current number.                       │
- * │ Step 5 : Repeat until all values from 1 to 10 are processed.        │
+ * │ Step 1 : Observe where the variable 'i' is declared.                │
+ * │ Step 2 : Identify its scope (inside the for loop only).             │
+ * │ Step 3 : Notice that the program tries to use 'i' after the loop.   │
+ * │ Step 4 : Conclude that 'i' is out of scope.                         │
+ * │ Step 5 : Fix by declaring 'i' before the for loop if needed later.  │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
+ * │ i = 0 → Print 0                                                     │
+ * │ i = 1 → Print 1                                                     │
+ * │ i = 2 → Print 2                                                     │
+ * │ i = 3 → Print 3                                                     │
+ * │ i = 4 → Print 4                                                     │
+ * │ i = 5 → Print 5                                                     │
+ * │ Loop ends → 'i' goes out of scope                                  │
+ * │ Next statement: System.out.print(i); → Compilation Error            │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Iteration + Conditional Continue                                    │
+ * │ Variable Scope Analysis (Block Scope)                               │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time Complexity  : O(n)                                             │
- * │                    where n = total loop iterations (10).            │
- * │                    Since n is fixed, it can also be considered O(1).│
+ * │ Time Complexity  : O(1)                                             │
+ * │                    This is a compile-time scope analysis.           │
  * │ Space Complexity : O(1)                                             │
- * │                    Uses constant extra memory.                      │
+ * │                    No extra memory is used.                         │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Continue_Statement {                                    ║
+* ║ public class Scope_Error {                                           ║
 * ║     public static void main(String args[]){                          ║
-* ║         for(int i=1; i<=10; i++){                                    ║
-* ║             if(i == 3){                                              ║
-* ║                 continue;                                            ║
-* ║             }                                                        ║
-* ║             System.out.println(i);                                   ║
+* ║         for(int i =0; i<=5; i++){                                    ║
+* ║             System.out.println("i =" + i);                           ║
 * ║         }                                                            ║
-* ║         // Ans: Output will print numbers 1 to 10, skipping 3        ║
+* ║                                                                      ║
+* ║         System.out.print("i after the loop =" + i);                  ║
+* ║         // Ans : Compile-time Error!                                 ║
+* ║         // Reason: 'i' has block scope limited to the for-loop.      ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
 * ╚══════════════════════════════════════════════════════════════════════╝

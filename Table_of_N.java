@@ -1,127 +1,151 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [05/06/26] → #2  [06/06/26] → #3  [07/06/26]                    │
- * │  #4  [08/06/26] → #5  [09/06/26] → #6  [10/06/26]                    │
- * │  #7  [11/06/26] → #8  [12/06/26] → #9  [13/06/26]                    │
+ * │  #1  [12/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 24: ANALYSE OUTPUT ASSIGNMENT OPERATORS                      ║
+ * ║ PROBLEM 59: Print the Multiplication Table of a Number               ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate how multiple variables are affected by sequential       │
- * │ compound assignment operations and observe how earlier mutations    │
- * │ influence later calculations.                                       │
+ * │ Given an integer n, print its multiplication table from             │
+ * │ 1 to 10 in the standard format:                                     │
+ * │ n × i = result                                                      │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Initial Values : x = 2, y = 2, z = 2                                │
+ * │ Input  : 5                                                          │
+ * │ Output :                                                            │
+ * │ 5 * 1 = 5                                                           │
+ * │ 5 * 2 = 10                                                          │
+ * │ 5 * 3 = 15                                                          │
+ * │ ...                                                                 │
+ * │ 5 * 10 = 50                                                         │
  * │                                                                     │
- * │ x += y  → x = 4                                                     │
- * │ y -= z  → y = 0                                                     │
- * │ z /= (x + y) → 2 / 4 = 0                                            │
- * │                                                                     │
- * │ Output:                                                             │
- * │ X IS : 4                                                            │
- * │ Y IS : 0                                                            │
- * │ Z IS : 0                                                            │
+ * │ Explanation :                                                       │
+ * │ The program multiplies the given number by every integer            │
+ * │ from 1 to 10 and prints the result.                                 │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ 1. Variables must be initialized before use.                        │
- * │ 2. Denominator (x + y) must not be zero.                            │
- * │ 3. Integer division truncates decimal values.                       │
+ * │ • Input can be any integer.                                         │
+ * │ • Print exactly 10 multiples.                                       │
+ * │ • Use a for loop for iteration.                                     │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Initialize x, y, and z with value 2.                       │
- * │ Step 2 : Update x using compound addition assignment.               │
- * │ Step 3 : Update y using compound subtraction assignment.            │
- * │ Step 4 : Update z using compound division assignment.               │
- * │ Step 5 : Print the final values of x, y, and z.                     │
+ * │ Step 1 : Read the integer n from the user.                          │
+ * │ Step 2 : Iterate from i = 1 to 10.                                  │
+ * │ Step 3 : Compute table = n × i.                                     │
+ * │ Step 4 : Print the multiplication expression and result.            │
+ * │ Step 5 : Repeat until all 10 multiples are printed.                 │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
+ * │ Input : 3                                                           │
+ * │ i = 1 → 3 × 1 = 3                                                   │
+ * │ i = 2 → 3 × 2 = 6                                                   │
+ * │ i = 3 → 3 × 3 = 9                                                   │
+ * │ ...                                                                 │
+ * │ i = 10 → 3 × 10 = 30                                                │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Compound Assignment Operators / State Transition Analysis           │
+ * │ Iterative Multiplication (For Loop)                                 │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
  * │ Time Complexity  : O(1)                                             │
+ * │                    The loop always executes exactly 10 iterations.  │
+ * │                    (Can also be viewed as O(n) for k fixed outputs.)│
  * │ Space Complexity : O(1)                                             │
+ * │                    Uses constant extra memory.                      │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-public class Analyse_Output_Assignment_Operators {
+import java.util.Scanner;
+public class Table_of_N {
     public static void main(String args[]){
-        int x, y, z;
-
-        x = y = z = 2;
-        x += y;
-        y -= z;
-        z /= (x + y);
-        System.out.println(" X IS :" +x+"\n Y IS :"+y+"\n Z IS :"+z); // Ans x : , y : , z : ,
+        
     }
 }
 
-/* ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 24: ANALYSE OUTPUT ASSIGNMENT OPERATORS                      ║
+/* 
+ * ╔══════════════════════════════════════════════════════════════════════╗
+ * ║ PROBLEM 59: Print the Multiplication Table of a Number               ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Demonstrate how multiple variables are affected by sequential       │
- * │ compound assignment operations and observe how earlier mutations    │
- * │ influence later calculations.                                       │
+ * │ Given an integer n, print its multiplication table from             │
+ * │ 1 to 10 in the standard format:                                     │
+ * │ n × i = result                                                      │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Initial Values : x = 2, y = 2, z = 2                                │
+ * │ Input  : 5                                                          │
+ * │ Output :                                                            │
+ * │ 5 * 1 = 5                                                           │
+ * │ 5 * 2 = 10                                                          │
+ * │ 5 * 3 = 15                                                          │
+ * │ ...                                                                 │
+ * │ 5 * 10 = 50                                                         │
  * │                                                                     │
- * │ x += y  → x = 4                                                     │
- * │ y -= z  → y = 0                                                     │
- * │ z /= (x + y) → 2 / 4 = 0                                            │
- * │                                                                     │
- * │ Output:                                                             │
- * │ X IS : 4                                                            │
- * │ Y IS : 0                                                            │
- * │ Z IS : 0                                                            │
+ * │ Explanation :                                                       │
+ * │ The program multiplies the given number by every integer            │
+ * │ from 1 to 10 and prints the result.                                 │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ 1. Variables must be initialized before use.                        │
- * │ 2. Denominator (x + y) must not be zero.                            │
- * │ 3. Integer division truncates decimal values.                       │
+ * │ • Input can be any integer.                                         │
+ * │ • Print exactly 10 multiples.                                       │
+ * │ • Use a for loop for iteration.                                     │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Initialize x, y, and z with value 2.                       │
- * │ Step 2 : Update x using compound addition assignment.               │
- * │ Step 3 : Update y using compound subtraction assignment.            │
- * │ Step 4 : Update z using compound division assignment.               │
- * │ Step 5 : Print the final values of x, y, and z.                     │
+ * │ Step 1 : Read the integer n from the user.                          │
+ * │ Step 2 : Iterate from i = 1 to 10.                                  │
+ * │ Step 3 : Compute table = n × i.                                     │
+ * │ Step 4 : Print the multiplication expression and result.            │
+ * │ Step 5 : Repeat until all 10 multiples are printed.                 │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
+ * │ Input : 3                                                           │
+ * │ i = 1 → 3 × 1 = 3                                                   │
+ * │ i = 2 → 3 × 2 = 6                                                   │
+ * │ i = 3 → 3 × 3 = 9                                                   │
+ * │ ...                                                                 │
+ * │ i = 10 → 3 × 10 = 30                                                │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Compound Assignment Operators / State Transition Analysis           │
+ * │ Iterative Multiplication (For Loop)                                 │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
  * │ Time Complexity  : O(1)                                             │
+ * │                    The loop always executes exactly 10 iterations.  │
+ * │                    (Can also be viewed as O(n) for k fixed outputs.)│
  * │ Space Complexity : O(1)                                             │
+ * │                    Uses constant extra memory.                      │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Analyse_Output_Assignment_Operators {                   ║
+* ║ import java.util.Scanner;                                            ║
+* ║ public class Table_of_N {                                            ║
 * ║     public static void main(String args[]){                          ║
-* ║         int x, y, z;                                                 ║
+* ║         Scanner sc = new Scanner(System.in);                         ║
+* ║         int table = 1;                                               ║
+* ║         System.out.print("ENTER THE TABLE NUMBER : ");               ║
+* ║         int n = sc.nextInt();                                        ║
 * ║                                                                      ║
-* ║         x = y = z = 2;                                               ║
-* ║         x += y;                                                      ║
-* ║         y -= z;                                                      ║
-* ║         z /= (x + y);                                                ║
-* ║         System.out.println("X IS :" +x+"\n Y IS :"+y+"\n Z IS :"+z); ║
-* ║         // Ans x : 4, y : 0, z : 0                                   ║
+* ║         for(int i=1; i<=10; i++){                                    ║
+* ║             table = i * n;                                           ║
+* ║             System.out.println(n + " * " + i + " = " + table);       ║
+* ║         }                                                            ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
 * ╚══════════════════════════════════════════════════════════════════════╝
