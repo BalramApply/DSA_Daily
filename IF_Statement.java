@@ -1,8 +1,8 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
  * │  #1  [06/06/26] → #2  [07/06/26] → #3  [08/06/26]                    │
  * │  #4  [09/06/26] → #5  [10/06/26] → #6  [11/06/26]                    │
- * │  #7  [12/06/26] → #8  [13/06/26] → #9  [00/06/26]                    │
- * │  #10 [00/06/26]                                                      │
+ * │  #7  [12/06/26] → #8  [13/06/26] → #9  [14/06/26]                    │
+ * │  #10 [15/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
 *
 * ╔══════════════════════════════════════════════════════════════════════╗
@@ -97,16 +97,19 @@ public class IF_Statement {
 
 
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Analyse_Output_Expressopn_1 {                           ║
-* ║     public static void main(String args[]){                          ║
-* ║         int x = 10, y = 5;                                           ║
-* ║                                                                      ║
-* ║         int exp1 = (y * (x / y + x / y));                            ║
-* ║         int exp2 = (y * x / y + y * x + y);                          ║
-* ║                                                                      ║
-* ║         System.out.println("VALUE IS :"+exp1);  // Ans : 20          ║
-* ║         System.out.print("VALUE IS :"+exp2);    // Ans : 65          ║
+* ║ public class IF_Statement {                                          ║
+* ║     public static void main(String[] args) {                         ║
+* ║         int number = 10;                                             ║
+* ║         if (number > 5) {                                            ║
+* ║             System.out.println("NUMBER IS GREATER THAN 5 : "+number);║
+* ║         }                                                            ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
+* ╠══════════════════════════════════════════════════════════════════════╣
+* ║  Output:                                                             ║
+* ║  NUMBER IS GREATER THAN 5 : 10                                       ║
+* ║                                                                      ║
+* ║  Note: Evaluates the conditional clause (10 > 5), which is true,     ║
+* ║  and executes the code body nested inside the if-block.              ║
 * ╚══════════════════════════════════════════════════════════════════════╝
 */
