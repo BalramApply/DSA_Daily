@@ -1,142 +1,149 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [12/06/26] → #2  [13/06/26] → #3  [14/06/26]                    │
- * │  #4  [15/06/26] → #5  [16/06/26] → #6  [00/06/26]                    │
+ * │  #1  [15/06/26] → #2  [16/06/26] → #3  [00/06/26]                    │
+ * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- *
+ * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 58: Find the Factorial of a Number                           ║
+ * ║ PROBLEM 73: Check Whether a Number is Even or Odd                    ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Given a non-negative integer n, compute its factorial.              │
- * │ The factorial of a number is the product of all positive integers   │
- * │ from 1 to n.                                                        │
- * │ Factorial is denoted by n!                                          │
+ * │ Given an integer, determine whether it is even or odd.              │
+ * │ Return true if the number is divisible by 2; otherwise return false.│
+ * │ Input: A single integer. Output: Even or Odd.                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : 5                                                          │
- * │ Output : FACTORIAL IS : 120                                         │
- * │                                                                     │
- * │ Explanation :                                                       │
- * │ 5! = 1 × 2 × 3 × 4 × 5 = 120                                        │
+ * │ Input  : 18                                                         │
+ * │ Output : NUMBER IS EVEN : 18                                        │
+ * │ Explanation : Since 18 % 2 == 0, the number is even.                │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ • n ≥ 0                                                             │
- * │ • Factorial of 0 is 1.                                              │
- * │ • Result should fit within the integer data type used.              │
+ * │ Input can be any valid integer (positive, negative, or zero).       │
+ * │ Even numbers are exactly divisible by 2.                            │
+ * │ Odd numbers leave a remainder of 1 or -1 when divided by 2.         │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Read the input number n.                                   │
- * │ Step 2 : Initialize fact = 1.                                       │
- * │ Step 3 : Iterate from i = 1 to n.                                   │
- * │ Step 4 : Multiply fact by i in each iteration.                      │
- * │ Step 5 : After the loop, print the value of fact.                   │
- * └─────────────────────────────────────────────────────────────────────┘
- *
- * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
- * │ Input : 5                                                           │
- * │ fact = 1                                                            │
- * │ i = 1 → fact = 1                                                    │
- * │ i = 2 → fact = 2                                                    │
- * │ i = 3 → fact = 6                                                    │
- * │ i = 4 → fact = 24                                                   │
- * │ i = 5 → fact = 120                                                  │
- * │ Output : FACTORIAL IS : 120                                         │
+ * │ Step 1 : Read an integer from the user.                             │
+ * │ Step 2 : Pass the number to the isEven() method.                    │
+ * │ Step 3 : Check whether number % 2 == 0.                             │
+ * │ Step 4 : Return true if divisible by 2; otherwise return false.     │
+ * │ Step 5 : Print whether the number is Even or Odd.                   │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Iterative Multiplication (For Loop)                                 │
+ * │ Mathematics | Modulo Arithmetic                                     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
+ * │ Input : 15                                                          │
+ * │ 15 % 2 = 1                                                          │
+ * │ Result : false                                                      │
+ * │ Output : NUMBER IS ODD : 15                                         │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time Complexity  : O(n)                                             │
- * │                    The loop executes n times.                       │
+ * │ Time Complexity  : O(1)                                             │
  * │ Space Complexity : O(1)                                             │
- * │                    Uses constant extra memory.                      │
  * └─────────────────────────────────────────────────────────────────────┘
  */
+
 import java.util.Scanner;
-public class Factorial {
-    public static void main(String[] args) {
+public class Even_Odd {
+    
+    public static void main(String args[]){
         
     }
 }
-/* 
+
+/* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
+ * │  #1  [15/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
+ * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
+ * │  #10 [00/06/26]                                                      │
+ * └──────────────────────────────────────────────────────────────────────┘
+ * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 58: Find the Factorial of a Number                           ║
+ * ║ PROBLEM 73: Check Whether a Number is Even or Odd                    ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Given a non-negative integer n, compute its factorial.              │
- * │ The factorial of a number is the product of all positive integers   │
- * │ from 1 to n.                                                        │
- * │ Factorial is denoted by n!                                          │
+ * │ Given an integer, determine whether it is even or odd.              │
+ * │ Return true if the number is divisible by 2; otherwise return false.│
+ * │ Input: A single integer. Output: Even or Odd.                       │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : 5                                                          │
- * │ Output : FACTORIAL IS : 120                                         │
- * │                                                                     │
- * │ Explanation :                                                       │
- * │ 5! = 1 × 2 × 3 × 4 × 5 = 120                                        │
+ * │ Input  : 18                                                         │
+ * │ Output : NUMBER IS EVEN : 18                                        │
+ * │ Explanation : Since 18 % 2 == 0, the number is even.                │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ • n ≥ 0                                                             │
- * │ • Factorial of 0 is 1.                                              │
- * │ • Result should fit within the integer data type used.              │
+ * │ Input can be any valid integer (positive, negative, or zero).       │
+ * │ Even numbers are exactly divisible by 2.                            │
+ * │ Odd numbers leave a remainder of 1 or -1 when divided by 2.         │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Read the input number n.                                   │
- * │ Step 2 : Initialize fact = 1.                                       │
- * │ Step 3 : Iterate from i = 1 to n.                                   │
- * │ Step 4 : Multiply fact by i in each iteration.                      │
- * │ Step 5 : After the loop, print the value of fact.                   │
- * └─────────────────────────────────────────────────────────────────────┘
- *
- * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
- * │ Input : 5                                                           │
- * │ fact = 1                                                            │
- * │ i = 1 → fact = 1                                                    │
- * │ i = 2 → fact = 2                                                    │
- * │ i = 3 → fact = 6                                                    │
- * │ i = 4 → fact = 24                                                   │
- * │ i = 5 → fact = 120                                                  │
- * │ Output : FACTORIAL IS : 120                                         │
+ * │ Step 1 : Read an integer from the user.                             │
+ * │ Step 2 : Pass the number to the isEven() method.                    │
+ * │ Step 3 : Check whether number % 2 == 0.                             │
+ * │ Step 4 : Return true if divisible by 2; otherwise return false.     │
+ * │ Step 5 : Print whether the number is Even or Odd.                   │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Iterative Multiplication (For Loop)                                 │
+ * │ Mathematics | Modulo Arithmetic                                     │
+ * └─────────────────────────────────────────────────────────────────────┘
+ *
+ * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
+ * │ Input : 15                                                          │
+ * │ 15 % 2 = 1                                                          │
+ * │ Result : false                                                      │
+ * │ Output : NUMBER IS ODD : 15                                         │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time Complexity  : O(n)                                             │
- * │                    The loop executes n times.                       │
+ * │ Time Complexity  : O(1)                                             │
  * │ Space Complexity : O(1)                                             │
- * │                    Uses constant extra memory.                      │
  * └─────────────────────────────────────────────────────────────────────┘
  */
+
 /*╔══════════════════════════════════════════════════════════════════════╗
 * ║ import java.util.Scanner;                                            ║
-* ║ public class Factorial {                                             ║
-* ║     public static void main(String[] args) {                         ║
-* ║         Scanner sc = new Scanner(System.in);                         ║
-* ║         int fact = 1;                                                ║
-* ║         System.out.print("ENTER THE NUMBER : ");                     ║
-* ║         int n = sc.nextInt();                                        ║
-* ║                                                                      ║
-* ║         for(int i=1; i<=n; i++){                                     ║
-* ║             fact *= i;                                               ║
+* ║ public class Even_Odd {                                              ║
+* ║     public static boolean isEven(int number){                        ║
+* ║             if(number % 2 == 0){                                     ║
+* ║                 return true;                                         ║
+* ║             }else{                                                   ║
+* ║                 return false;                                        ║
+* ║             }                                                        ║
 * ║         }                                                            ║
-* ║         System.out.println("FACTORIAL IS : "+fact);                  ║
-* ║         // Note: Works correctly for small non-negative integers.    ║
+* ║     public static void main(String args[]){                          ║
+* ║         Scanner sc = new Scanner(System.in);                         ║
+* ║         System.out.print("ENTER THE INTEGER :");                     ║
+* ║         int num = sc.nextInt();                                      ║
+* ║         if(isEven(num)){                                             ║
+* ║             System.out.println("NUMBER IS EVEN : "+num);             ║
+* ║         }else{                                                       ║
+* ║              System.out.println("NUMBER IS ODD : "+num);             ║
+* ║         }                                                            ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
+* ╠══════════════════════════════════════════════════════════════════════╣
+* ║  Execution Trace & Logic:                                            ║
+* ║  - The program reads an integer from user input.                     ║
+* ║  - It invokes the isEven() helper method, passing the input value.   ║
+* ║  - Inside isEven(), the remainder operator (%) checks divisibility   ║
+* ║    by 2. If number % 2 evaluates to 0, it confirms an even integer.  ║
+* ║                                                                      ║
+* ║  Code Optimization Note:                                             ║
+* ║  The conditional block inside isEven() can be safely simplified to:  ║
+* ║  return number % 2 == 0;                                             ║
 * ╚══════════════════════════════════════════════════════════════════════╝
 */

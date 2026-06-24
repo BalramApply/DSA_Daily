@@ -1,165 +1,178 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [14/06/26] → #2  [15/06/26] → #3  [16/06/26]                    │
+ * │  #1  [15/06/26] → #2  [16/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- *
+ * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 70: Convert Binary Number to Decimal                         ║
+ * ║ PROBLEM 72: Two Sum (LeetCode #1)                                    ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Given a binary number represented as an integer, convert it into    │
- * │ its equivalent decimal (base-10) number.                            │
- * │ Process each binary digit from right to left using positional       │
- * │ values of powers of 2.                                              │
- * │ Input: A binary integer. Output: Corresponding decimal integer.     │
+ * │ Given an integer array nums and an integer target, return the       │
+ * │ indices of the two numbers whose sum equals the target.             │
+ * │ Each input has exactly one valid solution, and the same element     │
+ * │ cannot be used twice.                                               │
+ * │ Input: Integer array nums and integer target.                       │
+ * │ Output: Array containing the indices of the required pair.          │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : 10100                                                      │
- * │ Output : 20                                                         │
- * │ Explanation :                                                       │
- * │ 1×2⁴ + 0×2³ + 1×2² + 0×2¹ + 0×2⁰ = 16 + 4 = 20                      │
+ * │ Input  : nums = [2,7,11,15], target = 9                             │
+ * │ Output : [0,1]                                                      │
+ * │ Explanation : nums[0] + nums[1] = 2 + 7 = 9, so the indices         │
+ * │ 0 and 1 are returned.                                               │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Binary number should contain only digits 0 and 1.                   │
- * │ Input is represented as an integer (not a string).                  │
- * │ Number should fit within the integer range.                         │
+ * │ 2 <= nums.length <= 10^4                                            │
+ * │ -10^9 <= nums[i] <= 10^9                                            │
+ * │ -10^9 <= target <= 10^9                                             │
+ * │ Exactly one valid answer exists.                                    │
+ * │ The same array element cannot be used more than once.               │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Initialize decimal result and power as 0.                  │
- * │ Step 2 : Extract the last binary digit using modulus (%) operation. │
- * │ Step 3 : Multiply the digit by 2^power and add it to the result.    │
- * │ Step 4 : Increment power and remove the processed digit.            │
- * │ Step 5 : Repeat until all digits are processed and return result.   │
+ * │ Step 1 : Create a HashMap to store each number and its index.       │
+ * │ Step 2 : Traverse the array from left to right.                     │
+ * │ Step 3 : Compute complement = target - current element.             │
+ * │ Step 4 : Check if the complement already exists in the HashMap.     │
+ * │ Step 5 : If found, return the stored index and current index.       │
+ * │ Step 6 : Otherwise, store the current element and its index in the  │
+ * │          HashMap and continue.                                      │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Number System Conversion | Mathematical Computation                 │
+ * │ HashMap (Hash Table) | One-Pass Lookup                              │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
- * │ Input : 10100                                                       │
- * │ Digit = 0, Power = 0 → Decimal = 0                                  │
- * │ Digit = 0, Power = 1 → Decimal = 0                                  │
- * │ Digit = 1, Power = 2 → Decimal = 4                                  │
- * │ Digit = 0, Power = 3 → Decimal = 4                                  │
- * │ Digit = 1, Power = 4 → Decimal = 20                                 │
- * │ Output : 20                                                         │
+ * │ Input : nums = [2,7,11,15], target = 9                              │
+ * │ i = 0 → num = 2, complement = 7 → Not found → Store (2,0)           │
+ * │ i = 1 → num = 7, complement = 2 → Found at index 0                  │
+ * │ Return [0,1]                                                        │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time Complexity  : O(d)                                             │
- * │ Space Complexity : O(1)                                             │
- * │ where d = number of binary digits.                                  │
+ * │ Time Complexity  : O(n)                                             │
+ * │ Space Complexity : O(n)                                             │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-public class Binary_to_Decimal {
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Two_Sum_Leetcode{
     
-    public static void main(String args[]){
-        int binary = 10100;
-        
+    public static void main(String[] args) {
+        int nums[] = {2,7,11,15};
+        int target = 9;
     }
 }
-
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [14/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #1  [15/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
- *
+ * 
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 70: Convert Binary Number to Decimal                         ║
+ * ║ PROBLEM 72: Two Sum (LeetCode #1)                                    ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Given a binary number represented as an integer, convert it into    │
- * │ its equivalent decimal (base-10) number.                            │
- * │ Process each binary digit from right to left using positional       │
- * │ values of powers of 2.                                              │
- * │ Input: A binary integer. Output: Corresponding decimal integer.     │
+ * │ Given an integer array nums and an integer target, return the       │
+ * │ indices of the two numbers whose sum equals the target.             │
+ * │ Each input has exactly one valid solution, and the same element     │
+ * │ cannot be used twice.                                               │
+ * │ Input: Integer array nums and integer target.                       │
+ * │ Output: Array containing the indices of the required pair.          │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : 10100                                                      │
- * │ Output : 20                                                         │
- * │ Explanation :                                                       │
- * │ 1×2⁴ + 0×2³ + 1×2² + 0×2¹ + 0×2⁰ = 16 + 4 = 20                      │
+ * │ Input  : nums = [2,7,11,15], target = 9                             │
+ * │ Output : [0,1]                                                      │
+ * │ Explanation : nums[0] + nums[1] = 2 + 7 = 9, so the indices         │
+ * │ 0 and 1 are returned.                                               │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Binary number should contain only digits 0 and 1.                   │
- * │ Input is represented as an integer (not a string).                  │
- * │ Number should fit within the integer range.                         │
+ * │ 2 <= nums.length <= 10^4                                            │
+ * │ -10^9 <= nums[i] <= 10^9                                            │
+ * │ -10^9 <= target <= 10^9                                             │
+ * │ Exactly one valid answer exists.                                    │
+ * │ The same array element cannot be used more than once.               │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Initialize decimal result and power as 0.                  │
- * │ Step 2 : Extract the last binary digit using modulus (%) operation. │
- * │ Step 3 : Multiply the digit by 2^power and add it to the result.    │
- * │ Step 4 : Increment power and remove the processed digit.            │
- * │ Step 5 : Repeat until all digits are processed and return result.   │
+ * │ Step 1 : Create a HashMap to store each number and its index.       │
+ * │ Step 2 : Traverse the array from left to right.                     │
+ * │ Step 3 : Compute complement = target - current element.             │
+ * │ Step 4 : Check if the complement already exists in the HashMap.     │
+ * │ Step 5 : If found, return the stored index and current index.       │
+ * │ Step 6 : Otherwise, store the current element and its index in the  │
+ * │          HashMap and continue.                                      │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
- * │ Number System Conversion | Mathematical Computation                 │
+ * │ HashMap (Hash Table) | One-Pass Lookup                              │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
- * │ Input : 10100                                                       │
- * │ Digit = 0, Power = 0 → Decimal = 0                                  │
- * │ Digit = 0, Power = 1 → Decimal = 0                                  │
- * │ Digit = 1, Power = 2 → Decimal = 4                                  │
- * │ Digit = 0, Power = 3 → Decimal = 4                                  │
- * │ Digit = 1, Power = 4 → Decimal = 20                                 │
- * │ Output : 20                                                         │
+ * │ Input : nums = [2,7,11,15], target = 9                              │
+ * │ i = 0 → num = 2, complement = 7 → Not found → Store (2,0)           │
+ * │ i = 1 → num = 7, complement = 2 → Found at index 0                  │
+ * │ Return [0,1]                                                        │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time Complexity  : O(d)                                             │
- * │ Space Complexity : O(1)                                             │
- * │ where d = number of binary digits.                                  │
+ * │ Time Complexity  : O(n)                                             │
+ * │ Space Complexity : O(n)                                             │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Binary_to_Decimal {                                     ║
-* ║     public static int BinaryToDecimal(int binNum){                   ║
-* ║         int myNum = binNum;                                          ║
-* ║         int pow = 0;                                                 ║
-* ║         int decNum = 0;                                              ║
-* ║         while(binNum > 0){                                           ║
-* ║             int lastDigit = binNum % 10;                             ║
-* ║             decNum = decNum + (lastDigit * (int)Math.pow(2,pow));    ║
-* ║             pow++;                                                   ║
-* ║             binNum /= 10;                                            ║
+* ║ import java.util.Arrays;                                             ║
+* ║ import java.util.HashMap;                                            ║
+* ║ import java.util.Map;                                                ║
+* ║                                                                      ║
+* ║ public class Two_Sum_Leetcode{                                       ║
+* ║     public static int[] twoSum(int[] nums, int target) {             ║
+* ║         Map<Integer, Integer> map = new HashMap<>();                 ║
+* ║                                                                      ║
+* ║         for (int i = 0; i < nums.length; i++) {                      ║
+* ║             int complement = target - nums[i];                       ║
+* ║                                                                      ║
+* ║             if (map.containsKey(complement)) {                       ║
+* ║                 return new int[] { map.get(complement), i };         ║
+* ║             }                                                        ║
+* ║             map.put(nums[i], i);                                     ║
 * ║         }                                                            ║
-* ║         return decNum;                                               ║
+* ║         return new int[] {};                                         ║
 * ║     }                                                                ║
-* ║     public static void main(String args[]){                          ║
-* ║         int binary = 10100;                                          ║
-* ║         int decimal = BinaryToDecimal(binary);                       ║
-* ║         System.out.println("DECIMAL OF "+binary+" IS : "+decimal);   ║
+* ║                                                                      ║
+* ║     public static void main(String[] args) {                         ║
+* ║         int nums[] = {2, 7, 11, 15};                                 ║
+* ║         int target = 9;                                              ║
+* ║         System.out.println(Arrays.toString(twoSum(nums, target)));   ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
 * ╠══════════════════════════════════════════════════════════════════════╣
-* ║  Mathematical & Execution Breakdown for 10100:                       ║
+* ║  Dry Run & Execution Trace for nums = {2, 7, 11, 15}, target = 9:    ║
 * ║                                                                      ║
-* ║  Iter  | binNum | lastDigit | calculation: decNum + (ld * 2^pow)     ║
-* ║  ------|--------|-----------|--------------------------------------  ║
-* ║   1    |  10100 |     0     |   0  + (0 * 2^0) = 0                   ║
-* ║   2    |   1010 |     0     |   0  + (0 * 2^1) = 0                   ║
-* ║   3    |    101 |     1     |   0  + (1 * 2^2) = 4                   ║
-* ║   4    |     10 |     0     |   4  + (0 * 2^3) = 4                   ║
-* ║   5    |      1 |     1     |   4  + (1 * 2^4) = 4 + 16 = 20         ║
+* ║  Iter | i | nums[i] | complement (9 - nums[i]) | map.containsKey?    ║
+* ║  -----|---|---------|--------------------------|-------------------  ║
+* ║   1   | 0 |    2    |        9 - 2 = 7         | No -> map.put(2,0)  ║ 
+* ║   2   | 1 |    7    |        9 - 7 = 2         | Yes! (at index 0)   ║
 * ║                                                                      ║
 * ║  Output:                                                             ║
-* ║  DECIMAL OF 10100 IS : 20                                            ║
+* ║  [0, 1]                                                              ║
+* ╠══════════════════════════════════════════════════════════════════════╣
+* ║  Complexity Analysis:                                                ║
+* ║  - Time Complexity: O(n) -> Single pass traversal utilizing constant ║
+* ║    O(1) average lookup time of HashMap.                              ║
+* ║  - Space Complexity: O(n) -> To store array elements in the map.     ║
 * ╚══════════════════════════════════════════════════════════════════════╝
 */

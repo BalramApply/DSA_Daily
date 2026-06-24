@@ -1,41 +1,47 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [14/06/26] → #2  [15/06/26] → #3  [16/06/26]                    │
+ * │  #1  [15/06/26] → #2  [16/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 70: Convert Binary Number to Decimal                         ║
+ * ║ PROBLEM 71: Convert Decimal Number to Binary                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Given a binary number represented as an integer, convert it into    │
- * │ its equivalent decimal (base-10) number.                            │
- * │ Process each binary digit from right to left using positional       │
- * │ values of powers of 2.                                              │
- * │ Input: A binary integer. Output: Corresponding decimal integer.     │
+ * │ Given a decimal (base-10) integer, convert it into its equivalent   │
+ * │ binary (base-2) representation.                                     │
+ * │ The binary number is constructed by repeatedly dividing the decimal │
+ * │ number by 2 and storing the remainders.                             │
+ * │ Input: A decimal integer. Output: Equivalent binary integer.        │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : 10100                                                      │
- * │ Output : 20                                                         │
+ * │ Input  : 20                                                         │
+ * │ Output : 10100                                                      │
  * │ Explanation :                                                       │
- * │ 1×2⁴ + 0×2³ + 1×2² + 0×2¹ + 0×2⁰ = 16 + 4 = 20                      │
+ * │ 20 ÷ 2 = 10, Remainder = 0                                          │
+ * │ 10 ÷ 2 = 5,  Remainder = 0                                          │
+ * │  5 ÷ 2 = 2,  Remainder = 1                                          │
+ * │  2 ÷ 2 = 1,  Remainder = 0                                          │
+ * │  1 ÷ 2 = 0,  Remainder = 1                                          │
+ * │ Reading remainders from bottom to top gives 10100.                  │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Binary number should contain only digits 0 and 1.                   │
- * │ Input is represented as an integer (not a string).                  │
- * │ Number should fit within the integer range.                         │
+ * │ n should be a non-negative integer.                                 │
+ * │ The resulting binary number should fit within the integer range.    │
+ * │ This implementation stores the binary representation as an integer. │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Initialize decimal result and power as 0.                  │
- * │ Step 2 : Extract the last binary digit using modulus (%) operation. │
- * │ Step 3 : Multiply the digit by 2^power and add it to the result.    │
- * │ Step 4 : Increment power and remove the processed digit.            │
- * │ Step 5 : Repeat until all digits are processed and return result.   │
+ * │ Step 1 : Initialize binary result and positional power to 0.        │
+ * │ Step 2 : Find the remainder by dividing the number by 2.            │
+ * │ Step 3 : Place the remainder at the correct decimal position using  │
+ * │          10^power and add it to the binary result.                  │
+ * │ Step 4 : Divide the number by 2 and increment the power.            │
+ * │ Step 5 : Repeat until the number becomes 0 and return the result.   │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
@@ -43,68 +49,73 @@
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
- * │ Input : 10100                                                       │
- * │ Digit = 0, Power = 0 → Decimal = 0                                  │
- * │ Digit = 0, Power = 1 → Decimal = 0                                  │
- * │ Digit = 1, Power = 2 → Decimal = 4                                  │
- * │ Digit = 0, Power = 3 → Decimal = 4                                  │
- * │ Digit = 1, Power = 4 → Decimal = 20                                 │
- * │ Output : 20                                                         │
+ * │ Input : 20                                                          │
+ * │ n = 20 → rem = 0 → binNum = 0                                       │
+ * │ n = 10 → rem = 0 → binNum = 0                                       │
+ * │ n = 5  → rem = 1 → binNum = 100                                     │
+ * │ n = 2  → rem = 0 → binNum = 100                                     │
+ * │ n = 1  → rem = 1 → binNum = 10100                                   │
+ * │ Output : 10100                                                      │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time Complexity  : O(d)                                             │
+ * │ Time Complexity  : O(log₂n)                                         │
  * │ Space Complexity : O(1)                                             │
- * │ where d = number of binary digits.                                  │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
-public class Binary_to_Decimal {
+public class Decimal_to_Binary {
     
     public static void main(String args[]){
-        int binary = 10100;
+        int decimal = 20;
         
     }
 }
 
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [14/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #1  [15/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
  * └──────────────────────────────────────────────────────────────────────┘
  *
  * ╔══════════════════════════════════════════════════════════════════════╗
- * ║ PROBLEM 70: Convert Binary Number to Decimal                         ║
+ * ║ PROBLEM 71: Convert Decimal Number to Binary                         ║
  * ╚══════════════════════════════════════════════════════════════════════╝
  *
  * ┌── PROBLEM STATEMENT ────────────────────────────────────────────────┐
- * │ Given a binary number represented as an integer, convert it into    │
- * │ its equivalent decimal (base-10) number.                            │
- * │ Process each binary digit from right to left using positional       │
- * │ values of powers of 2.                                              │
- * │ Input: A binary integer. Output: Corresponding decimal integer.     │
+ * │ Given a decimal (base-10) integer, convert it into its equivalent   │
+ * │ binary (base-2) representation.                                     │
+ * │ The binary number is constructed by repeatedly dividing the decimal │
+ * │ number by 2 and storing the remainders.                             │
+ * │ Input: A decimal integer. Output: Equivalent binary integer.        │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── EXAMPLE ──────────────────────────────────────────────────────────┐
- * │ Input  : 10100                                                      │
- * │ Output : 20                                                         │
+ * │ Input  : 20                                                         │
+ * │ Output : 10100                                                      │
  * │ Explanation :                                                       │
- * │ 1×2⁴ + 0×2³ + 1×2² + 0×2¹ + 0×2⁰ = 16 + 4 = 20                      │
+ * │ 20 ÷ 2 = 10, Remainder = 0                                          │
+ * │ 10 ÷ 2 = 5,  Remainder = 0                                          │
+ * │  5 ÷ 2 = 2,  Remainder = 1                                          │
+ * │  2 ÷ 2 = 1,  Remainder = 0                                          │
+ * │  1 ÷ 2 = 0,  Remainder = 1                                          │
+ * │ Reading remainders from bottom to top gives 10100.                  │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── CONSTRAINTS ──────────────────────────────────────────────────────┐
- * │ Binary number should contain only digits 0 and 1.                   │
- * │ Input is represented as an integer (not a string).                  │
- * │ Number should fit within the integer range.                         │
+ * │ n should be a non-negative integer.                                 │
+ * │ The resulting binary number should fit within the integer range.    │
+ * │ This implementation stores the binary representation as an integer. │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── APPROACH STEPS ───────────────────────────────────────────────────┐
- * │ Step 1 : Initialize decimal result and power as 0.                  │
- * │ Step 2 : Extract the last binary digit using modulus (%) operation. │
- * │ Step 3 : Multiply the digit by 2^power and add it to the result.    │
- * │ Step 4 : Increment power and remove the processed digit.            │
- * │ Step 5 : Repeat until all digits are processed and return result.   │
+ * │ Step 1 : Initialize binary result and positional power to 0.        │
+ * │ Step 2 : Find the remainder by dividing the number by 2.            │
+ * │ Step 3 : Place the remainder at the correct decimal position using  │
+ * │          10^power and add it to the binary result.                  │
+ * │ Step 4 : Divide the number by 2 and increment the power.            │
+ * │ Step 5 : Repeat until the number becomes 0 and return the result.   │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── ALGORITHM TYPE ───────────────────────────────────────────────────┐
@@ -112,54 +123,53 @@ public class Binary_to_Decimal {
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── DRY RUN ──────────────────────────────────────────────────────────┐
- * │ Input : 10100                                                       │
- * │ Digit = 0, Power = 0 → Decimal = 0                                  │
- * │ Digit = 0, Power = 1 → Decimal = 0                                  │
- * │ Digit = 1, Power = 2 → Decimal = 4                                  │
- * │ Digit = 0, Power = 3 → Decimal = 4                                  │
- * │ Digit = 1, Power = 4 → Decimal = 20                                 │
- * │ Output : 20                                                         │
+ * │ Input : 20                                                          │
+ * │ n = 20 → rem = 0 → binNum = 0                                       │
+ * │ n = 10 → rem = 0 → binNum = 0                                       │
+ * │ n = 5  → rem = 1 → binNum = 100                                     │
+ * │ n = 2  → rem = 0 → binNum = 100                                     │
+ * │ n = 1  → rem = 1 → binNum = 10100                                   │
+ * │ Output : 10100                                                      │
  * └─────────────────────────────────────────────────────────────────────┘
  *
  * ┌── TIME AND SPACE COMPLEXITY ────────────────────────────────────────┐
- * │ Time Complexity  : O(d)                                             │
+ * │ Time Complexity  : O(log₂n)                                         │
  * │ Space Complexity : O(1)                                             │
- * │ where d = number of binary digits.                                  │
  * └─────────────────────────────────────────────────────────────────────┘
  */
 
 /*╔══════════════════════════════════════════════════════════════════════╗
-* ║ public class Binary_to_Decimal {                                     ║
-* ║     public static int BinaryToDecimal(int binNum){                   ║
-* ║         int myNum = binNum;                                          ║
+* ║ public class Decimal_to_Binary {                                     ║
+* ║     public static int decToBin(int n){                               ║
+* ║         int myNum = n;                                               ║
 * ║         int pow = 0;                                                 ║
-* ║         int decNum = 0;                                              ║
-* ║         while(binNum > 0){                                           ║
-* ║             int lastDigit = binNum % 10;                             ║
-* ║             decNum = decNum + (lastDigit * (int)Math.pow(2,pow));    ║
+* ║         int binNum = 0;                                              ║
+* ║         while(n > 0){                                                ║
+* ║             int rem = n % 2;                                         ║
+* ║             binNum = binNum + (rem * (int)Math.pow(10, pow));        ║
 * ║             pow++;                                                   ║
-* ║             binNum /= 10;                                            ║
+* ║             n /= 2;                                                  ║
 * ║         }                                                            ║
-* ║         return decNum;                                               ║
+* ║         return binNum;                                               ║
 * ║     }                                                                ║
 * ║     public static void main(String args[]){                          ║
-* ║         int binary = 10100;                                          ║
-* ║         int decimal = BinaryToDecimal(binary);                       ║
-* ║         System.out.println("DECIMAL OF "+binary+" IS : "+decimal);   ║
+* ║         int decimal = 20;                                            ║
+* ║         int binary = decToBin(decimal);                              ║
+* ║         System.out.println("BINARY OF "+decimal+" IS : "+binary);    ║
 * ║     }                                                                ║
 * ║ }                                                                    ║
 * ╠══════════════════════════════════════════════════════════════════════╣
-* ║  Mathematical & Execution Breakdown for 10100:                       ║
+* ║  Mathematical & Execution Breakdown for 20:                          ║
 * ║                                                                      ║
-* ║  Iter  | binNum | lastDigit | calculation: decNum + (ld * 2^pow)     ║
-* ║  ------|--------|-----------|--------------------------------------  ║
-* ║   1    |  10100 |     0     |   0  + (0 * 2^0) = 0                   ║
-* ║   2    |   1010 |     0     |   0  + (0 * 2^1) = 0                   ║
-* ║   3    |    101 |     1     |   0  + (1 * 2^2) = 4                   ║
-* ║   4    |     10 |     0     |   4  + (0 * 2^3) = 4                   ║
-* ║   5    |      1 |     1     |   4  + (1 * 2^4) = 4 + 16 = 20         ║
+* ║  Iter  |  n  | remainder (n%2) | calculation: binNum + (rem * 10^pow)║
+* ║  ------|-----|-----------------|------------------------------------ ║
+* ║   1    |  20 |        0        |   0 + (0 * 10^0) = 0                ║
+* ║   2    |  10 |        0        |   0 + (0 * 10^1) = 0                ║
+* ║   3    |   5 |        1        |   0 + (1 * 10^2) = 100              ║
+* ║   4    |   2 |        0        | 100 + (0 * 10^3) = 100              ║
+* ║   5    |   1 |        1        | 100 + (1 * 10^4) = 10100            ║
 * ║                                                                      ║
 * ║  Output:                                                             ║
-* ║  DECIMAL OF 10100 IS : 20                                            ║
+* ║  BINARY OF 20 IS : 10100                                             ║
 * ╚══════════════════════════════════════════════════════════════════════╝
 */
