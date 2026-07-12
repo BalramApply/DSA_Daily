@@ -64,7 +64,6 @@ public class Prime_in_Range {
     
     public static void main(String args[]) {
         int number = 20;
-     
     }
 }
 
