@@ -71,7 +71,6 @@ public class Inverted_Half_Pyramid_Number {
 
     public static void main(String args[]) {
         int height = 5;
-        
     }
 }
 
