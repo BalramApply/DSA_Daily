@@ -1,5 +1,5 @@
 /* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [20/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
+ * │  #1  [20/06/26] → #2  [21/06/26] → #3  [00/06/26]                    │
  * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
  * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
  * │  #10 [00/06/26]                                                      │
@@ -86,13 +86,7 @@ public class Total_Posible_Pair {
     }
 }
 
-/* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [20/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
- * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
- * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
- * │  #10 [00/06/26]                                                      │
- * └──────────────────────────────────────────────────────────────────────┘
- * 
+/*
  * ╔══════════════════════════════════════════════════════════════════════╗
  * ║ PROBLEM 100: Print All Possible Pairs in an Array                    ║
  * ╚══════════════════════════════════════════════════════════════════════╝
@@ -215,12 +209,12 @@ public class Total_Posible_Pair {
 ║                                               ALGORITHMIC ANALYSIS                                                               ║
 ╠══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 ║  Mechanics:                                                                                                                      ║
-║  The algorithm utilizes two nested loops to map distinct combinations of pairs from the input collection. The external          ║
-║  loop establishes a pivot position `curr`, while the internal loop sequentially spans forward elements starting exclusively     ║
-║  from index `i + 1`. This effectively counts and outputs unique combinations without duplicate evaluation.                      ║
+║  The algorithm utilizes two nested loops to map distinct combinations of pairs from the input collection. The external           ║
+║  loop establishes a pivot position `curr`, while the internal loop sequentially spans forward elements starting exclusively      ║
+║  from index `i + 1`. This effectively counts and outputs unique combinations without duplicate evaluation.                       ║
 ║                                                                                                                                  ║
 ║  Time Complexity:                                                                                                                ║
-║  - Best Case:      O(N^2) - Regardless of values, nested operations require traversing all geometric intervals.                    ║
+║  - Best Case:      O(N^2) - Regardless of values, nested operations require traversing all geometric intervals.                  ║
 ║  - Worst/Avg Case: O(N^2) - Summing combinations gives N*(N-1)/2 iterations, defining classic quadratic scale behavior.          ║
 ║                                                                                                                                  ║
 ║  Space Complexity:                                                                                                               ║
