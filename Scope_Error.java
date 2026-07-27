@@ -50,7 +50,7 @@
  * │ i = 3 → Print 3                                                     │
  * │ i = 4 → Print 4                                                     │
  * │ i = 5 → Print 5                                                     │
- * │ Loop ends → 'i' goes out of scope                                  │
+ * │ Loop ends → 'i' goes out of scope                                   │
  * │ Next statement: System.out.print(i); → Compilation Error            │
  * └─────────────────────────────────────────────────────────────────────┘
  *
@@ -75,13 +75,7 @@ public class Scope_Error {
     }
 }
 
-/* ┌─────────────────────── DSA ATTEMPTS ─────────────────────────────────┐
- * │  #1  [12/06/26] → #2  [00/06/26] → #3  [00/06/26]                    │
- * │  #4  [00/06/26] → #5  [00/06/26] → #6  [00/06/26]                    │
- * │  #7  [00/06/26] → #8  [00/06/26] → #9  [00/06/26]                    │
- * │  #10 [00/06/26]                                                      │
- * └──────────────────────────────────────────────────────────────────────┘
- *
+/* 
  * ╔══════════════════════════════════════════════════════════════════════╗
  * ║ PROBLEM 60: Find the Scope Error in a For Loop Variable              ║
  * ╚══════════════════════════════════════════════════════════════════════╝
@@ -127,7 +121,7 @@ public class Scope_Error {
  * │ i = 3 → Print 3                                                     │
  * │ i = 4 → Print 4                                                     │
  * │ i = 5 → Print 5                                                     │
- * │ Loop ends → 'i' goes out of scope                                  │
+ * │ Loop ends → 'i' goes out of scope                                   │
  * │ Next statement: System.out.print(i); → Compilation Error            │
  * └─────────────────────────────────────────────────────────────────────┘
  *
